@@ -1,0 +1,4 @@
+mixin twoInputs(input1, input2)
+  include ../input/input
+  +input(input1.type, input1.name, input1.placeholder, input1.mixClass)
+  +input(input2.type, input2.name, input2.placeholder, input2.mixClass)

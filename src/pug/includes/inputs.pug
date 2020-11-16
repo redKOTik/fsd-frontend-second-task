@@ -1,0 +1,5 @@
+- var inputs = ["Name","Age"]
+  each item in inputs
+    .input-container
+      label(for=item.toLowerCase()) #{item}
+      input(id=item.toLowerCase() type='text')

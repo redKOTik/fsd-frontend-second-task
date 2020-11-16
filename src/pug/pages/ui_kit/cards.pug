@@ -1,0 +1,20 @@
+span.element__logo
+div.cards
+  div.card__column
+    div.find-room
+      include ../../blocks/find_room-form/find_room-form 
+    div.register
+      include ../../blocks/register-form/register-form
+  div.card__column
+    div.reserve
+      include ../../blocks/reserve-form/reserve-form
+    div.auth
+      include ../../blocks/login-form/login-form     
+  div.card__column
+    div.date
+      div.card__date
+        div.calendar
+    div.room
+      include ../../blocks/room/room
+      +cardroom('room__card', '888', '9 990₽', 'card__room-title', 'room-title__number_size-20', true, '145', 'slider1', '0', 'rate1', [{id: '5', checked:"checked"}, {id: '4'}, {id: '3'}, {id: '2'}, {id: '1'}])   
+      +cardroom(null, '840', '9 990₽', 'card__room-title', 'room-title__number_size-20', true, '65', 'slider2', '1', 'rate2', [{id: '5'}, {id: '4', checked:"checked"}, {id: '3'}, {id: '2'}, {id: '1'}])

@@ -1,0 +1,67 @@
+div.details-room
+  include ../label/label  
+  div.photo
+    div.photo__item
+      img(src='assets/img/details/big-image.svg', alt="room-image")
+    div.photo__item.photo-column
+      div.photo-column__item.photo-column__item_matrix 
+        img(src='assets/img/details/small-image1.svg', alt="room-image")
+      div.photo-column__item  
+        img(src='assets/img/details/small-image2.svg', alt="room-image")
+  div.details-room__wrapper
+    div.details
+      div.details__row
+        include ../room-quality/room-quality        
+        div.details__item
+          +label('Сведения о номере', 'label_for-details')
+          div.details__quality
+            +quality('Комфорт', 'Шумопоглощающие стены', 'quality__icon_smile')  
+          div.details__quality
+            +quality('Удобство', 'Окно в каждой из спален', 'quality__icon_city')
+          div.details__quality
+            +quality('Уют', 'Номер оснащён камином', 'quality__icon_fire')
+        div.details__item
+          +label('Впечатления от номера', 'label_for-details')
+          div.details__diagram.diagram
+            div.diagram_yellow
+            div.diagram_purple
+            div.diagram_green
+            div.diagram__text
+              p.diagram__count 260
+              p.diagram__name голосов
+          div.details__list
+              div.bullet-list
+                ul               
+                  li.li_yellow
+                    span Великолепно
+                  li.li_green
+                    span Хорошо
+                  li.li_purple
+                    span Удовлетворительно
+                  li.li_black
+                    span Разочарован
+          div.details__button.hide
+            include ../button/button
+            +button('форма бронирования', 'button_wide')
+      div.details__row
+        include ../post/post
+        div.details__item
+          +label('2 отзыва', 'label_normal label_position-right label_transform-none')
+          +label('Отзывы посетителей номера', 'label_for-details')
+          div.details__post
+            +post('Мурад Сарафанов', '5 дней назад', '12', 'checked', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', 'post__icon_avatar1')
+          div.details__post
+            +post('Патрисия Стёклышкова', 'Неделю назад', '2', undefined, 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент', 'post__icon_avatar2')  
+      div.details__row
+        include ../bullet-list/bullet-list
+        div.details__item
+          +label('Правила', 'label_for-details')
+          div.details__bullet
+            +bullet(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+        div.details__item
+          +label('Отмена', 'label_for-details')
+          div.details__info
+            p.info Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+    div.reserve-form__wrapper.modal
+      include ../reserve-form/reserve-form
+div.overlay

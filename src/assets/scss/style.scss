@@ -1,0 +1,53 @@
+@import "./ui_kits/colorsAndType.scss";
+@import "./ui_kits/formElements.scss";
+@import "./ui_kits/cards.scss";
+@import "./ui_kits/headersAndFooters.scss";
+
+@import "./pages/register.scss";
+@import "./pages/landing.scss";
+
+@import "./blocks/details-room/details-room.scss";
+@import "./blocks/search-room/search-room.scss";
+
+$base-color: green;
+$base-color-text: black;
+
+@font-face {
+  font-family: "horror";
+  src: url(/assets/fonts/horror/17666.otf);
+}
+
+@font-face {
+  font-family: "MontserratRegular";
+  src: url(/assets/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: "MontserratBold";
+  src: url(/assets/fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: "QuicksandBold";
+  src: url(/assets/fonts/Quicksand-Bold.ttf);
+}
+@font-face {
+  font-family: "QuicksandRegular";
+  src: url(/assets/fonts/Quicksand-Regular.ttf);
+}
+
+// body {
+//     background-color: $base-color;
+//     color: $base-color-text;
+//     font-family: "horror";
+// }
+
+body {
+  font-family: sans-serif;
+
+  &.bg_gray {
+    background-color: #f4f4f6;
+  }
+
+  &.bg_white {
+    background-color: #ffffff;
+  }
+}

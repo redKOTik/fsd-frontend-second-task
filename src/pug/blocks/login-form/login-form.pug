@@ -1,0 +1,12 @@
+form.login-form
+  include ../title/title
+  +title('Войти', 'login-form__title')
+  include ../two-input/two-input
+  +twoInputs({type: 'text', placeholder: 'Имя', mixClass: 'login-form__input'}, {type: 'text', placeholder: 'Фамилия', mixClass: 'login-form__input'})
+  include ../button/button
+  +button('войти', 'button_wide login-form__button')
+    span.icon-button    
+  div.to-create
+    div.to-create__span
+      span Нет аккаунта на Toxin?
+    +button('создать', 'button_small')

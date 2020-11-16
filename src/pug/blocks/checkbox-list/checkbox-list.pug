@@ -1,0 +1,6 @@
+mixin checkboxList(items)  
+  include ../checkbox/checkbox      
+  ul.checkbox-list
+    each item in items
+      li.checkbox-list__item(class!=item.classLi)                 
+        +checkbox(item.label, item.checked, item.classLabel, item.rich, item.richText)         

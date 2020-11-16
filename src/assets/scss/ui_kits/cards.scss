@@ -1,0 +1,75 @@
+@import "../blocks/register-form/register-form.scss";
+@import "../blocks/login-form/login-form.scss";
+@import "../blocks/reserve-form/reserve-form.scss";
+@import "../blocks/find_room-form/find_room-form.scss";
+@import "../blocks/room/room.scss";
+@import "../blocks/labels/labels.scss";
+
+.element__logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 48px;
+  height: 48px;
+  background: url(/assets/img/logo/logo.svg);
+}
+
+.cards {
+  position: relative;
+  width: 1160px;
+  margin: 150px 140px 140px 140px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card__column {
+  position: relative;
+  margin-right: 40px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  .date {
+    margin-bottom: 40px;
+  }
+}
+
+.find-room {
+  position: relative;
+  margin-bottom: 40px;
+}
+.register {
+  position: relative;
+}
+.auth {
+  position: relative;
+}
+.reserve {
+  position: relative;
+  margin-bottom: 40px;
+}
+.card__date {
+  width: 320px;
+  height: 411px;
+  //background: #FFFFFF;
+  //border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+
+  .datepicker__header {
+    display: none;
+  }
+
+  & .datepicker-range .datepicker__calendar {
+    top: 0;
+  }
+}
+.room {
+  position: relative;
+
+  &__card {
+    margin-bottom: 40px;
+  }
+}

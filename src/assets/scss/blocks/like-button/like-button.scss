@@ -1,0 +1,49 @@
+.like {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+
+  &__button {
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__button + &__label {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    font-family: MontserratRegular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 20px;
+    vertical-align: middle;
+    color: rgba(31, 32, 65, 0.25);
+    top: 0;
+    left: 20px;
+  }
+
+  &__button + &__label:before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-image: url(/assets/img/form_elements/favorite_border.svg);
+    background-repeat: no-repeat;
+    transition: 0.2s;
+    left: -20px;
+    top: 0px;
+  }
+
+  &__button:checked + &__label:before {
+    border: 1px solid #bc9cff;
+    background-image: url(/assets/img/form_elements/favorite.svg);
+  }
+
+  &__button:checked + &__label {
+    color: #bc9cff;
+  }
+}

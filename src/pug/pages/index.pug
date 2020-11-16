@@ -1,0 +1,34 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name="keywords" content="ключевые слова")
+    meta(name="description" content="краткое описание страницы")
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel="icon", href="assets/favicon.ico", type="image/ico")
+    title Registration  
+  body
+    template
+      div.register
+        include ../blocks/register-form/register-form
+      div.login
+        include ../blocks/login-form/login-form
+      div.find-room
+        include ../blocks/find_room-form/find_room-form
+      div.details
+        include ../blocks/details-room/details-room
+      div.filter
+        include ../blocks/search-room/search-room
+      div.cat
+        include ../pages/ui_kit/colorsAndType
+      div.elements
+        include ../pages/ui_kit/form_elements
+      div.cards
+        include ../pages/ui_kit/cards
+      div.haf
+        include ../pages/ui_kit/headersAndFooters
+    include ../blocks/header/header      
+    section.container
+      div.register-form_wrapper
+    include ../blocks/footer/footer

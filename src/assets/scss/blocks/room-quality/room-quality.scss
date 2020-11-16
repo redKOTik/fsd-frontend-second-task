@@ -1,0 +1,41 @@
+.quality {
+  display: flex;
+
+  .quality__icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+
+    &.quality__icon_smile {
+      background-image: url(/assets/img/form_elements/insert_emoticon.svg);
+    }
+    &.quality__icon_city {
+      background-image: url(/assets/img/form_elements/location_city.svg);
+    }
+    &.quality__icon_fire {
+      background: url(/assets/img/form_elements/fire.svg) center no-repeat;
+    }
+  }
+
+  .quality__text {
+    height: 48px;
+
+    p {
+      margin: 0;
+      font-family: MontserratRegular;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 24px;
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
+
+  & + hr {
+    background: rgba(31, 32, 65, 0.1);
+    width: 280px;
+    height: 1px;
+    border: none;
+    margin: 0;
+    margin-top: 20px;
+  }
+}

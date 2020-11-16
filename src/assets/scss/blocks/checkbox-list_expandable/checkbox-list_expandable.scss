@@ -1,0 +1,42 @@
+@import "../checkbox-list/checkbox-list.scss";
+
+.list {
+  width: 266px;
+
+  &_collapsed .checkbox-list {
+    display: none;
+    position: absolute;
+  }
+
+  &_expanded .checkbox-list {
+    display: block;
+    position: relative;
+    width: 266px;
+    background-color: #fff;
+    height: auto;
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    cursor: pointer;
+
+    label {
+      cursor: pointer;
+    }
+
+    .icon-collapsed {
+      background-image: url(/assets/img/arrow__checkbox/expand_more.svg);
+    }
+
+    .icon-expanded {
+      background-image: url(/assets/img/arrow__checkbox/collapsed_more.svg);
+    }
+  }
+
+  &__arrow {
+    width: 44px;
+    height: 44px;
+  }
+}

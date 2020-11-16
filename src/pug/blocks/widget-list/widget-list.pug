@@ -1,0 +1,4 @@
+mixin widgetList(items)
+  ul.list
+    each item in items
+      li.list__element(class!=item.active)= item.text

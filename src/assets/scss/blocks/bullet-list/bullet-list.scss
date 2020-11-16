@@ -1,0 +1,16 @@
+.bullet-list {
+  list-style-type: circle;
+  list-style-image: url(/assets/img/form_elements/ellipse.svg);
+  padding: 0;
+  margin-left: 20px;
+
+  &__item {
+    margin-bottom: 10px;
+    color: rgba(31, 32, 65, 0.75);
+    font-family: MontserratRegular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

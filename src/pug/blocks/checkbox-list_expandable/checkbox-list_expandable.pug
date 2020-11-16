@@ -1,0 +1,7 @@
+mixin list(type, items, labelName)
+  include ../checkbox-list/checkbox-list    
+  div.list(class='list_'+type)
+    div.list__header
+      label.label.label_bold.label_center(name="list")= labelName
+      div.list__arrow(class='icon-'+type)
+    +checkboxList(items)

@@ -1,0 +1,103 @@
+@import "../button/button.scss";
+@import "../title/room-title.scss";
+
+.reserve-form {
+  width: 380px;
+  height: 511px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  padding: 30px;
+
+  &__room-number {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  &__reserve-dates {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &__reserve-guest {
+    position: relative;
+    margin-bottom: 20px;
+  }
+}
+
+.reserve-dates,
+.reserve-guest {
+  &__wrapper {
+    position: relative;
+    margin-top: 5px;
+    font-family: MontserratRegular;
+  }
+}
+
+.reserve-pricelist {
+  position: relative;
+  margin-bottom: 30px;
+
+  .reserve-service {
+    display: flex;
+    justify-content: space-between;
+
+    &_mb-10 {
+      margin-bottom: 10px;
+    }
+
+    &__span {
+      font-family: MontserratRegular;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+
+      color: rgba(31, 32, 65, 0.75);
+    }
+
+    &__icon {
+      position: absolute;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url(/assets/img/form_elements/spec.svg);
+      background-repeat: no-repeat;
+      right: 80px;
+
+      cursor: pointer;
+    }
+  }
+}
+
+.reserve-total {
+  position: relative;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+
+  &__border {
+    height: 1px;
+    border: 1px dotted rgba(31, 32, 65, 0.25);
+    padding-top: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    width: 182px;
+  }
+
+  &__text .text {
+    font-family: QuicksandBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    color: #1f2041;
+  }
+}

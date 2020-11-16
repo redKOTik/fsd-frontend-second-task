@@ -1,0 +1,48 @@
+@import "../like-button/like-button.scss";
+
+.post {
+  &__header {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+
+    &_avatar1 {
+      background-image: url(/assets/img/form_elements/avatar1.svg);
+      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+      border-radius: 32px;
+    }
+    &_avatar2 {
+      background-image: url(/assets/img/form_elements/avatar2.svg);
+      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+      border-radius: 32px;
+    }
+  }
+
+  &__author {
+    height: auto;
+  }
+
+  &__body {
+    display: flex;
+  }
+
+  &__counter {
+    position: relative;
+    margin-right: 14px;
+    margin-left: 3px;
+  }
+
+  &__content {
+    margin: 0;
+    font-family: MontserratRegular;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+  }
+}

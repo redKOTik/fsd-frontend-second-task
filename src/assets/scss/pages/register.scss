@@ -1,0 +1,25 @@
+@import "../blocks/header/header.scss";
+@import "../blocks/footer/footer.scss";
+@import "../blocks/labels/labels.scss";
+@import "../blocks/register-form/register-form.scss";
+@import "../blocks/login-form/login-form.scss";
+
+.container {
+  max-width: 100%;
+  height: 702px;
+  display: flex;
+  align-items: center;
+}
+
+.container_registration-bg {
+  background-image: url(/assets/img/image4.1.svg);
+}
+
+.register-form_wrapper,
+.login-form_wrapper {
+  margin: 0 auto;
+}
+
+// .header.header_mt-140 {
+//     margin-top: 0;
+// }

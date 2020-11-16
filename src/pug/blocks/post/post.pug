@@ -1,0 +1,15 @@
+mixin post(name, createDate, count, checked, text, classIcon)
+  div.post
+    div.post__header
+      div.post__icon(class=classIcon)
+      div.post__author
+        p.post__content
+          strong= name
+        p.post__content= createDate       
+    div.post__body
+      div.post__counter
+        include ../like-button/like-button   
+        label.label__default.label__default_d-ib.label__default_w-40
+          +like(count, checked)
+      div.post__author
+        p.post__content= text

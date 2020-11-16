@@ -1,0 +1,8 @@
+mixin quality(name, description, classIcon)
+  div.quality
+    div.quality__icon(class=classIcon)
+    div.quality__text
+      p.text__title 
+        strong= name
+      p.text__content= description
+  hr

@@ -1,0 +1,69 @@
+.label {
+  font-family: MontserratRegular;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+
+  &__input {
+    margin-top: 5px;
+  }
+
+  &_bold {
+    font: 12px MontserratBold;
+    font-weight: bold;
+    color: #1f2041;
+  }
+
+  &_normal {
+    font-weight: normal;
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &_center {
+    line-height: 44px;
+  }
+
+  &_position-right {
+    float: right;
+  }
+
+  &_with-element {
+    display: inline-block;
+    width: 150px;
+    margin-right: 20px;
+  }
+
+  &_for-details {
+    display: block;
+    height: 24px;
+    font-family: QuicksandBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    color: #1f2041;
+    text-transform: none;
+
+    margin-bottom: 20px;
+  }
+
+  &_for-filter {
+    display: block;
+    height: 30px;
+    font-family: QuicksandBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1f2041;
+    text-transform: none;
+
+    margin-bottom: 20px;
+  }
+
+  &_transform-none {
+    text-transform: none;
+    margin-top: 6px;
+  }
+}

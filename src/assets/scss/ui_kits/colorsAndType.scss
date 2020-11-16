@@ -1,0 +1,162 @@
+.element__logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 48px;
+  height: 48px;
+  background: url(/assets/img/logo/logo.svg);
+}
+
+.kits {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 10% 10%;
+  justify-content: space-between;
+}
+
+.kit__block {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.colors,
+.titles,
+.types,
+.hedears {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.colors,
+.titles {
+  justify-content: space-around;
+}
+
+.types,
+.hedears {
+  justify-content: flex-start;
+}
+
+.title__block {
+  line-height: 29px;
+}
+
+.title__p {
+  margin: 0;
+}
+
+.title__p_size_b {
+  font: 19px QuicksandBold;
+}
+
+.title__p_size_r {
+  font: 19px QuicksandRegular;
+}
+
+.title__p_color {
+  color: #1f2041;
+}
+
+.color__block {
+  width: 70px;
+  height: 70px;
+  margin: 10px 40px;
+  border-radius: 6px;
+}
+
+.color__block_dark_shade_100 {
+  background: rgba(31, 32, 65, 1);
+}
+
+.color__block_dark_shade_75 {
+  background: rgba(31, 32, 65, 0.75);
+}
+
+.color__block_dark_shade_50 {
+  background: rgba(31, 32, 65, 0.5);
+}
+
+.color__block_dark_shade_25 {
+  background: rgba(31, 32, 65, 0.25);
+}
+
+.color__block_dark_shade_5 {
+  background: rgba(31, 32, 65, 0.05);
+}
+
+.color__block_purple {
+  background: #bc9cff;
+}
+
+.color__block_green {
+  background: #6fcf97;
+}
+
+.types__block {
+  width: 336px;
+  margin-bottom: 50px;
+}
+
+.types__p {
+  margin: 0;
+}
+
+.types__p_color_100 {
+  color: #1f2041;
+}
+
+.types__p_color_75 {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.types__p_quicksand_bold_xl {
+  font: 24px QuicksandBold;
+  line-height: 30px;
+}
+
+.types__p_quicksand_bold_l {
+  font: 19px QuicksandBold;
+  line-height: 24px;
+}
+
+.types__p_montserrat_bold_s {
+  font: 12px MontserratBold;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.types__p_montserrat_regular_m {
+  font: 14px MontserratRegular;
+  line-height: 24px;
+}
+
+.header__block {
+  margin: 0 30px 30px 30px;
+}
+
+.header__p {
+  margin: 0;
+  color: rgba(31, 32, 65, 0.25);
+  text-align: right;
+}
+
+.header__p_montserrat_regular_xl {
+  font: 24px MontserratRegular;
+  line-height: 29px;
+}
+
+.header__p_montserrat_regular_l {
+  font: 19px MontserratRegular;
+  line-height: 23px;
+}
+
+.header__p_montserrat_regular_s {
+  font: 12px MontserratRegular;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.header__p_montserrat_regular_m {
+  font: 14px MontserratRegular;
+  line-height: 24px;
+}

@@ -1,0 +1,34 @@
+.rate {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  width: 120px;
+
+  input {
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    margin-left: -2px;
+  }
+
+  label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+
+    background-image: url(/assets/img/form_elements/star_border.svg);
+    background-repeat: no-repeat;
+  }
+
+  label:hover,
+  label:hover ~ label,
+  input:checked ~ label {
+    background-image: url(/assets/img/form_elements/star.svg);
+    background-repeat: no-repeat;
+  }
+}

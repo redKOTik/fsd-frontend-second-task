@@ -1,0 +1,57 @@
+div.search-room
+  include ../label/label  
+  div.filter.search-room__filter
+    div.filter__item
+      +label('даты пребывания в отеле', 'label_bold')
+      div.filter__datepicker-wrapper.font-montserrat
+        div.filter__datepicker
+    div.filter__item
+      +label('гости', 'label_bold')
+      div.filter__multiselect-wrapper.font-montserrat
+        select.filter__multiselect(value="Сколько гостей")
+          option(value="1") взрослые
+          option(value="2") дети  
+          option(value="0") младенцы
+    div.filter__item
+      +label('default', 'label_normal label_position-right label_slider')
+      +label('диапазон цены', 'label_bold')
+      div.filter__slider-wrapper
+        div.filter__slider
+        p.slider-text Стоимость за сутки пребывания в номере
+    div.filter__item.item      
+      +label('Checkbox Buttons', 'label_bold item__label')
+      include ../checkbox-list/checkbox-list
+      +checkboxList([{label: 'Можно курить'}, {label: 'Можно с питомцами', checked: 'checked'}, {label: 'Можно пригласить гостей (до 10 человек)', checked: 'checked', classLabel: 'checkbox-label_w-192', classLi: 'li_h-40'}])
+    div.filter__item.item
+      +label('доступность', 'label_bold item__label')
+      +checkboxList([{ label: 'Широкий коридор', classLabel: 'checkbox-label_w-203', classLi: 'li_h-52', richText: 'Ширина коридоров в номере не менее 91 см.', rich: true }, { label: 'Помощник для инвалидов', classLabel: 'checkbox-label_w-234', classLi: 'li_h-52', richText: 'На 1 этаже вас встретит специалист и проводит до номера.', rich: true }])
+    div.filter__item
+      +label('удобства номера', 'label_bold')
+      div.filter__multiselect-wrapper.font-montserrat
+        select.filter__multiselect_multititle(value="Сколько всего")
+          option(value="2") спальни
+          option(value="2") кровати
+          option(value="0") ванные комнаты
+    div.filter__item
+      include ../checkbox-list_expandable/checkbox-list_expandable
+      +list('collapsed', [{label: 'Завтрак'}, {label: 'Письменный стол'}, {label: 'Стул для кормления'}, {label: 'Кроватка'}, {label: 'Телевизор'}, {label: 'Шампунь'}], 'дополнительные удобства')
+  div.result
+    +label('Номера, которые мы для вас подобрали', 'label_for-filter')
+    include ../room/room    
+    - var room1 = ['result__item', '888', '9 990₽', 'card__room-title', 'room-title__number_size-20', true, '145', 'slider1', '0', 'rate1', [{id: '1-5', checked:'checked'}, {id: '1-4'}, {id: '1-3'}, {id: '1-2'}, {id: '1-1'}]];
+    - var room2 = ['result__item', '840', '9 990₽', 'card__room-title', 'room-title__number_size-20', false, '65', 'slider2', '1', 'rate2', [{id: '2-5'}, {id: '2-4', checked:'checked'}, {id: '2-3'}, {id: '2-2'}, {id: '2-1'}]];
+    - var room3 = ['result__item', '980', '8 500₽', 'card__room-title', 'room-title__number_size-20', true, '35', 'slider3', '2', 'rate3', [{id: '3-5'}, {id: '3-4'}, {id: '3-3', checked:'checked'}, {id: '3-2'}, {id: '3-1'}]];
+    - var room4 = ['result__item', '856', '7 300₽', 'card__room-title', 'room-title__number_size-20', false, '19', 'slider4', '3', 'rate4', [{id: '4-5', checked:'checked'}, {id: '4-4'}, {id: '4-3'}, {id: '4-2'}, {id: '4-1'}]];
+    - var room5 = ['result__item', '740', '6 000₽', 'card__room-title', 'room-title__number_size-20', false, '44', 'slider5', '4', 'rate5', [{id: '5-5'}, {id: '5-4', checked:'checked'}, {id: '5-3'}, {id: '5-2'}, {id: '5-1'}]];
+    - var room6 = ['result__item', '982', '5 800₽', 'card__room-title', 'room-title__number_size-20', false, '56', 'slider6', '5', 'rate6', [{id: '6-5'}, {id: '6-4'}, {id: '6-3', checked:'checked'}, {id: '6-2'}, {id: '6-1'}]];
+    - var room7 = ['result__item', '678', '5 500₽', 'card__room-title', 'room-title__number_size-20', false, '45', 'slider7', '6', 'rate7', [{id: '7-5', checked:'checked'}, {id: '7-4'}, {id: '7-3'}, {id: '7-2'}, {id: '7-1'}]];
+    - var room8 = ['result__item', '450', '5 300₽', 'card__room-title', 'room-title__number_size-20', false, '39', 'slider8', '7', 'rate8', [{id: '8-5'}, {id: '8-4', checked:'checked'}, {id: '8-3'}, {id: '8-2'}, {id: '8-1'}]];
+    - var room9 = ['result__item', '350', '5 000₽', 'card__room-title', 'room-title__number_size-20', false, '77', 'slider9', '8', 'rate9', [{id: '9-5'}, {id: '9-4'}, {id: '9-3', checked:'checked'}, {id: '9-2'}, {id: '9-1'}]];
+    - var room10 = ['result__item', '666', '5 000₽', 'card__room-title', 'room-title__number_size-20', false, '25', 'slider10', '9', 'rate10', [{id: '10-5', checked:'checked'}, {id: '10-4'}, {id: '10-3'}, {id: '10-2'}, {id: '10-1'}]];
+    - var room11 = ['result__item', '444', '5 000₽', 'card__room-title', 'room-title__number_size-20', false, '15', 'slider11', '10', 'rate11', [{id: '11-5'}, {id: '11-4'}, {id: '11-3', checked:'checked'}, {id: '11-2'}, {id: '11-1'}]];
+    - var room12 = ['result__item', '352', '5 000₽', 'card__room-title', 'room-title__number_size-20', false, '55', 'slider12', '11', 'rate12', [{id: '12-5'}, {id: '12-4'}, {id: '12-3', checked:'checked'}, {id: '12-2'}, {id: '12-1'}]];
+    - var items = [room1, room2, room3, room4, room5, room6, room7, room8, room9, room10, room11, room12]
+    div.result-room.result-room_mb-40
+      each item in items
+        +cardroom(...item)
+    div.result-pagination

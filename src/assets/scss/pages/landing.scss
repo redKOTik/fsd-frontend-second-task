@@ -1,0 +1,28 @@
+@import "../blocks/header/header.scss";
+@import "../blocks/footer/footer.scss";
+@import "../blocks/labels/labels.scss";
+@import "../blocks/find_room-form/find_room-form.scss";
+
+.container {
+  max-width: 100%;
+  height: 702px;
+  display: flex;
+  align-items: center;
+}
+
+.container_landind-bg {
+  background-image: url(/assets/img/land-image.svg);
+}
+
+.find_room-form_wrapper {
+  margin-left: 140px;
+  margin-top: 70px;
+  align-self: start;
+}
+
+@media (max-width: 992px) {
+  .find_room-form_wrapper {
+    margin: 0 auto;
+    align-self: center;
+  }
+}
