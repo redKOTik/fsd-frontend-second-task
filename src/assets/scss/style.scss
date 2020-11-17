@@ -42,6 +42,13 @@ $base-color-text: black;
 
 body {
   font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .footer {
+    margin-top: auto;
+  }
 
   &.bg_gray {
     background-color: #f4f4f6;
