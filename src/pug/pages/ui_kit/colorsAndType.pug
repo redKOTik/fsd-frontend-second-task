@@ -1,10 +1,8 @@
 span.element__logo
 div.kits
-  - var values = ['color__block_dark_shade_100', 'color__block_dark_shade_75', 'color__block_dark_shade_50', 'color__block_dark_shade_25', 'color__block_dark_shade_5',  'color__block_purple',  'color__block_green'];
+  - var values = ['bg-dark-shade-100', 'bg-dark-shade-75', 'bg-dark-shade-50', 'bg-dark-shade-25', 'bg-dark-shade-5',  'bg-purple',  'bg-green'];
   - var p1 = ['Dark Shade 100%', 'Dark Shade 75%', 'Dark Shade 50%', 'Dark Shade 25%', 'Dark Shade 5%',  'Purple',  'Green'];
   - var p2 = ['#1F2041', '#1F2041', '#1F2041', '#1F2041', '#1F2041',  '#BC9CFF',  '#6FCF97'];
-  - var headers = ['H1', 'H2', 'H3', 'Body'];
-  - var fonts = ['header__p_montserrat_regular_xl', 'header__p_montserrat_regular_l', 'header__p_montserrat_regular_s', 'header__p_montserrat_regular_m'];
   div.kit__block  
     div.colors
       each val in values
@@ -12,19 +10,19 @@ div.kits
     div.titles
       each p, index in p1    
         div.title__block
-          p.title__p.title__p_size_b.title__p_color=p
-          p.title__p.title__p_size_r.title__p_color=p2[index]
-  div.kit__block          
-    div.hedears
-      each font,index in fonts
-        div.header__block          
-          p.header__p(class=font)=headers[index]
+          p.title__p.title__p_size-b.title__p_color=p
+          p.title__p.title__p_size-r.title__p_color=p2[index]
+  div.kit__block       
     div.types
-      div.types__block    
-        p.types__p.types__p_color_100.types__p_quicksand_bold_xl This one is the sub-section or widget title
-      div.types__block    
-        p.types__p.types__p_color_100.types__p_quicksand_bold_l Next one is the item title inside widgets
-      div.types__block    
-        p.types__p.types__p_color_100.types__p_montserrat_bold_s This is a label or CTA text
-      div.types__block    
-        p.types__p.types__p_color_75.types__p_montserrat_regular_m This is the body text which is used for most of the design, like paragraphs, lists, etc.      
+      div.types__block.types__block_mb-50
+        p.tag.types__element.types__element_mr-30.types__element_ta-right.montserrat-regular-xl.dark-shade-25 H1   
+        p.types__element.dark-shade-100.quicksand-bold-xl This one is the sub-section or<br/> widget title
+      div.types__block.types__block_mb-50
+        p.tag.types__element.types__element_mr-30.types__element_ta-right.montserrat-regular-l.dark-shade-25 H2 
+        p.types__element.dark-shade-100.quicksand-bold-l Next one is the item title inside<br/> widgets
+      div.types__block.types__block_mb-50
+        p.tag.types__element.types__element_mr-30.types__element_ta-right.montserrat-regular-s.dark-shade-25 H3     
+        p.types__element.dark-shade-100.montserrat-bold-s This is a label or CTA text
+      div.types__block.montserrat-regular-m
+        p.tag.types__element.types__element_mr-30.types__element_ta-right.dark-shade-25 Body     
+        p.types__element.dark-shade-75 This is the body text which is used for most<br/> of the design, like paragraphs, lists, etc.      
