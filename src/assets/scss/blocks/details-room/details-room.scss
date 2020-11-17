@@ -10,30 +10,50 @@
 }
 
 .photo {
+  height: 485px;
+  max-width: 1920px;
   max-height: 485px;
   display: flex;
 
   &__item {
     flex: 1 1 auto;
-    overflow: hidden;
+    overflow: hidden;    
 
-    img {
+    &_bg-image-0 {
       width: 100%;
-      object-fit: cover;
+      height: 100%;
+      max-width: 1200px;
+      max-height: 485px;
+      background-image: url(/assets/img/details/big-image.svg);
+      background-size: cover;
     }
   }
 }
 
 .photo-column {
+  min-width: 467px;
+  min-height: 460px;
+  max-width: 685px;
+  max-height: 485px;
   display: flex;
   flex-direction: column;
 
+
   &__item {
-    margin-bottom: -4.5px;
+    width: 100%;
+    height: 100%;    
     max-height: 250px;
     overflow: hidden;
     &_matrix {
       transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    &_bg-image-1 {
+      background-image: url(/assets/img/details/small-image1.svg);
+      background-size: cover;
+    }
+    &_bg-image-2 {
+      background-image: url(/assets/img/details/small-image2.svg);
+      background-size: cover;
     }
   }
 }
@@ -239,19 +259,30 @@
 @media (max-width: 1440px) {
   .photo {
     max-height: 100%;
+
+    &__item {
+      &_bg-image-0 {
+        max-width: 1000px;
+      }
+    }
   }
+  
 }
 
 @media (max-width: 1200px) {
   .photo {
     flex-wrap: wrap;
+    max-height: 1455px;
+    height: 1455px;
+    padding: 0 125px;
+  }
+  .photo-column {
+    max-width: 1200px;
+    max-height: 966px;
+    height: 100%;
 
     &__item {
-      padding: 0 125px;
-    }
-
-    &__item:first-child {
-      margin-bottom: -4.5px;
+      max-height: none;
     }
   }
 
@@ -304,8 +335,24 @@
 
 @media (max-width: 900px) {
   .photo {
+    padding: 0;
+    max-height: 840px;
+    height: 840px;
+
     &__item {
-      padding: 0;
+      &_bg-image-0 {
+        max-height: 340px;
+      }
+    }
+  }
+
+  .photo-column {
+    max-width: 900px;
+    max-height: 500px;
+    height: 100%;
+
+    &__item {
+      max-height: none;
     }
   }
 
@@ -336,6 +383,18 @@
 }
 
 @media (max-width: 767px) {
+  .photo {
+    padding: 0;
+    max-height: 750px;
+    height: 750px;
+
+    &__item {
+      &_bg-image-0 {
+        max-height: 250px;
+      }
+    }
+  }
+
   .column {
     flex-direction: column;
   }

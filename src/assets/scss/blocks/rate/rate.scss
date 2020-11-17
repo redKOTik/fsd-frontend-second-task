@@ -3,13 +3,13 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  width: 120px;
+  width: 125px;
 
   input {
     display: inline-block;
     width: 0;
     opacity: 0;
-    margin-left: -2px;
+    margin-left: 0;
   }
 
   label {

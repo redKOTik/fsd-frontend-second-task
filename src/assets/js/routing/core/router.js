@@ -123,6 +123,7 @@ export class Router {
                 title.textContent = 'Headers and Footers';
                 body.html(content.querySelector('.haf').innerHTML);
                 body[0].className = 'bg_gray';
+                initFooterJs();
                 break;                                    
         }
         body.append(t); 
