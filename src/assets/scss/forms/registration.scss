@@ -22,7 +22,9 @@
 
   label {
     margin-bottom: 5px;
-    font: 12px MontserratBold;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
     line-height: 15px;
 
     /* Dark 100% */
@@ -30,7 +32,9 @@
   }
 
   span {
-    font: 14px MontserratRegular;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 18px;
     color: #000000;
   }
@@ -56,7 +60,9 @@
     border-radius: 4px;
     &::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
-      font: 14px MontserratRegular;
+      font-family: Montserrat, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
       line-height: 24px;
       color: rgba(31, 32, 65, 0.25);
     }
@@ -69,7 +75,9 @@
     & + label {
       cursor: pointer;
       padding: 0 0 0 10px;
-      font: 14px MontserratRegular;
+      font-family: Montserrat, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
       line-height: 24px;
     }
 
@@ -115,7 +123,9 @@
     & + label {
       cursor: pointer;
       padding: 0 0 0 30px;
-      font: 14px MontserratRegular;
+      font-family: Montserrat, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
       line-height: 24px;
     }
 
@@ -162,7 +172,9 @@
     & + label {
       cursor: pointer;
       padding: 0 0 0 30px;
-      font: 14px MontserratRegular;
+      font-family: Montserrat, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
       line-height: 24px;
     }
 
@@ -204,7 +216,9 @@
   }
 
   button {
-    font: 12px MontserratBold;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
     line-height: 15px;
     height: 44px;
     border-radius: 22px;
@@ -236,7 +250,9 @@
 
 h3 {
   margin: 10px 0;
-  font: 24px QuicksandBold;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
   line-height: 30px;
 
   /* Dark 100% */

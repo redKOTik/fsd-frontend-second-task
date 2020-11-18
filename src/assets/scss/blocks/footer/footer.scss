@@ -20,7 +20,9 @@
   }
 
   &__description {
-    font: 14px MontserratRegular;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 24px;
     color: rgba(31, 32, 65, 0.75);
   }
@@ -52,8 +54,9 @@
 
   &__element {
     margin: 20px 0;
-
-    font: 14px MontserratRegular;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 17px;
     color: rgba(31, 32, 65, 0.5);
 
@@ -63,8 +66,9 @@
 
     &_active {
       margin-top: 0px;
-
-      font: 12px MontserratBold;
+      font-family: Montserrat, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 12px;
       line-height: 15px;
       text-transform: uppercase;
       color: #1f2041;
@@ -85,7 +89,9 @@
     border-radius: 4px;
     &::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
-      font: 14px MontserratRegular;
+      font-family: Montserrat, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
       line-height: 24px;
       color: rgba(31, 32, 65, 0.25);
     }
@@ -97,7 +103,7 @@
     height: 42px;
     right: 0;
     top: 1px;
-    background: url(/assets/img/footer/arrow_purple.svg) no-repeat;
+    background: url(/assets/img/footer/arrow.svg) no-repeat;
   }
 }
 
@@ -111,7 +117,9 @@
 
   &__title {
     margin-left: calc(100% / 1440 * 140);
-    font: 14px MontserratRegular;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 17px;
     color: rgba(31, 32, 65, 0.75);
   }

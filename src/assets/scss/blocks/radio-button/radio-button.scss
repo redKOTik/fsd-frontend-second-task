@@ -16,8 +16,15 @@
       display: inline-block;
       cursor: pointer;
       padding: 0 0 0 10px;
-      font: 14px MontserratRegular;
+      font-family: Montserrat, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
       line-height: 24px;
+      color: rgba(31, 32, 65, 0.5);      
+    }
+
+    &:checked + .radio__label {      
+      color: rgba(31, 32, 65, 0.75);
     }
 
     & + .radio__label:before {
@@ -41,7 +48,7 @@
       opacity: 0;
       transition: 0.2s;
       left: 5px;
-      top: 2px;
+      top: 3px;
     }
 
     &:checked + .radio__label:before {
@@ -51,7 +58,7 @@
 
     &:checked + .radio__label:after {
       opacity: 1;
-      transition: 0.2s;
+      transition: 0.2s;      
     }
   }
 }

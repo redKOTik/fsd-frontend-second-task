@@ -24,7 +24,7 @@
       height: 100%;
       max-width: 1200px;
       max-height: 485px;
-      background-image: url(/assets/img/details/big-image.svg);
+      background-image: url(/assets/img/details/room-main-image.svg);
       background-size: cover;
     }
   }
@@ -48,11 +48,11 @@
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
     &_bg-image-1 {
-      background-image: url(/assets/img/details/small-image1.svg);
+      background-image: url(/assets/img/details/room-more-image-1.svg);
       background-size: cover;
     }
     &_bg-image-2 {
-      background-image: url(/assets/img/details/small-image2.svg);
+      background-image: url(/assets/img/details/room-more-image-2.svg);
       background-size: cover;
     }
   }
@@ -111,9 +111,8 @@
         li {
           margin-bottom: 5px;
 
-          font-family: MontserratRegular;
-          font-style: normal;
-          font-weight: normal;
+          font-family: Montserrat, Arial, sans-serif;
+          font-weight: 400;
           font-size: 14px;
           line-height: 24px;
           color: rgba(31, 32, 65, 0.75);
@@ -231,12 +230,14 @@
   }
 
   &__count {
-    font-family: QuicksandBold;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 700;
     font-size: 24px;
     line-height: 30px;
   }
   &__name {
-    font-family: MontserratBold;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 700;
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
@@ -244,9 +245,8 @@
 }
 
 .info {
-  font-family: MontserratRegular;
-  font-style: normal;
-  font-weight: normal;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);

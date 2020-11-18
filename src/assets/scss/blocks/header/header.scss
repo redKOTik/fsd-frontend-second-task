@@ -51,8 +51,8 @@
     margin: 0 10px;
 
     color: rgba(31, 32, 65, 0.5);
-    font-family: MontserratRegular;
-    font-style: normal;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
     font-size: 14px;
     line-height: 17px;
 
@@ -65,8 +65,8 @@
 
     &_active {
       color: rgba(31, 32, 65, 0.75);
-      font-family: MontserratBold;
-      font-weight: bold;
+      font-family: Montserrat, Arial, sans-serif;
+      font-weight: 700;
     }
   }
 
@@ -98,8 +98,8 @@
     min-width: 45px;
 
     color: rgba(31, 32, 65, 0.5);
-    font-family: MontserratRegular;
-    font-style: normal;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
     font-size: 14px;
     line-height: 17px;
   }
@@ -254,8 +254,8 @@
 
     &__link {
       color: #fff;
-      font-family: MontserratBold;
-      font-style: bold;
+      font-family: Montserrat, Arial, sans-serif;
+      font-weight: 700;
       font-size: 20px;
       line-height: 20px;
       padding: 10px;

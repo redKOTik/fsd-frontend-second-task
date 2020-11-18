@@ -15,7 +15,6 @@
 
   &__title {
     position: relative;
-    max-width: 220px;
     margin-bottom: 20px;
   }
 
@@ -35,6 +34,7 @@
   &__wrapper {
     position: relative;
     margin-top: 5px;
-    font-family: MontserratRegular;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
   }
 }

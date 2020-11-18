@@ -115,7 +115,8 @@
 }
 
 .font-montserrat {
-  font-family: MontserratRegular;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
 }
 
 .custom-width {
@@ -129,5 +130,5 @@
   height: 42px;
   right: 0;
   top: 1px;
-  background: url(/assets/img/footer/arrow_purple.svg) no-repeat;
+  background: url(/assets/img/footer/arrow.svg) no-repeat;
 }

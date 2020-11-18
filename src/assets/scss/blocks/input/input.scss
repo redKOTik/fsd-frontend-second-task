@@ -19,7 +19,8 @@
   }
 
   &_focus {
-    font-family: MontserratRegular;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
     font-size: 14px;
     line-height: 24px;
     color: rgba(31, 32, 65, 0.75);
@@ -27,7 +28,9 @@
 
   &::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    font: 14px MontserratRegular;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 24px;
     color: rgba(31, 32, 65, 0.25);
   }

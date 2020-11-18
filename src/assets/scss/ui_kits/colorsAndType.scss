@@ -46,11 +46,15 @@
 }
 
 .title__p_size-b {
-  font: 19px QuicksandBold;
+  font-family: Montserrat, Arial, sans-serif;;
+  font-weight: 700;
+  font-size: 19px;
 }
 
 .title__p_size-r {
-  font: 19px QuicksandRegular;
+  font-family: Montserrat, Arial, sans-serif;;
+  font-weight: 400;
+  font-size: 19px;
 }
 
 .title__p_color {
@@ -129,39 +133,53 @@
   color: rgba(31, 32, 65, 0.25);
 }
 
-.quicksand-bold-xl {
-  font: 24px QuicksandBold;
+.montserrat-bold-xl {
+  font-family: Montserrat, Arial, sans-serif;;
+  font-weight: 700;
+  font-size: 24px;
   line-height: 30px;
 }
 
-.quicksand-bold-l {
-  font: 19px QuicksandBold;
+.montserrat-bold-l {
+  font-family: Montserrat, Arial, sans-serif;;
+  font-weight: 700;
+  font-size: 19px;
   line-height: 24px;
 }
 
 .montserrat-bold-s {
-  font: 12px MontserratBold;
+  font-family: Montserrat, Arial, sans-serif;;
+  font-weight: 700;
+  font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
 }
 
 .montserrat-regular-m {
-  font: 14px MontserratRegular;
+  font-family: Montserrat, Arial, sans-serif;;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 24px;
 }
 
 .montserrat-regular-xl {
-  font: 24px MontserratRegular;
+  font-family: Montserrat, Arial, sans-serif;;
+  font-weight: 400;
+  font-size: 24px;
   line-height: 29px;
 }
 
 .montserrat-regular-l {
-  font: 19px MontserratRegular;
+  font-family: Montserrat, Arial, sans-serif;;
+  font-weight: 400;
+  font-size: 19px;
   line-height: 23px;
 }
 
 .montserrat-regular-s {
-  font: 12px MontserratRegular;
+  font-family: Montserrat, Arial, sans-serif;;
+  font-weight: 400;
+  font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
 }

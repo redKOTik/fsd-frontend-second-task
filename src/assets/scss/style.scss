@@ -13,35 +13,24 @@ $base-color: green;
 $base-color-text: black;
 
 @font-face {
-  font-family: "horror";
-  src: url(/assets/fonts/horror/17666.otf);
+	font-family: 'Montserrat';
+	src: url(/assets/fonts/montserrat/montserrat-bold.ttf);
+	src: local('☺'), url(/assets/fonts/montserrat/montserrat-bold.woff) format('woff'), url(/assets/fonts/montserrat/montserrat-bold.eot) format('eot'), url(/assets/fonts/montserrat/montserrat-bold.svg) format('svg');
+	font-weight: 700;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: "MontserratRegular";
-  src: url(/assets/fonts/Montserrat-Regular.ttf);
+	font-family: 'Montserrat';
+	src: url(/assets/fonts/montserrat/montserrat-regular.ttf);
+	src: local('☺'), url(/assets/fonts/montserrat/montserrat-regular.woff) format('woff'), url(/assets/fonts/montserrat/montserrat-regular.eot) format('eot'),  url(/assets/fonts/montserrat/montserrat-regular.svg) format('svg');
+	font-weight: 400;
+	font-style: normal;
 }
-@font-face {
-  font-family: "MontserratBold";
-  src: url(/assets/fonts/Montserrat-Bold.ttf);
-}
-@font-face {
-  font-family: "QuicksandBold";
-  src: url(/assets/fonts/Quicksand-Bold.ttf);
-}
-@font-face {
-  font-family: "QuicksandRegular";
-  src: url(/assets/fonts/Quicksand-Regular.ttf);
-}
-
-// body {
-//     background-color: $base-color;
-//     color: $base-color-text;
-//     font-family: "horror";
-// }
 
 body {
-  font-family: sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
