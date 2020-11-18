@@ -121,6 +121,10 @@
     width: 196px;
     height: 34px;
     outline: none;
+
+    &:focus {
+      border: 2px solid gray;
+    }
   }
 
   .button.button_small {
@@ -133,6 +137,10 @@
     border: 2px solid #bc9cff;
     border-radius: 22px;
     outline: none;
+
+    &:focus {
+      border: 2px solid gray;
+    }
   }
 }
 
