@@ -1,105 +1,112 @@
 div.elements
   span.element__logo
   div.line.line_mb-100
-    include ../../blocks/label/label
-    include ../../blocks/input/input
+    include ../../../blocks/label/label
+    include ../../../blocks/input/input
     div.element-column
       div.field.element-column__field
-        +label('default', 'label_normal label_position-right')
-        +label('text field', 'label_bold')
-          +input('email', 'text', 'Email', 'label__input')          
+        +label('default', 'label_weight_normal label_position_right')
+        +label('text field', 'label_weight_bold')
+          div.label__input
+            +input('email', 'text', 'Email')
       div.field.element-column__field
-        +label('hover / focus', 'label_normal label_position-right')
-        +label('text field', 'label_bold')
-          +input('other', 'text', null, 'input_focus label__input', 'This is pretty awesome')   
+        +label('hover / focus', 'label_weight_normal label_position_right')
+        +label('text field', 'label_weight_bold')
+          div.label__input
+            +input('other', 'text', null, 'input_focused input_hovered', 'This is pretty awesome')   
       div.field.element-column__field
-        +label('default', 'label_normal label_position-right')
-        +label('dropdown', 'label_bold') 
+        +label('default', 'label_weight_normal label_position_right')
+        +label('dropdown', 'label_weight_bold') 
         div.field__multiselect-wrapper.font-montserrat
           select.multiselect-collapsed(value="Сколько гостей", name="counter")
             option(value="0") взрослые
             option(value="0") дети  
             option(value="0") младенцы
       div.field.field_mb-40
-        +label('default', 'label_normal label_position-right')        
-        +label('masked text field', 'label_bold')
-          +input('date', 'text', 'ДД.ММ.ГГГГ', 'label__input')
+        +label('default', 'label_weight_normal label_position_right')        
+        +label('masked text field', 'label_weight_bold')
+          div.label__input
+            +input('date', 'text', 'ДД.ММ.ГГГГ')
       div.field.field_mb-40
-        +label('date dropdown', 'label_bold label_with-element')        
-        +label('date dropdown', 'label_bold')
+        +label('date dropdown', 'label_weight_bold label_position_inline')        
+        +label('date dropdown', 'label_weight_bold')
         div.field__datepicker-wrapper.font-montserrat
           select.datepicker-range
       div.field.field_mb-40
-        +label('filter date dropdown', 'label_bold')
+        +label('filter date dropdown', 'label_weight_bold')
         div.field__datepicker-wrapper.font-montserrat.custom-width
           select.datepicker-range-filter
       div.field
-        +label('subscription text field', 'label_bold')
+        +label('subscription text field', 'label_weight_bold')
           div.field__input-wrapper.custom-width
             +input('email', 'text', 'Email')
-              span.custom-arrow
+              span.input__arrow
     div.element-column
       div.field.field_mb-40
-        +label('Checkbox Buttons', 'label_bold field__label')
-        include ../../blocks/checkbox-list/checkbox-list
-        +checkboxList([{label: 'Можно курить', checked: 'checked'}, {label: 'Можно с питомцами', checked: 'checked'}, {label: 'Можно пригласить гостей (до 10 человек)', checked: 'checked', classLabel: 'checkbox-label_w-192', classLi: 'li_h-40'}])
+        +label('Checkbox Buttons', 'label_weight_bold field__label')
+        include ../../../blocks/checkbox-list/checkbox-list
+        +checkboxList([
+          {label: 'Можно курить', classLabel: 'width_default', checked: 'checked'}, 
+          {label: 'Можно с питомцами', classLabel: 'width_default', checked: 'checked'}, 
+          {label: 'Можно пригласить гостей (до 10 человек)', checked: 'checked', classLabel: 'width_default', classItem: 'height_middle'}
+          ])
       div.field.field_mb-40
-        +label('Radio Buttons ', 'label_bold field__label')
-        include ../../blocks/radio-button/radio-button
+        +label('Radio Buttons ', 'label_weight_bold field__label')
+        include ../../../blocks/radio-button/radio-button
         +radio()
       div.field.field_mb-40
-        +label('Toggle', 'label_bold field__label')
-        include ../../blocks/toggle-button/toggle-button
+        +label('Toggle', 'label_weight_bold field__label')
+        include ../../../blocks/toggle-button/toggle-button
         div.field__toggle-wrapper
           +toggle('Получать спецпредложения', 'checked')
         +toggle('Получать спецпредложения')          
       div.field.field_mb-40
-        +label('like button', 'label_bold field__label')        
-        include ../../blocks/like-button/like-button
+        +label('like button', 'label_weight_bold field__label')        
+        include ../../../blocks/like-button/like-button
         div.field__like-wrapper
           +like('2')
         +like('12', 'checked')          
       div.field
-        +label('rate button', 'label_bold field__label')        
+        +label('rate button', 'label_weight_bold field__label')        
         div.field__rate-wrapper
-          include ../../blocks/rate/rate
-          +rate('rate1', [{id: 'y5', checked:"checked"}, {id: 'y4'}, {id: 'y3'}, {id: 'y2'}, {id: 'y1'}])
-          +rate('rate2', [{id: 'x5'}, {id: 'x4', checked:"checked"}, {id: 'x3'}, {id: 'x2'}, {id: 'x1'}])
+          include ../../../blocks/rate/rate
+          +rate('rate-first', [{value: '5'}, {value: '4', checked:"checked"}, {value: '3'}, {value: '2'}, {value: '1'}])
+          +rate('rate-second', [{value: '5', checked:"checked"}, {value: '4'}, {value: '3'}, {value: '2'}, {value: '1'}])
     div.element-column
       div.field.field_mb-40.custom-width
-        +label('default', 'label_normal label_position-right label_slider')
-        +label('Range Slider', 'label_bold')        
+        +label('default', 'label_weight_normal label_position_right label_slider')
+        +label('Range Slider', 'label_weight_bold')        
         div.custom-slider.field__custom-slider
-      div.field.field_mb-40
-        +label('buttons', 'label_bold field__label')        
+      div.field.field_mb-40        
+        +label('buttons', 'label_weight_bold field__label') 
+        include ../../../blocks/button/button     
         div.field__custom-button-wrapper
-          button.button.button_white.button_bg-purple.button_w-99 CLICK ME
-          button.button.button_white.button_bg-purple.button_disabled.button_w-99  CLICK ME
+          +button('CLICK ME', 'button_size_small button_height_large button_bg_purple button_color_white button_without-border button_focused')          
+          +button('CLICK ME', 'button_size_small button_height_large button_bg_purple button_color_white button_without-border button_focused button_disabled') 
         div.field__custom-button-wrapper
-          button.button.button_purple.button_bg-white.button_with-border.button_w-99  CLICK ME
-          button.button.button_purple.button_bg-white.button_with-border.button_disabled.button_w-99  CLICK ME
+          +button('CLICK ME', 'button_size_small button_height_large button_bg_white button_color_purple button_with-border button_focused')          
+          +button('CLICK ME', 'button_size_small button_height_large button_bg_white button_color_purple button_with-border button_focused button_disabled')
         div.field__custom-button-wrapper
-          button.button.button_without-border.button_purple.button_bg-white.button_h-15 CLICK ME
-          button.button.button_without-border.button_gray.button_bg-white.button_h-15 CLICK ME        
-        include ../../blocks/button/button          
-        +button('перейти к оплате', 'button_wide')
-          span.icon-button          
+          +button('CLICK ME', 'button_height_small button_bg_white button_color_purple button_without-border button_focused')
+          +button('CLICK ME', 'button_height_small button_bg_white button_color_grey button_without-border button_focused')       
+        +button('перейти к оплате', 'button_size_wide button_height_large button_bg_purple button_color_white button_without-border button_focused')
+          span.button__icon       
       div.field
-        +label('pagination', 'label_bold field__label')        
-        include ../../blocks/pagination/pagination       
+        +label('pagination', 'label_weight_bold field__label')        
+        include ../../../blocks/pagination/pagination       
   div.line.line_mb-158
     div.element-column
       div.field.element-column__field.custom-width
-        +label('default', 'label_normal label_position-right')
-        +label('dropdown', 'label_bold') 
+        +label('default', 'label_weight_normal label_position_right')
+        +label('dropdown', 'label_weight_bold') 
         div.field__multiselect-wrapper.font-montserrat
           select.multiselect-collapsed-with-value(value="Сколько всего")
             option(value="0") спальни
             option(value="0") кровати
             option(value="0") ванные комнаты
       div.field.custom-width
-        +label('expanded', 'label_normal label_position-right')
-        +label('dropdown', 'label_bold')
+        +label('expanded', 'label_weight_normal label_position_right')
+        +label('dropdown', 'label_weight_bold')
         div.field__multiselect-wrapper.font-montserrat 
           select.multiselect-expanded-with-value(value="Сколько всего")
             option(value="0") спальни
@@ -107,7 +114,7 @@ div.elements
             option(value="0") ванные комнаты
     div.element-column
       div.field
-        +label('dropdown', 'label_bold')
+        +label('dropdown', 'label_weight_bold')
         div.field__multiselect-wrapper.font-montserrat  
           select.multiselect-expanded-default(value="Сколько гостей")
             option(value="0") взрослые
@@ -115,7 +122,7 @@ div.elements
             option(value="0") младенцы   
     div.element-column
       div.field
-        +label('dropdown', 'label_bold')
+        +label('dropdown', 'label_weight_bold')
         div.field__multiselect-wrapper.font-montserrat  
           select.multiselect-expanded-total-value(value="Сколько гостей")
             option(value="2") взрослые
@@ -123,29 +130,48 @@ div.elements
             option(value="0") младенцы
   div.line.line_mb-53
     div.element-column
-      include ../../blocks/checkbox-list_expandable/checkbox-list_expandable   
+      include ../../../blocks/checkbox-list-expandable/checkbox-list-expandable   
       div.field.element-column__field
-        +list('collapsed', [{label: 'Завтрак'}, {label: 'Письменный стол'}, {label: 'Стул для кормления'}, {label: 'Кроватка'}, {label: 'Телевизор'}, {label: 'Шампунь'}], 'expandable checkbox list')
+        +listExpandable('collapsed', [
+          {label: 'Завтрак'}, 
+          {label: 'Письменный стол'}, 
+          {label: 'Стул для кормления'}, 
+          {label: 'Кроватка'}, 
+          {label: 'Телевизор'}, 
+          {label: 'Шампунь'}
+          ], 'expandable checkbox list')
       div.field
-        +list('expanded', [{label: 'Завтрак'}, {label: 'Письменный стол', checked: "checked"}, {label: 'Стул для кормления', checked: "checked"}, {label: 'Кроватка', checked: "checked"}, {label: 'Телевизор'}, {label: 'Шампунь'}], 'expandable checkbox list')
+        +listExpandable('expanded', [
+          {label: 'Завтрак'}, 
+          {label: 'Письменный стол', checked: "checked"}, 
+          {label: 'Стул для кормления', checked: "checked"}, 
+          {label: 'Кроватка', checked: "checked"}, 
+          {label: 'Телевизор'}, 
+          {label: 'Шампунь'}
+          ], 'expandable checkbox list')
     div.element-column
-      include ../../blocks/checkbox-list/checkbox-list  
+      include ../../../blocks/checkbox-list/checkbox-list  
       div.field.field_mt-14
-        +label('Rich Checkbox Buttons', 'label_bold field__label')
-        +checkboxList([{ label: 'Широкий коридор', classLabel: 'checkbox-label_w-203', classLi: 'li_h-52', richText: 'Ширина коридоров в номере не менее 91 см.', rich: true }, { label: 'Помощник для инвалидов', classLabel: 'checkbox-label_w-234', classLi: 'li_h-52', richText: 'На 1 этаже вас встретит специалист и проводит до номера.', rich: true }])       
+        +label('Rich Checkbox Buttons', 'label_weight_bold field__label')
+        +checkboxList([
+          { label: 'Широкий коридор', classLabel: 'width_default', classItem: 'height_custom', richText: 'Ширина коридоров в номере не менее 91 см.', rich: true }, 
+          { label: 'Помощник для инвалидов', classLabel: 'width_custom', classItem: 'height_custom', richText: 'На 1 этаже вас встретит специалист и проводит до номера.', rich: true }
+          ])       
     div.element-column
       div.field.field_mt-14
-        +label('bullet list', 'label_bold field__label')
-        include ../../blocks/bullet-list/bullet-list
-        +bullet(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])                 
+        +label('bullet list', 'label_weight_bold field__label')
+        include ../../../blocks/bullet-list/bullet-list
+        +bullet(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])             
   div.line
     div.element-column
-      include ../../blocks/room-quality/room-quality          
+      include ../../../blocks/feature/feature          
       div.field.element-column__field
-        +quality('Комфорт', 'Шумопоглощающие стены', 'quality__icon_smile')            
+        +feature('Комфорт', 'Шумопоглощающие стены', 'feature__icon_smile')
+        hr.separator           
       div.field
-        +quality('Удобство', 'Окно в каждой из спален', 'quality__icon_city')
+        +feature('Удобство', 'Окно в каждой из спален', 'feature__icon_city')
+        hr.separator 
     div.element-column.element-column_custom-width
-      include ../../blocks/post/post              
+      include ../../../blocks/post/post              
       div.field
-        +post('Мурад Сарафанов', '5 дней назад', '12', 'checked', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', 'post__icon_avatar1')
+        +post('Мурад Сарафанов', '5 дней назад', 'feature__icon_avatar_man', '12', 'checked', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')

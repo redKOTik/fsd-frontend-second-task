@@ -1,0 +1,5 @@
+.bullet-list-colored__item_marker_color_green {
+    &::before {
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    }    
+}

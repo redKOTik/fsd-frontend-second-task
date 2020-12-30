@@ -1,0 +1,31 @@
+@import "../like-button/like-button.scss";
+@import "../feature/feature.scss";
+
+.post {
+  &__header {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__body {
+    display: flex;
+  }
+
+  &__counter {
+    position: relative;
+    padding: 2px 14px 0 3px;
+  }
+
+  &__author {
+    height: auto;
+  }
+
+  &__review {
+    margin: 0;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+  }
+}

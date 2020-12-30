@@ -1,0 +1,9 @@
+mixin checkboxButton(label, checked, className, rich, richText)
+  label.checkbox-button
+    input.checkbox-button__input(type="checkbox", checked!=checked)
+    div.checkbox-button__label(class!= className ? 'checkbox-button__label_' + className : '')
+      if rich
+        p.checkbox-button__title= label
+        p.checkbox-button__content= richText
+      else
+        = label

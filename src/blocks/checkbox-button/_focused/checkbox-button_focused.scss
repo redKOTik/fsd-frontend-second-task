@@ -1,0 +1,5 @@
+.checkbox-button-focused {
+  &:focus {
+    border: 2px solid gray;
+  }
+}

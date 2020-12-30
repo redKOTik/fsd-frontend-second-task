@@ -1,9 +1,10 @@
+@import "src/blocks/find-room-form/find-room-form.scss";
+
 @import "../blocks/register-form/register-form.scss";
 @import "../blocks/login-form/login-form.scss";
 @import "../blocks/reserve-form/reserve-form.scss";
-@import "../blocks/find_room-form/find_room-form.scss";
 @import "../blocks/room/room.scss";
-@import "../blocks/labels/labels.scss";
+//@import "../blocks/labels/labels.scss";
 
 .element__logo {
   position: absolute;
@@ -35,7 +36,7 @@
   }
 }
 
-.find-room {
+.card__find-room-form {
   position: relative;
   margin-bottom: 40px;
 }

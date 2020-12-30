@@ -1,0 +1,14 @@
+.rate__label {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  
+  cursor: pointer;  
+
+  background-image: url(/assets/img/rate/__label/star-border.svg);
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,5 @@
+mixin radio(mixClass)
+  div.radio(class!=mixClass)
+    include ./__wrapper/radio__wrapper
+    +radioWrapper('Мужчина')
+    +radioWrapper('Женщина')

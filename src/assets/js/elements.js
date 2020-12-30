@@ -9,6 +9,11 @@ import '../plugins/datepicker/bundle.js';
 import 'fsd-custom-slider/dist/app.js';
 import 'fsd-custom-slider/dist/app.css';
 
+import { handleListExpandableToggle } from '../../blocks/checkbox-list-expandable/__header/checkbox-list-expandable__header';
+import { initRates } from '../../blocks/rate/rate.js';
+import initPagination from '../../blocks/pagination/pagination.js';
+
+
 export function initElementsJs() {
 
     $('.multiselect-collapsed').multiselect({
@@ -81,29 +86,7 @@ export function initElementsJs() {
         title: 'Сколько гостей',
         totalTextTitle: 'гостя',
         showAllValue: false
-    });
-    
-    $('.list__header').on('click', (event) => {
-        const target = event.currentTarget.parentNode;
-        const arrow = target.querySelector('.list__arrow');
-        const isCollapsed = arrow.classList.contains('icon-collapsed');
-        const isExpanded = arrow.classList.contains('icon-expanded');
-    
-        target.classList.toggle('list_collapsed');
-        target.classList.toggle('list_expanded');
-    
-        if (isCollapsed) {
-            arrow.classList.remove('icon-collapsed');
-        } else {
-            arrow.classList.add('icon-collapsed');
-        }
-    
-        if (isExpanded) {
-            arrow.classList.remove('icon-expanded');
-        } else {
-            arrow.classList.add('icon-expanded');
-        }
-    });
+    });   
     
     $('.custom-slider').sliderPlugin({
         step: '500',
@@ -117,7 +100,17 @@ export function initElementsJs() {
             $('.label_slider').text(change);
         }
     });
+
+    // list-expandable
+    $('.checkbox-list-expandable__header').on('click', handleListExpandableToggle);
     
+    // pagination    
+    initPagination('.result-pagination');
+
+    // rating
+    initRates('.rate');
+
+    // slider
     $('.label_slider').text($('.custom-slider').sliderPlugin('value'));
 };
 

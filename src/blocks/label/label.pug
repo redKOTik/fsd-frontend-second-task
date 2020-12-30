@@ -1,0 +1,4 @@
+mixin label(text, classModificator, align)
+  label.label(class!=classModificator, class=align ? "label_align_" + align : "label_align_default")= text
+    if block
+      block

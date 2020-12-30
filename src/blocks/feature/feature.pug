@@ -1,0 +1,8 @@
+mixin feature(title, description, classIcon)
+  div.feature
+    div.feature__icon(class=classIcon)
+    div.feature__type
+      p.feature__title= title
+      p.feature__description= description
+  if block
+    block

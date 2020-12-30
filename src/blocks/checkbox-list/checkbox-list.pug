@@ -1,0 +1,6 @@
+mixin checkboxList(items)  
+  include ../checkbox-button/checkbox-button
+  ul.checkbox-list
+    each item in items
+      li.checkbox-list__item(class!=item.classItem ? 'checkbox-list__item_' + item.classItem : 'checkbox-list__item_height_default')                
+        +checkboxButton(item.label, item.checked, item.classLabel, item.rich, item.richText)

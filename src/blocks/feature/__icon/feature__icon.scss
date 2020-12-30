@@ -1,0 +1,25 @@
+.feature__icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+
+  &_smile {
+    background-image: url(/assets/img/feature/__icon/insert-emoticon.svg);
+  }
+  &_city {
+    background-image: url(/assets/img/feature/__icon/location-city.svg);
+  }
+  &_fire {
+    background: url(/assets/img/feature/__icon/fire.svg) center no-repeat;
+  }
+  &_avatar_man {
+    background-image: url(/assets/img/feature/__icon/avatar-man.svg);
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+    border-radius: 32px;
+  }
+  &_avatar_woman {
+    background-image: url(/assets/img/feature/__icon/avatar-woman.svg);
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+    border-radius: 32px;
+  }
+}

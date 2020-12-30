@@ -1,0 +1,11 @@
+//@import '../__button/radio__button.scss';
+//@import '../__label/radio__label.scss';
+
+.radio__wrapper {
+    position: relative;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+}

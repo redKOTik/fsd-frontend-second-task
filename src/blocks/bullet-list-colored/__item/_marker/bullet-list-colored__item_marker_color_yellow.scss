@@ -1,0 +1,5 @@
+.bullet-list-colored__item_marker_color_yellow {
+    &::before {
+      background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+    }    
+}

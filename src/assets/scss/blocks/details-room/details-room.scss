@@ -1,8 +1,10 @@
-@import "../labels/labels.scss";
+@import "src/blocks/bullet-list/bullet-list.scss";
+@import "src/blocks/bullet-list-colored/bullet-list-colored.scss";
+
+//@import "../labels/labels.scss";
 @import "../room-quality/room-quality.scss";
 @import "../reserve-form/reserve-form.scss";
-@import "../bullet-list/bullet-list.scss";
-@import "../post/post.scss";
+//@import "../post/post.scss";
 
 .container_details {
   height: 100%;
@@ -102,49 +104,6 @@
   &__list {
     position: relative;
     display: inline-block;
-
-    .bullet-list {
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        li {
-          margin-bottom: 5px;
-
-          font-family: Montserrat, Arial, sans-serif;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 24px;
-          color: rgba(31, 32, 65, 0.75);
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-
-        li::before {
-          content: "";
-          display: inline-block;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          margin-right: 5px;
-        }
-
-        .li_yellow::before {
-          background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
-        }
-        .li_green::before {
-          background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-        }
-        .li_purple::before {
-          background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-        }
-        .li_black::before {
-          background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
-        }
-      }
-    }
   }
 
   &__post {

@@ -1,0 +1,6 @@
+mixin listExpandableHeader(labelName, type)
+  div.checkbox-list-expandable__header
+    include ../../label/label
+    +label(labelName, 'label_weight_bold label_cursor_pointer', 'center')
+    include ../__arrow/checkbox-list-expandable__arrow
+    +listExpandableArrow(type)

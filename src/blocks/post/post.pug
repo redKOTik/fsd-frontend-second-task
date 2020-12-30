@@ -1,0 +1,12 @@
+mixin post(name, createDate, classIcon, count, checked, review)
+  div.post    
+    div.post__header
+      include ../feature/feature
+      +feature(name, createDate, classIcon)  
+    div.post__body
+      div.post__counter
+        include ../like-button/like-button   
+        label.label__default.label__default_d-ib.label__default_w-40
+          +like(count, checked)
+      div.post__author
+        p.post__review= review

@@ -6,25 +6,15 @@ import '../plugins/multiselect/bundle.js';
 import '../plugins/datepicker/bundle.js';
 import Sim from '../plugins/imgslider/imgslider.js';
 
+import initFindRoomPlugins from '../../blocks/find-room-form/find-room-form'
+
 export function initCardsJs() {
-    const eventStop = (e) => {
+    const handleFormSubmit = (e) => {
         e.preventDefault();
         console.log(e.target);
     };
 
-    $('.findroom-form__datepicker').datepicker({
-        mode: 'Range'
-    });
-    $('.findroom-form__multiselect').multiselect({
-        state: 'Collapsed',
-        options: [
-            { text: 'взрослые', value: '0' },
-            { text: 'дети', value: '0' },
-            { text: 'младенцы', value: '0' }],
-        title: 'Сколько гостей',
-        totalTextTitle: 'гостя',
-        showAllValue: false
-    });
+    initFindRoomPlugins();
     
     $('.register-form__datepicker').datepicker();
     
@@ -55,10 +45,10 @@ export function initCardsJs() {
 
     $('.datepicker-range').focus();    
     
-    $('.findroom-form').on('submit', eventStop);
-    $('.register-form').on('submit', eventStop);
-    $('.login-form').on('submit', eventStop);
-    $('.reserve-form').on('submit', eventStop);
+    $('.find-room-form').on('submit', handleFormSubmit);
+    $('.register-form').on('submit', handleFormSubmit);
+    $('.login-form').on('submit', handleFormSubmit);
+    $('.reserve-form').on('submit', handleFormSubmit);
     
     new Sim('slider1');
     new Sim('slider2');

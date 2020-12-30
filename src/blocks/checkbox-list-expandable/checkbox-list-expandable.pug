@@ -1,0 +1,6 @@
+mixin listExpandable(type, items, labelName)
+  include ./__header/checkbox-list-expandable__header
+  include ../checkbox-list/checkbox-list  
+  div.checkbox-list-expandable(class='checkbox-list-expandable_type_' + type)
+    +listExpandableHeader(labelName, type)
+    +checkboxList(items)

@@ -27,16 +27,11 @@ div.details-room
               p.diagram__count 260
               p.diagram__name голосов
           div.details__list
-              div.bullet-list
-                ul               
-                  li.li_yellow
-                    span Великолепно
-                  li.li_green
-                    span Хорошо
-                  li.li_purple
-                    span Удовлетворительно
-                  li.li_black
-                    span Разочарован
+            include ../../../blocks/bullet-list-colored/bullet-list-colored
+            +bulletColored([{ text: 'Великолепно', color: 'yellow' },
+              { text: 'Хорошо', color: 'green' },
+              { text: 'Удовлетворительно', color: 'purple' },
+              { text: 'Разочарован', color: 'black' }])
           div.details__button.hide
             include ../button/button
             +button('форма бронирования', 'button_wide')
@@ -50,7 +45,7 @@ div.details-room
           div.details__post
             +post('Патрисия Стёклышкова', 'Неделю назад', '2', undefined, 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент', 'post__icon_avatar2')  
       div.details__row
-        include ../bullet-list/bullet-list
+        include ../../../blocks/bullet-list/bullet-list
         div.details__item
           +label('Правила', 'label_for-details')
           div.details__bullet

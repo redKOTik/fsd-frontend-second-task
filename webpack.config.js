@@ -61,7 +61,25 @@ module.exports = {
             { 
                 test: /\.(png|svg|gif|jpg)$/, 
                 exclude: /node_modules/, 
-                loader: "file-loader" 
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: path.resolve(__dirname, 'dist/images'),
+                            useRelativePath: true
+                        }
+                    }, 
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            svgo: {
+                                progressive: true,
+                                quality: 80
+                            }
+                        }
+                    }
+                ]
             },
             { 
                 test: /\.(woff(2)?|ttf|otf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/, 
@@ -91,17 +109,30 @@ module.exports = {
             filename: `./${page.replace(/\.pug/,'.html')}`
           })),    
         new CleanWebpackPlugin(),
-        new CopyWebpackPlugin([
-            {
-                from: path.resolve(__dirname, 'src/static/favicon.ico'), to: path.resolve(__dirname, 'dist/assets')
-            },
-            {   
-                from: path.resolve(__dirname, 'src/assets/fonts'), to: path.resolve(__dirname, 'dist/assets/fonts')
-            },
-            {   
-                from: path.resolve(__dirname, 'src/assets/img'), to: path.resolve(__dirname, 'dist/assets/img')
-            },
-        ]),
+        new CopyWebpackPlugin({ 
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/static/favicon.ico'), to: path.resolve(__dirname, 'dist/assets')
+                },
+                {   
+                    from: path.resolve(__dirname, 'src/assets/fonts'), to: path.resolve(__dirname, 'dist/assets/fonts')
+                },
+                {   
+                    from: path.resolve(__dirname, 'src/assets/img'), to: path.resolve(__dirname, 'dist/assets/img')
+                },
+                {   
+                    from: path.resolve(__dirname, 'src/blocks'), to: path.resolve(__dirname, 'dist/assets/img'),
+                    globOptions: {
+                        ignore: [
+                          // Ignore all `txt` files
+                          '**/*.js', 
+                          '**/*.scss',
+                          '**/*.pug'
+                        ],
+                      },
+                },
+            ]
+        }),
         new MiniCssExtractPlugin({
             filename: 'style.css'
         }),

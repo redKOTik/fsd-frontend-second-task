@@ -1,0 +1,5 @@
+mixin bullet(items)
+  ul.bullet-list.bullet-list_marker_circle
+    each item in items
+      include ./__item/bullet-list__item
+      +bullet-item(item)

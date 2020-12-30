@@ -1,0 +1,5 @@
+.button_focused {
+  &:focus {
+    border: 2px solid gray;
+  }
+}

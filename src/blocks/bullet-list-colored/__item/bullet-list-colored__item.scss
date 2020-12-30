@@ -1,0 +1,23 @@
+@import "./_marker/bullet-list-colored__item_marker_color_black.scss";
+@import "./_marker/bullet-list-colored__item_marker_color_green.scss";
+@import "./_marker/bullet-list-colored__item_marker_color_yellow.scss";
+@import "./_marker/bullet-list-colored__item_marker_color_purple.scss";
+
+.bullet-list-colored__item {
+  margin-bottom: 5px;
+  color: rgba(31, 32, 65, 0.75);
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  max-width: 270px;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+}

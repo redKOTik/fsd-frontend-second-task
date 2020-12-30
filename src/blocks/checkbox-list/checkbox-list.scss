@@ -1,0 +1,20 @@
+@import "../checkbox-button/checkbox-button.scss";
+@import "./__item/_height/checkbox-list__item_height_custom.scss";
+@import "./__item/_height/checkbox-list__item_height_middle.scss";
+@import "./__item/_height/checkbox-list__item_height_default.scss";
+
+.checkbox-list {
+  list-style: none;
+  padding: 0;
+  margin: 3px 0px;
+  z-index: 100;
+}
+
+.checkbox-list__item {
+  position: relative;
+  margin: 0 0 10px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

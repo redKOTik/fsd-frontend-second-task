@@ -1,0 +1,20 @@
+form.find-room-form
+  include ../label/label
+  include ../title/title
+  div.find-room-form__title
+    +title('Найдём номера под ваши пожелания')
+  div.find-room-form__dates    
+    +label('прибытие', 'label_weight_bold label_position_inline')        
+    +label('выезд', 'label_weight_bold')
+    div.find-room-form__datepicker
+      div.datepicker
+  div.find-room-form__guest    
+    +label('гости', 'label_weight_bold')
+    div.find-room-form__multiselect
+      select.multiselect(value="Сколько гостей", name="counter")
+        option(value="0") взрослые
+        option(value="0") дети  
+        option(value="0") младенцы
+  include ../button/button
+  +button('подобрать номер','button_size_wide button_height_large button_bg_purple button_color_white button_without-border button_focused')
+    span.button__icon

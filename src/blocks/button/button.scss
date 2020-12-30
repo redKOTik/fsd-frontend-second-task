@@ -1,0 +1,42 @@
+@import './__icon/button__icon.scss';
+@import './_bg/button_bg_purple.scss';
+@import './_bg/button_bg_white.scss';
+@import './_border/button_with-border.scss';
+@import './_border/button_without-border.scss';
+@import './_color/button_color_grey.scss';
+@import './_color/button_color_purple.scss';
+@import './_color/button_color_white.scss';
+@import './_disabled/button_disabled.scss';
+@import './_focused/button_focused.scss';
+@import './_height/button_height_large.scss';
+@import './_height/button_height_small.scss';
+@import './_size/button_size_small.scss';
+@import './_size/button_size_wide.scss';
+
+.button {
+  position: relative;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 22px;
+  outline: none;
+  cursor: pointer;
+ 
+  & ~ .button {
+    margin-left: 20px;
+  }
+  
+}
+
+.to-sing-in__span,
+.to-create__span {
+  height: 18px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}

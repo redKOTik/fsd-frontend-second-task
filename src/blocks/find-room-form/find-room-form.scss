@@ -1,0 +1,38 @@
+@import "../button/button.scss";
+@import "../title/title.scss";
+@import "../label/label.scss";
+
+.find-room-form {
+  width: 380px;
+  height: 374px;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  padding: 30px;
+}
+
+.find-room-form__dates,
+.find-room-form__title {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.find-room-form__guest {
+  position: relative;
+  height: 69px;
+  margin-bottom: 31px;
+}
+
+.find-room-form__datepicker,
+.find-room-form__multiselect {
+  position: relative;
+  margin-top: 5px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+}
+
+
