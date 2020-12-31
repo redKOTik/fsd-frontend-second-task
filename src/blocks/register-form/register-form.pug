@@ -1,0 +1,33 @@
+form.register-form
+  include ../title/title
+  include ../label/label
+  include ../input/input
+  include ../radio-button/radio-button  
+  include ../toggle-button/toggle-button
+  include ../button/button
+  div.register-form__title
+    +title('Регистрация аккаунта')
+  div.register-form__name
+    +input('text', 'name', 'Имя')
+  div.register-form__surname
+     +input('text', 'surname', 'Фамилия')
+  div.register-form__gender
+    +radio()
+  div.register-form__birthdate
+    +label('дата рождения', 'label_weight_bold')
+    div.register-form__datepicker
+      div.datepicker
+  div.register-form__userdata
+    div.register-form__label
+      +label('данные для входа в сервис', 'label_weight_bold')
+    div.register-form__email
+      +input('email', 'email', 'Email')
+    +input('password', 'password', 'Пароль')
+  div.register-form__toggle
+    +toggle('Получать спецпредложения')
+  div.register-form__to-pay
+    +button('перейти к оплате', 'button_size_wide button_height_large button_bg_purple button_color_white button_without-border button_focused')
+      span.button__icon   
+  div.register-form__to-sing-in
+    span.register-form__span Уже есть аккаунт на Toxin
+    +button('войти', 'button_size_small button_height_large button_bg_white button_color_purple button_with-border button_focused')

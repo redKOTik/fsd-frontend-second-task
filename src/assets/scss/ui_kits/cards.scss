@@ -1,6 +1,6 @@
 @import "src/blocks/find-room-form/find-room-form.scss";
+@import "src/blocks/register-form/register-form.scss";
 
-@import "../blocks/register-form/register-form.scss";
 @import "../blocks/login-form/login-form.scss";
 @import "../blocks/reserve-form/reserve-form.scss";
 @import "../blocks/room/room.scss";
@@ -40,7 +40,7 @@
   position: relative;
   margin-bottom: 40px;
 }
-.register {
+.card__register-form {
   position: relative;
 }
 .auth {

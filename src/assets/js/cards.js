@@ -6,7 +6,8 @@ import '../plugins/multiselect/bundle.js';
 import '../plugins/datepicker/bundle.js';
 import Sim from '../plugins/imgslider/imgslider.js';
 
-import initFindRoomPlugins from '../../blocks/find-room-form/find-room-form'
+import initFindRoomPlugins from '../../blocks/find-room-form/find-room-form';
+import initRegisterPlugins from '../../blocks/register-form/register-form';
 
 export function initCardsJs() {
     const handleFormSubmit = (e) => {
@@ -15,8 +16,7 @@ export function initCardsJs() {
     };
 
     initFindRoomPlugins();
-    
-    $('.register-form__datepicker').datepicker();
+    initRegisterPlugins();    
     
     $('.reserve-form__datepicker').datepicker({
         mode: 'Range'
