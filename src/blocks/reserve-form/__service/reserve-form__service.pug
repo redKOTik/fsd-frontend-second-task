@@ -1,0 +1,6 @@
+mixin service(count, total)
+  div.reserve-form__service
+    span.reserve-form__count= count
+    span.reserve-form__total= total
+    if block
+      block

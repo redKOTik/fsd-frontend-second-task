@@ -1,0 +1,26 @@
+.reserve-form__service {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reserve-form__count,
+.reserve-form__total {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  white-space: pre-line;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.reserve-form__icon {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(/assets/img/reserve-form/__service/spec.svg);
+  background-repeat: no-repeat;
+  right: 80px;
+
+  cursor: pointer;
+}

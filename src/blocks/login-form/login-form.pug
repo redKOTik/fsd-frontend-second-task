@@ -1,0 +1,16 @@
+form.login-form
+  include ../title/title
+  include ../input/input
+  include ../button/button
+  div.login-form__title
+    +title('Войти')
+  div.login-form__name
+    +input('text', 'name', 'Имя')
+  div.login-form__surname
+     +input('text', 'surname', 'Фамилия')
+  div.login-form__to-sign-in
+    +button('войти', 'button_size_wide button_height_large button_bg_purple button_color_white button_without-border button_focused')
+      span.button__icon   
+  div.login-form__to-sing-up
+    span.login-form__span Нет аккаунта на Toxin?
+    +button('создать', 'button_size_small button_height_large button_bg_white button_color_purple button_with-border button_focused')

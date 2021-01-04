@@ -8,6 +8,7 @@ import Sim from '../plugins/imgslider/imgslider.js';
 
 import initFindRoomPlugins from '../../blocks/find-room-form/find-room-form';
 import initRegisterPlugins from '../../blocks/register-form/register-form';
+import initReservePlugins from '../../blocks/reserve-form/reserve-form';
 
 export function initCardsJs() {
     const handleFormSubmit = (e) => {
@@ -17,24 +18,8 @@ export function initCardsJs() {
 
     initFindRoomPlugins();
     initRegisterPlugins();    
-    
-    $('.reserve-form__datepicker').datepicker({
-        mode: 'Range'
-    }).datepicker('update', { selected: [{
-        start: moment().locale('ru').set({'date': 19, 'month': 7, 'year': 2019}),
-        end: moment().locale('ru').set({'date': 23, 'month': 7, 'year': 2019}) }]
-    });    
-    $('.reserve-form__multiselect').multiselect({
-        state: 'Collapsed',
-        options: [
-            { text: 'взрослые', value: '1' },
-            { text: 'дети', value: '2' },
-            { text: 'младенцы', value: '0' }],
-        title: 'Сколько гостей',
-        totalTextTitle: 'гостя',
-        showAllValue: false
-    });
-    
+    initReservePlugins();
+        
     $('.calendar').datepicker({
         mode: 'Range',
         state: 'Expanded'

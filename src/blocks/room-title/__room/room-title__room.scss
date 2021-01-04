@@ -1,0 +1,22 @@
+@import './_size/room-title__number_size_large.scss';
+@import './_size/room-title__number_size_medium.scss';
+
+.room-title__room {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1f2041;
+  margin: 0;
+  margin-right: 5px;
+}
+
+.room-title__type {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #bc9cff;
+  align-self: top;
+}

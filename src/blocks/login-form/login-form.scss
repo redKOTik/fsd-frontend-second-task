@@ -1,0 +1,42 @@
+@import "../input/input.scss";
+@import "../button/button.scss";
+@import "../title/title.scss";
+
+.login-form {
+  width: 380px;
+  height: 358px;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.login-form__title,
+.login-form__surname {
+  margin-bottom: 20px;
+}
+
+.login-form__name {
+  margin-bottom: 10px;
+}
+
+.login-form__to-sign-in {
+  margin-bottom: 30px;
+}
+
+.login-form__to-sing-up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form__span {
+  height: 18px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}

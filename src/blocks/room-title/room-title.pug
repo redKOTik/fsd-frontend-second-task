@@ -1,0 +1,6 @@
+mixin roomTitle(number, price, classModificator, isLux)
+  div.room-title
+    include ./__room/room-title__room
+    +room(number, isLux, classModificator)
+    include ./__price/room-title__price
+    +price(price)

@@ -1,8 +1,8 @@
 @import "src/blocks/find-room-form/find-room-form.scss";
 @import "src/blocks/register-form/register-form.scss";
+@import "src/blocks/login-form/login-form.scss";
+@import "src/blocks/reserve-form/reserve-form.scss";
 
-@import "../blocks/login-form/login-form.scss";
-@import "../blocks/reserve-form/reserve-form.scss";
 @import "../blocks/room/room.scss";
 //@import "../blocks/labels/labels.scss";
 
@@ -36,20 +36,16 @@
   }
 }
 
-.card__find-room-form {
+.card__find-room-form,
+.card__reserve-form {
   position: relative;
   margin-bottom: 40px;
 }
-.card__register-form {
+.card__register-form,
+.card__login-form {
   position: relative;
 }
-.auth {
-  position: relative;
-}
-.reserve {
-  position: relative;
-  margin-bottom: 40px;
-}
+
 .card__date {
   width: 320px;
   height: 411px;

@@ -1,0 +1,5 @@
+mixin room(number, isLux, size)
+  p.room-title__room № 
+    span.room-title__number(class!=size ? 'room-title__number_size_' + size : 'room-title__number_size_default')=  number
+    if isLux
+      span.room-title__type люкс
