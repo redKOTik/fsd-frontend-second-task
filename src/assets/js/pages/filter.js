@@ -6,11 +6,9 @@ import '../../plugins/multiselect/bundle.js';
 import '../../plugins/datepicker/bundle.js';
 import '../../plugins/customslider/bundle.js';
 
-import '../../plugins/paginationjs/pagination.js';
+import Sim from '../../../blocks/image-slider/image-slider';
 
-import Sim from '../../plugins/imgslider/imgslider.js';
-
-import initPagination from '../../../blocks/pagination/pagination.js';
+import initPagination from '../../../blocks/pagination/pagination';
 
 export function initFilterJs() {
 

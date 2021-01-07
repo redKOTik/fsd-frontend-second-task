@@ -1,5 +1,0 @@
-mixin rate(name, items)
-  .rate
-    each item in items
-      input(type="radio", id="star"+item.id, name=name, value=item.id, checked!=item.checked) 
-      label(for="star"+item.id)= item.id + " stars"
