@@ -1,0 +1,15 @@
+@import './__element/widget-list__element.scss';
+
+.widget-list {
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;   
+}
+
+@media (max-width: 767px) {
+  .widget-list {
+    &__element {
+      display: none;      
+    }
+  }  
+}

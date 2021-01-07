@@ -1,6 +1,6 @@
 import '../../plugins/datepicker/datepicker-styles.css';
 import '../../plugins/datepicker/bundle.js';
-import '../../plugins/burger/burger.js';
+
 
 export function initRegJs() {
     const eventStop = (e) => {

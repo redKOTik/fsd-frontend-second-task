@@ -3,10 +3,10 @@ import { initRegJs } from "../../pages/register";
 import { initLandJs } from "../../pages/landing";
 import { initDetailsJs } from "../../pages/details";
 import { initFilterJs } from "../../pages/filter";
-import { initCardsJs } from "../../cards";
-import { initElementsJs } from "../../elements";
-import { initHeaderJs } from "../../header";
-import { initFooterJs } from "../../footer"
+
+import { initCardsJs } from "../../../../pages/ui-kit/cards/cards";
+import { initElementsJs } from "../../../../pages/ui-kit/elements/elements";
+import { initHeaderJs, initFooterJs } from "../../../../pages/ui-kit/headers-and-footers/headers-and-footers";
 
 export class Router {
     constructor(selector, routes) {
@@ -123,7 +123,7 @@ export class Router {
                 title.textContent = 'Headers and Footers';
                 body.html(content.querySelector('.haf').innerHTML);
                 body[0].className = 'bg_gray';
-                initFooterJs();
+                this.helperFunctions();
                 break;                                    
         }
         body.append(t); 

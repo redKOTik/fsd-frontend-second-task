@@ -1,0 +1,8 @@
+mixin widgetList(items)
+  ul.widget-list
+    each item in items
+      li.widget-list__element(class=item.highlighted ? 'widget-list__element_highlighted' : '')= item.text
+        if item.block
+          div.widget-list__input
+            input.widget-list__email(placeholder="Email")
+            span.widget-list__arrow

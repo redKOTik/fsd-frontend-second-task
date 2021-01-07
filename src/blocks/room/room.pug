@@ -1,0 +1,17 @@
+mixin cardroom(number, price, titleSize, isLux, count, sliderId, firstElId, ratename, ratedata)
+  div.room
+    div.room__photos
+      include ../image-slider/image-slider
+      +imgSlider(sliderId, firstElId)
+    include ../room-title/room-title
+    div.room__title
+      +roomTitle(number, price, titleSize, isLux)
+    div.room__rateline 
+      hr.rateline
+    div.room__rate
+      include ../rate/rate
+      +rate(ratename, ratedata)
+      div.room__review
+        p.room__count-review
+          span.room__count-review_weight_bold= count
+          |  Отзывов

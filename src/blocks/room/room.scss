@@ -1,0 +1,56 @@
+@import "../rate/rate.scss";
+@import "../room-title/room-title.scss";
+@import "../image-slider/image-slider.scss";
+
+.room {
+  width: 270px;
+  height: 257px;
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+}
+
+.room__photos {
+  position: relative;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.room__title {
+  padding: 0 20px;
+}
+
+.room__rateline {
+  margin: 0 20px;
+  margin-top: 5px;
+  width: 230px;
+}
+
+.room__rate {
+  padding: 0 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rateline {
+  background: rgba(31, 32, 65, 0.1);
+  max-width: 280px;
+  height: 1px;
+  border: none;
+}
+
+.room__count-review {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+  margin: 0;
+  margin-top: 3.5px;
+
+}
+
+.room__count-review .room__count-review_weight_bold {
+  font-weight: 700;
+}

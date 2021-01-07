@@ -9,7 +9,7 @@ import '../../plugins/customslider/bundle.js';
 import '../../plugins/paginationjs/pagination.js';
 
 import Sim from '../../plugins/imgslider/imgslider.js';
-import '../../plugins/burger/burger.js';
+
 import initPagination from '../../../blocks/pagination/pagination.js';
 
 export function initFilterJs() {

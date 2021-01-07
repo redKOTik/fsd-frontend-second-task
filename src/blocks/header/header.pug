@@ -1,0 +1,15 @@
+mixin header(isAuthorized)
+  nav.header
+    include ../burger/burger
+    div.header__logo
+      img(src="assets/img/logo/logo-color.svg", alt="logo")   
+    ul.header__menu
+      li.header__link.header__link_selected О нас
+      li.header__link Услуги
+        span.header__arrow
+      li.header__link Вакансии
+      li.header__link Новости
+      li.header__link Соглашения
+        span.header__arrow
+    include ./__control/header__control
+    +control(isAuthorized)

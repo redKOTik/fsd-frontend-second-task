@@ -2,7 +2,6 @@ import '../../plugins/multiselect/multiselect-styles.css';
 import '../../plugins/datepicker/datepicker-styles.css';
 import '../../plugins/multiselect/bundle.js';
 import '../../plugins/datepicker/bundle.js';
-import '../../plugins/burger/burger.js';
 
 export function initDetailsJs() {
 

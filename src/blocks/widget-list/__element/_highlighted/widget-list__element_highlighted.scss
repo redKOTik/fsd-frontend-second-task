@@ -1,0 +1,37 @@
+.widget-list .widget-list__element_highlighted {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1f2041;
+}
+
+@media (max-width: 767px) {
+  .widget-list .widget-list__element_highlighted {
+    display: block;
+    position: relative;
+
+    padding-left: 25px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 1px;
+      background-color: #000;
+      top: 7px;
+      left: 0px;
+    }
+
+    &::after {
+      transform: rotate(-40deg);
+      left: 7.5px;
+    }
+
+    &::before {
+      transform: rotate(40deg);
+    }
+  }
+}
