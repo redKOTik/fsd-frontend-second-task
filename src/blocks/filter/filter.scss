@@ -1,0 +1,61 @@
+@import "../checkbox-list-expandable/checkbox-list-expandable.scss";
+@import "../label/label.scss";
+
+.filter {
+  max-width: 266px;
+}
+
+.filter__item {
+  margin-bottom: 30px;
+
+  &:first-child {
+    margin-bottom: 20px;
+  }
+}
+
+.filter__label {
+  margin-bottom: 16px;
+}
+
+.filter__datepicker-wrapper,
+.filter__multiselect-wrapper {
+  position: relative;
+  margin-top: 5px;
+
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+}
+
+.filter__slider-wrapper {
+  margin-top: 20px;
+}
+
+.filter__slider-description {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+@media (max-width: 992px) {
+  .filter {
+    top: 175px;
+    left: -285px;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+
+    position: absolute;
+    background-color: rgb(189, 173, 173);
+    padding: 15px;
+    z-index: 100;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    &:hover {
+      left: 0;
+    }
+  }
+}

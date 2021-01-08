@@ -1,0 +1,160 @@
+@import "src/blocks/bullet-list/bullet-list.scss";
+@import "src/blocks/bullet-list-colored/bullet-list-colored.scss";
+@import "src/blocks/label/label.scss";
+@import "src/blocks/feature/feature.scss";
+@import "src/blocks/reserve-form/reserve-form.scss";
+@import "src/blocks/post/post.scss";
+@import "src/blocks/photo/photo.scss";
+@import "src/blocks/diagram/diagram.scss";
+
+.container__details-room {
+  height: 100%;
+  display: block;
+}
+
+.details-room__detail-wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 70px 140px;
+}
+
+.details-room__reserve-form {
+  position: relative;
+}
+
+.detail {
+  margin-right: 70px;  
+}
+
+.detail__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.detail__item {
+  position: relative;
+}
+
+.detail__quality {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}  
+
+.detail__list {
+  position: relative;
+  display: inline-block;
+}
+
+.detail__post {
+  position: relative;
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+
+  &:first-of-type .post {
+    height: auto;
+  }
+}
+
+.detail__bullet {
+  width: 260px;
+  margin-right: 80px;
+}
+
+.detail__info {
+  width: 341px;
+}
+
+.detail__button {
+  padding: 40px 20px 0 20px;
+}
+
+.detail__diagram {  
+  margin-right: 30px;
+  display: inline-block;
+}
+
+.detail__description {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.hide {
+  visibility: hidden;
+}
+
+@media (max-width: 1200px) {
+  .hide {
+    visibility: visible;
+  }
+
+  .overlay {
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    transition: 0.3s all;
+  }
+
+  .modal {
+    /* Скрываем окна  */
+    opacity: 0;
+    visibility: hidden;
+
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30; /* Должен быть выше чем у подложки*/
+
+    /*  Побочные стили   */
+    //box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
+    transition: 0.3s all;
+  }
+
+  .modal.active,
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 900px) {
+  .detail__row {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .detail__item {
+    margin-bottom: 20px;
+  }
+
+  .detail__post {
+    overflow: hidden;
+
+    &:hover {
+      height: 200px;
+    }
+  }
+
+  .details-room__detail-wrapper {
+    padding: 20px;
+  }
+}

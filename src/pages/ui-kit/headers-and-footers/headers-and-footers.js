@@ -1,5 +1,5 @@
-import handleWidgetElementClick from '../../../blocks/footer/footer';
-import handleBurgerClick from '../../../blocks/burger/burger';
+import handleWidgetElementClick from '@blocks/footer/footer';
+import handleBurgerClick from '@blocks/burger/burger';
 
 export function initHeaderJs() {
     $('.header__login').on('click', () => {

@@ -1,0 +1,58 @@
+@import "src/blocks/filter/filter.scss";
+@import "src/blocks/room/room.scss";
+
+.container__search-room {
+  height: 100%;
+  display: block;
+}
+
+.search-room {
+  display: flex;
+  padding: 30px 140px 70px 140px;  
+}
+
+.search-room__filter {
+  margin-right: 60px;
+}
+
+.search-room__result {
+  max-width: 840px;   
+}
+
+.result {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap; 
+
+  & .room {
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.search-room__pagination {
+  .pagination__container {
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .pagination__info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .search-room {
+    padding: 30px 70px 70px 70px;
+  }
+
+  .search-room__filter {
+    margin-right: 40px;
+  }
+
+  .search-room__result {
+    .label_for-filter {
+      height: 50px;
+    }
+  }
+}

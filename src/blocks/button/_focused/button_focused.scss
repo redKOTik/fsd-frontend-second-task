@@ -1,5 +1,9 @@
 .button_focused {
   &:focus {
     border: 2px solid gray;
+    & .button__icon {
+      top: -2px;
+      right: -2px;
+    }
   }
 }

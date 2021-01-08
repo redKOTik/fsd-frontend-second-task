@@ -1,0 +1,52 @@
+div.details-room
+  include ../../../blocks/label/label  
+  include ../../../blocks/photo/photo  
+  div.details-room__detail-wrapper
+    div.detail
+      div.detail__row
+        include ../../../blocks/feature/feature     
+        div.detail__item
+          +label('Сведения о номере', 'label_for-details')
+          div.detail__quality
+            +feature('Комфорт', 'Шумопоглощающие стены', 'feature__icon_smile')
+            hr.separator
+          div.detail__quality
+            +feature('Удобство', 'Окно в каждой из спален', 'feature__icon_city')
+            hr.separator  
+          div.detail__quality
+            +feature('Уют', 'Номер оснащён камином', 'feature__icon_fire')
+        div.detail__item
+          +label('Впечатления от номера', 'label_for-details')
+          div.detail__diagram
+            include ../../../blocks/diagram/diagram
+          div.detail__list
+            include ../../../blocks/bullet-list-colored/bullet-list-colored
+            +bulletColored([{ text: 'Великолепно', color: 'yellow' },
+              { text: 'Хорошо', color: 'green' },
+              { text: 'Удовлетворительно', color: 'purple' },
+              { text: 'Разочарован', color: 'black' }])
+          div.detail__button.hide
+            include ../../../blocks/button/button
+            +button('форма бронирования', 'button_size_wide button_height_large button_bg_purple button_color_white button_without-border button_focused')
+      div.detail__row
+        include ../../../blocks/post/post
+        div.detail__item
+          +label('2 отзыва', 'label_weight_normal label_position_right label_transform-none')
+          +label('Отзывы посетителей номера', 'label_for-details')
+          div.detail__post
+            +post('Мурад Сарафанов', '5 дней назад', 'feature__icon_avatar_man', '12', 'checked', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+          div.detail__post
+            +post('Патрисия Стёклышкова', 'Неделю назад', 'feature__icon_avatar_woman', '2', undefined, 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент')  
+      div.detail__row
+        include ../../../blocks/bullet-list/bullet-list
+        div.detail__item
+          +label('Правила', 'label_for-details')
+          div.detail__bullet
+            +bullet(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+        div.detail__item
+          +label('Отмена', 'label_for-details')
+          div.detail__info
+            p.detail__description Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+    div.details-room__reserve-form.modal
+      include ../../../blocks/reserve-form/reserve-form
+div.overlay

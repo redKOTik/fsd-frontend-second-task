@@ -1,0 +1,21 @@
+@import "src/blocks/header/header.scss";
+@import "src/blocks/footer/footer.scss";
+@import "src/blocks/label/label.scss";
+@import "src/blocks/register-form/register-form.scss";
+@import "src/blocks/login-form/login-form.scss";
+
+.container {
+  max-width: 100%;
+  height: 702px;
+  display: flex;
+  align-items: center;
+}
+
+.container_bg_for-register {
+  background-image: url(/assets/img/website/register/bg-register-page.svg);
+}
+
+.register-form-wrapper,
+.login-form-wrapper {
+  margin: 0 auto;
+}

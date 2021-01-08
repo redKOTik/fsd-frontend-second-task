@@ -1,0 +1,24 @@
+div.search-room
+  include ../../../blocks/label/label
+  div.search-room__filter
+    include ../../../blocks/filter/filter
+  div.search-room__result
+    +label('Номера, которые мы для вас подобрали', 'label_for-filter')
+    include ../../../blocks/room/room
+    - var room1 = ['888', '9 990₽', 'medium', true, '145', 'slider-first', '0', 'rate-first', [{value: '5', checked:'checked'}, {value: '4'}, {value: '3'}, {value: '2'}, {value: '1'}]];
+    - var room2 = ['840', '9 990₽', 'medium', false, '65', 'slider-second', '1', 'rate-second', [{value: '5'}, {value: '4', checked:'checked'}, {value: '3'}, {value: '2'}, {value: '1'}]];
+    - var room3 = ['980', '8 500₽', 'medium', true, '35', 'slider-third', '2', 'rate-third', [{value: '5'}, {value: '4'}, {value: '3', checked:'checked'}, {value: '2'}, {value: '1'}]];
+    - var room4 = ['856', '7 300₽', 'medium', false, '19', 'slider-fourth', '3', 'rate-fourth', [{value: '5', checked:'checked'}, {value: '4'}, {value: '3'}, {value: '2'}, {value: '1'}]];
+    - var room5 = ['740', '6 000₽', 'medium', false, '44', 'slider-fifth', '4', 'rate-fifth', [{value: '5'}, {value: '4', checked:'checked'}, {value: '3'}, {value: '2'}, {value: '1'}]];
+    - var room6 = ['982', '5 800₽', 'medium', false, '56', 'slider-sixth', '5', 'rate-sixth', [{value: '5'}, {valued: '4'}, {value: '3', checked:'checked'}, {value: '2'}, {value: '1'}]];
+    - var room7 = ['678', '5 500₽', 'medium', false, '45', 'slider-seventh', '6', 'rate-seventh', [{value: '5', checked:'checked'}, {value: '4'}, {value: '3'}, {value: '2'}, {value: '1'}]];
+    - var room8 = ['450', '5 300₽', 'medium', false, '39', 'slider-eighth', '7', 'rate-eighth', [{value: '5'}, {value: '4', checked:'checked'}, {value: '3'}, {value: '2'}, {value: '1'}]];
+    - var room9 = ['350', '5 000₽', 'medium', false, '77', 'slider-ninth', '8', 'rate-ninth', [{value: '5'}, {value: '4'}, {value: '3', checked:'checked'}, {value: '2'}, {value: '1'}]];
+    - var room10 = ['666', '5 000₽', 'medium', false, '25', 'slider-tenth', '9', 'rate-tenth', [{value: '5', checked:'checked'}, {value: '4'}, {value: '3'}, {value: '2'}, {value: '1'}]];
+    - var room11 = ['444', '5 000₽', 'medium', false, '15', 'slider-eleventh', '10', 'rate-eleventh', [{value: '5'}, {value: '4'}, {value: '3', checked:'checked'}, {value: '2'}, {value: '1'}]];
+    - var room12 = ['352', '5 000₽', 'medium', false, '55', 'slider-twelfth', '11', 'rate-twelfth', [{value: '5'}, {value: '4'}, {value: '3', checked:'checked'}, {value: '2'}, {value: '1'}]];
+    - var items = [room1, room2, room3, room4, room5, room6, room7, room8, room9, room10, room11, room12]
+    div.result
+      each item in items
+        +cardroom(...item)
+    div.search-room__pagination

@@ -6,10 +6,10 @@ import '../../../assets/plugins/multiselect/bundle.js';
 import '../../../assets/plugins/datepicker/bundle.js';
 import Sim from '../../../blocks/image-slider/image-slider.js';
 
-import initFindRoomPlugins from '../../../blocks/find-room-form/find-room-form';
-import initRegisterPlugins from '../../../blocks/register-form/register-form';
-import initReservePlugins from '../../../blocks/reserve-form/reserve-form';
-import { initRates } from '../../../blocks/rate/rate.js';
+import initFindRoomPlugins from '@blocks/find-room-form/find-room-form';
+import initRegisterPlugins from '@blocks/register-form/register-form';
+import initReservePlugins from '@blocks/reserve-form/reserve-form';
+import { initRates } from '@blocks/rate/rate.js';
 
 export function initCardsJs() {
     const handleFormSubmit = (e) => {

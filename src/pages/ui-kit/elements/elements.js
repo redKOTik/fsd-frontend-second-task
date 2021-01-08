@@ -1,17 +1,17 @@
-import '../../../assets/plugins/multiselect/multiselect-styles.css';
-import '../../../assets/plugins/datepicker/datepicker-styles.css';
+import '@assets/plugins/multiselect/multiselect-styles.css';
+import '@assets/plugins/datepicker/datepicker-styles.css';
 //import '../plugins/customslider/slider-styles.css';
 
-import '../../../assets/plugins/multiselect/bundle.js';
-import '../../../assets/plugins/datepicker/bundle.js';
+import '@assets/plugins/multiselect/bundle.js';
+import '@assets/plugins/datepicker/bundle.js';
 //import '../plugins/customslider/bundle.js';
 
 import 'fsd-custom-slider/dist/app.js';
 import 'fsd-custom-slider/dist/app.css';
 
-import { handleListExpandableToggle } from '../../../blocks/checkbox-list-expandable/__header/checkbox-list-expandable__header';
-import { initRates } from '../../../blocks/rate/rate.js';
-import initPagination from '../../../blocks/pagination/pagination.js';
+import { handleListExpandableToggle } from '@blocks/checkbox-list-expandable/__header/checkbox-list-expandable__header';
+import { initRates } from '@blocks/rate/rate.js';
+import initPagination from '@blocks/pagination/pagination.js';
 
 
 export function initElementsJs() {
