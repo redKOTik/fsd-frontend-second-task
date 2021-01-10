@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const imageminSvgo = require('imagemin-svgo');
 
 const cssLoaders = (extra) => {
   const loaders = [
@@ -85,30 +87,7 @@ module.exports = {
         test: /\.pug$/,
         exclude: /node_modules/,
         loader: "pug-loader",
-      },
-      {
-        test: /\.(png|svg|gif|jpg)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: path.resolve(__dirname, "dist/images"),
-              useRelativePath: true,
-            },
-          },
-          {
-            loader: "image-webpack-loader",
-            options: {
-              svgo: {
-                progressive: true,
-                quality: 80,
-              },
-            },
-          },
-        ],
-      },
+      },      
       {
         test: /\.(woff(2)?|ttf|otf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: /node_modules/,
@@ -131,7 +110,7 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     writeToDisk: true,
   },
-  plugins: [
+  plugins: [    
     new HTMLWebpackPlugin({
       template: `${PAGES_DIR}/index.pug`,
       filename: `./index.html`,
@@ -158,6 +137,16 @@ module.exports = {
           globOptions: ignoreOptions,
         },
       ],
+    }),
+    new ImageminWebpackPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      plugins: [
+        imageminSvgo({
+          plugins: [
+            {removeViewBox: false}
+          ]
+        })
+      ]
     }),
     new MiniCssExtractPlugin({
       filename: "style.css",

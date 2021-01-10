@@ -7,6 +7,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const imageminSvgo = require('imagemin-svgo');
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
@@ -99,30 +101,7 @@ module.exports = {
         test: /\.pug$/,
         exclude: /node_modules/,
         loader: "pug-loader",
-      },
-      {
-        test: /\.(png|svg|gif|jpg)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: path.resolve(__dirname, "dist/assets/img"),
-              useRelativePath: true,
-            },
-          },
-          {
-            loader: "image-webpack-loader",
-            options: {
-              svgo: {
-                progressive: true,
-                quality: 80,
-              },
-            },
-          },
-        ],
-      },
+      },      
       {
         test: /\.(woff(2)?|ttf|otf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: /node_modules/,
@@ -172,6 +151,16 @@ module.exports = {
           globOptions: ignoreOptions,
         },
       ],
+    }),
+    new ImageminWebpackPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      plugins: [
+        imageminSvgo({
+          plugins: [
+            {removeViewBox: false}
+          ]
+        })
+      ]
     }),
     new MiniCssExtractPlugin({
       filename: "style.css",
