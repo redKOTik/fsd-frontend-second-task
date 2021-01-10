@@ -18,57 +18,59 @@
   left: 30px;
 }
 
-.elements {
+.element {
   height: 1853px;
+  margin-top: 10%;
 }
 
-.line {
+.element__first-line {
+  margin-bottom: 100px;
+}
+
+.element__second-line {
+  margin-bottom: 158px;
+}
+
+.element__third-line {
+  margin-bottom: 53px;
+}
+
+
+.element__line {
   display: flex;
   flex-wrap: wrap;
   margin: 0 10%;
-  justify-content: space-between;
-
-  &:first-of-type {
-    margin-top: 10%;
-  }
-
-  &.line_mb-100 {
-    margin-bottom: 100px;
-  }
-
-  &.line_mb-158 {
-    margin-bottom: 158px;
-  }
-
-  &.line_mb-53 {
-    margin-bottom: 53px;
-  }
+  justify-content: space-between; 
 }
 
-.element-column {
+.column {
   width: 320px;
+}
 
-  &__field {
-    margin-bottom: 20px;
-  }
+.column__field_mb_20 {
+  margin-bottom: 20px;
+}
 
-  &_custom-width {
-    width: 64.5%;
-  }
+.column__field_mb_40 {
+  margin-bottom: 40px;
+}
+
+.column__field_width_custom {
+  width: 266px;
+}
+
+.column_width_custom {
+  width: 64.5%;
 }
 
 .field {
   width: 100%;
 
-  &_mb-40 {
-    margin-bottom: 40px;
-  }
-  &_mt-14 {
-    margin-top: 14px;
+  &__label {
+    padding: 14px 0 12px;
   }
 
-  &__label {
-    display: block;
+  &__label_mb_16 {
     margin-bottom: 16px;
   }
 
@@ -104,21 +106,15 @@
   }
 
   &__custom-slider {
-    margin-top: 20px;
+    padding: 20px 0 0 0;
   }
 
-  &__custom-button-wrapper {
+  &__button {
     margin-bottom: 30px;
   }
+
+  &_font_montserrat {
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
+  }
 }
-
-.font-montserrat {
-  font-family: Montserrat, Arial, sans-serif;
-  font-weight: 400;
-}
-
-.custom-width {
-  width: 266px;
-}
-
-
