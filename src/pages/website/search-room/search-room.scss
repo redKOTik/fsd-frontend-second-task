@@ -22,7 +22,8 @@
 .result {
   margin-bottom: 40px;
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  width: 840px;
 
   & .room {
     margin-right: 10px;
@@ -33,6 +34,12 @@
 .search-room__pagination {
   .pagination__container {
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .result {
+    width: 560px;
   }
 }
 
@@ -49,5 +56,11 @@
     .label_for-filter {
       height: 50px;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .result {
+    width: 280px;
   }
 }
