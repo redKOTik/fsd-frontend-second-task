@@ -1,10 +1,12 @@
 import '../../assets/plugins/multiselect/multiselect-styles.css';
 import '../../assets/plugins/datepicker/datepicker-styles.css';
-import '../../assets/plugins/customslider/slider-styles.css';
 
 import '../../assets/plugins/multiselect/bundle.js';
 import '../../assets/plugins/datepicker/bundle.js';
-import '../../assets/plugins/customslider/bundle.js';
+
+import 'fsd-custom-slider/dist/app.js';
+import 'fsd-custom-slider/dist/app.css';
+
 
 import { handleListExpandableToggle } from '../checkbox-list-expandable/__header/checkbox-list-expandable__header';
 
@@ -42,7 +44,7 @@ export function initFilterPlugins() {
     $('.filter .filter__slider').sliderPlugin({
         step: '500',
         mode: 'Multiple',
-        orientation: 'Gorizontal',
+        orientation: 'Horizontal',
         defaultInterval: ['5000', '10000'],
         maximumValue: '15000',
         showSettings: false,

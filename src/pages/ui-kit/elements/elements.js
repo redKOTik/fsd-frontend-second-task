@@ -1,10 +1,8 @@
 import '@assets/plugins/multiselect/multiselect-styles.css';
 import '@assets/plugins/datepicker/datepicker-styles.css';
-//import '../plugins/customslider/slider-styles.css';
 
 import '@assets/plugins/multiselect/bundle.js';
 import '@assets/plugins/datepicker/bundle.js';
-//import '../plugins/customslider/bundle.js';
 
 import 'fsd-custom-slider/dist/app.js';
 import 'fsd-custom-slider/dist/app.css';
@@ -91,11 +89,12 @@ export function initElementsJs() {
     $('.custom-slider').sliderPlugin({
         step: '500',
         mode: 'Multiple',
-        orientation: 'Gorizontal',
+        orientation: 'Horizontal',
         defaultInterval: ['5000', '10000'],
         maximumValue: '15000',
         showSettings: false,
         showValue: false,
+        showScale: false,
         onValueChanged: function (_, change) {
             $('.label_slider').text(change);
         }

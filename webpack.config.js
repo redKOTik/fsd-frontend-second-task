@@ -106,7 +106,7 @@ module.exports = {
   },
   devServer: {
     port: 8082,
-    hot: false,
+    hot: true,
     contentBase: path.join(__dirname, "dist"),
     writeToDisk: true,
   },
