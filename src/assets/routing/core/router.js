@@ -126,6 +126,11 @@ export class Router {
                 body[0].className = 'bg_gray';
                 this.helperFunctions();
                 break;                                    
+            default:
+                title.textContent = 'Main';
+                body.html(content.querySelector('.base').innerHTML);
+                body[0].className = 'bg_gray';
+                this.helperFunctions();
         }
         body.append(t); 
     }
