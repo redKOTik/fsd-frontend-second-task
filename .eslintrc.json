@@ -1,0 +1,31 @@
+{
+    // Настройки проекта
+    "env": {
+    // Проект для браузера
+    "browser": true,
+    // Включаем возможности ES6
+    "es6": true,
+    // Добавляем возможности ES2017
+    "es2017": true
+    },
+    // Наборы правил
+    "extends": [
+        // набор правил eslint
+        "airbnb-base/legacy"
+    ],
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    // Плагин с наборами правил для TypeScript
+    "plugins": ["fsd"],
+    "rules": {
+      "fsd/hof-name-prefix": "error",
+      "fsd/no-heavy-constructor": "error",
+      "fsd/jq-cache-dom-elements": "error",
+      "fsd/jq-use-js-prefix-in-selector": "error",
+      "fsd/no-function-declaration-in-event-listener": "error",
+      "fsd/split-conditionals": "error",
+      "linebreak-style": 0,
+      "no-new": 0
+    }
+  }

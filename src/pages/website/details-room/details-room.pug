@@ -25,7 +25,7 @@ div.details-room
               { text: 'Хорошо', color: 'green' },
               { text: 'Удовлетворительно', color: 'purple' },
               { text: 'Разочарован', color: 'black' }])
-          div.detail__button.hide
+          div.detail__button.js-detail__button.hide
             include ../../../blocks/button/button
             +button('форма бронирования', 'button_size_wide button_height_large button_bg_purple button_color_white button_without-border button_focused')
       div.detail__row
@@ -47,6 +47,6 @@ div.details-room
           +label('Отмена', 'label_for-details')
           div.detail__info
             p.detail__description Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-    div.details-room__reserve-form.modal
+    div.details-room__reserve-form.js-details-room__reserve-form.modal.js-modal
       include ../../../blocks/reserve-form/reserve-form
-div.overlay
+div.overlay.js-overlay

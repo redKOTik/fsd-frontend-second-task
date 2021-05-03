@@ -1,24 +1,23 @@
+import $ from 'jquery';
 import Sim from '@blocks/image-slider/image-slider';
 import initPagination from '@blocks/pagination/pagination';
 import { initFilterPlugins } from '@blocks/filter/filter';
 import { initRates } from '@blocks/rate/rate.js';
 
 export function initFilterJs() {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+  };
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        console.log(e.target);
-    };
+  $('.js-filter').on('submit', handleFormSubmit);
 
-    $('.filter').on('submit', handleFormSubmit);
-    
-    initFilterPlugins();
+  initFilterPlugins();
 
-    $('.img-slider').each((i, slider) => {
-        new Sim(slider.id);
-    });
+  $('.js-img-slider').each((i, slider) => {
+    new Sim(slider.id);
+  });
 
-    initRates('.rate');
+  initRates('.js-rate');
 
-    initPagination('.search-room__pagination');
+  initPagination('.js-search-room__pagination');
 }

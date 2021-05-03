@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import moment from 'moment';
+
 import '@assets/plugins/multiselect/multiselect-styles.css';
 import '@assets/plugins/datepicker/datepicker-styles.css';
 
@@ -11,107 +14,105 @@ import { handleListExpandableToggle } from '@blocks/checkbox-list-expandable/__h
 import { initRates } from '@blocks/rate/rate.js';
 import initPagination from '@blocks/pagination/pagination.js';
 
-
 export function initElementsJs() {
+  $('.js-multiselect-collapsed').multiselect({
+    state: 'Collapsed',
+    options: [
+      { text: 'взрослые', value: '0' },
+      { text: 'дети', value: '0' },
+      { text: 'младенцы', value: '0' }],
+    title: 'Сколько гостей',
+    totalTextTitle: 'гостя',
+    showAllValue: false
+  });
 
-    $('.multiselect-collapsed').multiselect({
-        state: 'Collapsed',
-        options: [
-            { text: 'взрослые', value: '0' },
-            { text: 'дети', value: '0' },
-            { text: 'младенцы', value: '0' }],
-        title: 'Сколько гостей',
-        totalTextTitle: 'гостя',
-        showAllValue: false
-    });
+  $('.js-datepicker-range').datepicker({
+    mode: 'Range'
+  }).datepicker('update', {
+    selected: [{
+      end: moment().locale('ru').set({ date: 19, month: 7, year: 2019 })
+    }]
+  });
 
-    $('.datepicker-range').datepicker({
-        mode: 'Range'
-    }).datepicker('update', {
-        selected: [{
-            end: moment().locale('ru').set({'date': 19, 'month': 7, 'year': 2019})
-        }]
-    });
-    
-    $('.datepicker-range-filter').datepicker({
-        mode: 'Range',
-        select: 'One',
-        title: 'ДД.МММ',
-    }).datepicker('update', {
-        selected: [{
-            start: moment().locale('ru').set({'date': 19, 'month': 7, 'year': 2020}),
-            end: moment().locale('ru').set({'date': 23, 'month': 7, 'year': 2020})
-        }]
-    });    
-    
-    $('.multiselect-collapsed-with-value').multiselect({
-        state: 'Collapsed',
-        options: [
-            { text: 'спальни', value: '2' },
-            { text: 'кровати', value: '2' },
-            { text: 'ванные комнаты', value: '0' }],
-        title: 'Сколько всего',
-        showAllValue: true,
-    });
-    
-    $('.multiselect-expanded-with-value').multiselect({
-        state: 'Expanded',
-        options: [
-            { text: 'спальни', value: '2' },
-            { text: 'кровати', value: '2' },
-            { text: 'ванные комнаты', value: '0' }],
-        title: 'Сколько всего',
-        showAllValue: true,
-    });
-    
-    $('.multiselect-expanded-default').multiselect({
-        state: 'Collapsed',
-        options: [
-            { text: 'взрослые', value: '0' },
-            { text: 'дети', value: '0' },
-            { text: 'младенцы', value: '0' }],
-        title: 'Сколько гостей',
-        totalTextTitle: 'гостя',
-        showAllValue: false
-    });
-    
-    $('.multiselect-expanded-total-value').multiselect({
-        state: 'Collapsed',
-        options: [
-            { text: 'взрослые', value: '2' },
-            { text: 'дети', value: '1' },
-            { text: 'младенцы', value: '0' }],
-        title: 'Сколько гостей',
-        totalTextTitle: 'гостя',
-        showAllValue: false
-    });   
-    
-    $('.custom-slider').sliderPlugin({
-        step: '500',
-        mode: 'Multiple',
-        orientation: 'Horizontal',
-        defaultInterval: ['5000', '10000'],
-        maximumValue: '15000',
-        showSettings: false,
-        showValue: false,
-        showScale: false,
-        onValueChanged: function (_, change) {
-            $('.label_slider').text(change);
-        }
-    });
+  $('.js-datepicker-range-filter').datepicker({
+    mode: 'Range',
+    select: 'One',
+    title: 'ДД.МММ'
+  }).datepicker('update', {
+    selected: [{
+      start: moment().locale('ru').set({ date: 19, month: 7, year: 2020 }),
+      end: moment().locale('ru').set({ date: 23, month: 7, year: 2020 })
+    }]
+  });
 
-    // list-expandable
-    $('.checkbox-list-expandable__header').on('click', handleListExpandableToggle);
-    
-    // pagination    
-    initPagination('.result-pagination');
+  $('.js-multiselect-collapsed-with-value').multiselect({
+    state: 'Collapsed',
+    options: [
+      { text: 'спальни', value: '2' },
+      { text: 'кровати', value: '2' },
+      { text: 'ванные комнаты', value: '0' }],
+    title: 'Сколько всего',
+    showAllValue: true
+  });
 
-    // rating
-    initRates('.rate');
+  $('.js-multiselect-expanded-with-value').multiselect({
+    state: 'Expanded',
+    options: [
+      { text: 'спальни', value: '2' },
+      { text: 'кровати', value: '2' },
+      { text: 'ванные комнаты', value: '0' }],
+    title: 'Сколько всего',
+    showAllValue: true
+  });
 
-    // slider
-    $('.label_slider').text($('.custom-slider').sliderPlugin('value'));
-};
+  $('.js-multiselect-expanded-default').multiselect({
+    state: 'Collapsed',
+    options: [
+      { text: 'взрослые', value: '0' },
+      { text: 'дети', value: '0' },
+      { text: 'младенцы', value: '0' }],
+    title: 'Сколько гостей',
+    totalTextTitle: 'гостя',
+    showAllValue: false
+  });
 
+  $('.js-multiselect-expanded-total-value').multiselect({
+    state: 'Collapsed',
+    options: [
+      { text: 'взрослые', value: '2' },
+      { text: 'дети', value: '1' },
+      { text: 'младенцы', value: '0' }],
+    title: 'Сколько гостей',
+    totalTextTitle: 'гостя',
+    showAllValue: false
+  });
 
+  const $slider = $('.js-custom-slider');
+  const $sliderLabel = $('.js-label_slider');
 
+  $slider.sliderPlugin({
+    step: '500',
+    mode: 'Multiple',
+    orientation: 'Horizontal',
+    defaultInterval: ['5000', '10000'],
+    maximumValue: '15000',
+    showSettings: false,
+    showValue: false,
+    showScale: false,
+    onValueChanged: (_, change) => {
+      $sliderLabel.text(change);
+    }
+  });
+
+  // list-expandable
+  $('.js-checkbox-list-expandable__header').on('click', handleListExpandableToggle);
+
+  // pagination
+  initPagination('.result-pagination');
+
+  // rating
+  initRates('.rate');
+
+  // slider
+  $sliderLabel.text($slider.sliderPlugin('value'));
+}

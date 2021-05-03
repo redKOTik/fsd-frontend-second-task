@@ -1,33 +1,14 @@
-function handleRateClick(event) {
-  const target = event.target;
-  const parent = $(target).parent().parent()[0];
+import $ from 'jquery';
 
-  const $checkedEl = findChecked(parent.querySelectorAll('.rate__input'));
-
-  if ($checkedEl.length > 0) {
-    setStarState($checkedEl);
-  } else {
-    const nextAll = $(target).parent().nextAll(".rate__wrapper");
-    setAllActive(nextAll);
-  }  
+function setAllActive(wrappers) {
+  wrappers.each((i, wrapper) => {
+    $(wrapper).find('.rate__label').addClass('rate__label_active');
+  });
 }
-function handleRateMouseout(event) {
-  const target = event.target;
-  const parent = $(target).parent().parent()[0];
-
-  const $checkedEl = findChecked(parent.querySelectorAll('.rate__input'));
-
-  if ($checkedEl.length > 0) {
-    setStarState($checkedEl);
-  } else {
-    const nextAll = $(target).parent().nextAll(".rate__wrapper");
-    setAllInactive(nextAll);
-  }
-}
-function handleRateMouseover(event) {
-  const target = event.target;
-  const nextAll = $(target).parent().nextAll(".rate__wrapper");
-  setAllActive(nextAll);
+function setAllInactive(wrappers) {
+  wrappers.each((i, wrapper) => {
+    $(wrapper).find('.rate__label').removeClass('rate__label_active');
+  });
 }
 
 function findChecked(siblings) {
@@ -50,15 +31,34 @@ function setStarState($target) {
   setAllInactive(prevAll);
 }
 
-function setAllActive(wrappers) {
-  wrappers.each((i, wrapper) => {
-    $(wrapper).find('.rate__label').addClass('rate__label_active');
-  });
+function handleRateClick(event) {
+  const target = event.target;
+  const parent = $(target).parent().parent()[0];
+  const $checkedEl = findChecked(parent.querySelectorAll('.rate__input'));
+  if ($checkedEl.length > 0) {
+    setStarState($checkedEl);
+  } else {
+    const nextAll = $(target).parent().nextAll('.rate__wrapper');
+    setAllActive(nextAll);
+  }
 }
-function setAllInactive(wrappers) {
-  wrappers.each((i, wrapper) => {
-    $(wrapper).find('.rate__label').removeClass('rate__label_active');
-  });
+function handleRateMouseout(event) {
+  const target = event.target;
+  const parent = $(target).parent().parent()[0];
+
+  const $checkedEl = findChecked(parent.querySelectorAll('.rate__input'));
+
+  if ($checkedEl.length > 0) {
+    setStarState($checkedEl);
+  } else {
+    const nextAll = $(target).parent().nextAll('.rate__wrapper');
+    setAllInactive(nextAll);
+  }
+}
+function handleRateMouseover(event) {
+  const target = event.target;
+  const nextAll = $(target).parent().nextAll('.rate__wrapper');
+  setAllActive(nextAll);
 }
 
 export function initRates(selector) {
@@ -68,12 +68,11 @@ export function initRates(selector) {
     $rate.on('mouseout', '.rate__label', handleRateMouseout);
     $rate.on('click', handleRateClick);
 
-    $rate.each((i,item) => {
+    $rate.each((i, item) => {
       const $checkedEl = findChecked(item.querySelectorAll('.rate__input'));
       setStarState($checkedEl);
     });
-
   } else {
-    throw new Error(`cannot find elements by ${selector}`)
+    throw new Error(`cannot find elements by ${selector}`);
   }
 }

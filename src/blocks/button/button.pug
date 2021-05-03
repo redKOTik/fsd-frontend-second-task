@@ -1,4 +1,4 @@
 mixin button(text, addClasses)
-  button.button(class!=addClasses, type="submit")= text
+  button.button.js-button(class!=addClasses, type="submit")= text
     if block
       block

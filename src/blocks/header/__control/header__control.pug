@@ -2,9 +2,9 @@ mixin control(isAuthorized)
   div.header__control
     if (!isAuthorized)
       include ../../button/button
-      div.header__login
+      div.header__login.js-header__login
         +button('войти', 'button_size_small-custom button_height_middle button_bg_white button_color_purple button_with-border button_focused')
-      div.header__register
+      div.header__register.js-header__register
         +button('зарегистрироваться', 'button_size_wide button_height_middle button_bg_purple button_color_white button_without-border button_focused')
     else
       div.header__pipe
