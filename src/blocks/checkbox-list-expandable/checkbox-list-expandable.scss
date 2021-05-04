@@ -1,8 +1,4 @@
-@import "../checkbox-list/checkbox-list.scss";
-@import "./_type/checkbox-list-expandable_type_collapsed.scss";
-@import "./_type/checkbox-list-expandable_type_expanded.scss";
-@import "./__header/checkbox-list-expandable__header.scss";
-@import "./__arrow/checkbox-list-expandable__arrow.scss";
+@import "../checkbox-list/**/*.scss";
 
 .checkbox-list-expandable {
   max-width: 266px;

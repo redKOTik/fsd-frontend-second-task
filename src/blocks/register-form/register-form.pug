@@ -1,4 +1,4 @@
-form.register-form
+form.register-form.js-register-form
   include ../title/title
   include ../label/label
   include ../input/input
@@ -15,8 +15,8 @@ form.register-form
     +radio()
   div.register-form__birthdate
     +label('дата рождения', 'label_weight_bold')
-    div.register-form__datepicker
-      div.datepicker
+    div.register-form__datepicker.js-register-form__datepicker
+      div.datepicker.js-datepicker
   div.register-form__userdata
     div.register-form__label
       +label('данные для входа в сервис', 'label_weight_bold')

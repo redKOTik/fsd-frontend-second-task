@@ -1,5 +1,5 @@
-@import "../button/button.scss";
-@import "../room-title/room-title.scss";
+@import "../button/**/*.scss";
+@import "../room-title/**/*.scss";
 @import './__service/reserve-form__service.scss';
 
 .reserve-form {

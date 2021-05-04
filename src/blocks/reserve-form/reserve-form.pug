@@ -1,4 +1,4 @@
-form.reserve-form
+form.reserve-form.js-reserve-form
   include ../label/label
   include ../room-title/room-title
   div.reserve-form__title
@@ -6,12 +6,12 @@ form.reserve-form
   div.reserve-form__dates
     +label('прибытие', 'label_weight_bold label_position_inline')        
     +label('выезд', 'label_weight_bold')
-    div.reserve-form__datepicker
-      div.datepicker
+    div.reserve-form__datepicker.js-reserve-form__datepicker
+      div.datepicker.js-datepicker
   div.reserve-form__guest
     +label('гости', 'label_weight_bold')
-    div.reserve-form__multiselect
-      select.multiselect(value="Сколько гостей", name="counter")
+    div.reserve-form__multiselect.js-reserve-form__multiselect
+      select.multiselect.js-multiselect(value="Сколько гостей", name="counter")
         option(value="1") взрослые
         option(value="2") дети  
         option(value="0") младенцы

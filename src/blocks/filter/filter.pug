@@ -1,23 +1,23 @@
 include ../label/label
 include ../checkbox-list/checkbox-list
 include ../checkbox-list-expandable/checkbox-list-expandable
-div.filter
+div.filter.js-filter
   div.filter__item
     +label('даты пребывания в отеле', 'label_weight_bold')
     div.filter__datepicker-wrapper
-      div.filter__datepicker
+      div.filter__datepicker.js-filter__datepicker
   div.filter__item
     +label('гости', 'label_weight_bold')
     div.filter__multiselect-wrapper
-      select.filter__multiselect-for-human(value="Сколько гостей")
+      select.filter__multiselect-for-human.js-filter__multiselect-for-human(value="Сколько гостей")
         option(value="1") взрослые
         option(value="2") дети  
         option(value="0") младенцы
   div.filter__item
-    +label('default', 'label_weight_normal label_position_right filter__slider-value')
+    +label('default', 'label_weight_normal label_position_right filter__slider-value js-filter__slider-value')
     +label('диапазон цены', 'label_weight_bold')
     div.filter__slider-wrapper
-      div.filter__slider
+      div.filter__slider.js-filter__slider
       p.filter__slider-description Стоимость за сутки пребывания в номере
   div.filter__item
     div.filter__label
@@ -37,7 +37,7 @@ div.filter
   div.filter__item
     +label('удобства номера', 'label_weight_bold')
     div.filter__multiselect-wrapper
-      select.filter__multiselect-for-bed(value="Сколько всего")
+      select.filter__multiselect-for-bed.js-filter__multiselect-for-bed(value="Сколько всего")
         option(value="2") спальни
         option(value="2") кровати
         option(value="0") ванные комнаты

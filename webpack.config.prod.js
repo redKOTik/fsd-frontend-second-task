@@ -9,6 +9,7 @@ const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plug
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const imageminSvgo = require('imagemin-svgo');
+const globImporter = require('node-sass-glob-importer-plus');
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
@@ -26,7 +27,15 @@ const cssLoaders = (extra) => {
   ];
 
   if (extra) {
-    loaders.push(extra);
+    loaders.push({
+      loader: extra,
+      options: {
+        webpackImporter: false,
+        sassOptions: {
+          importer: globImporter()          
+        }
+      }
+    });    
   }
 
   return loaders;
@@ -88,6 +97,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        use: 'glob-import-loader'
+      },
       {
         test: /\.s[ac]ss$/,
         exclude: /node_modules/,

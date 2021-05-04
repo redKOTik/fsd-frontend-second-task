@@ -1,5 +1,5 @@
 @import "../like-button/like-button.scss";
-@import "../feature/feature.scss";
+@import "../feature/**/*.scss";
 
 .post {
   &__header {

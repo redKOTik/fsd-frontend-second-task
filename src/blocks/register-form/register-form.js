@@ -1,3 +1,4 @@
+import $ from 'jquery';
 export default function initRegisterPlugins() {
-    $('.register-form__datepicker .datepicker').datepicker();
+  $('.js-register-form__datepicker .js-datepicker').datepicker();
 }

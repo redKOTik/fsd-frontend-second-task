@@ -7,7 +7,8 @@
     "test": "",
     "build": "webpack --mode development",
     "build-prod": "cross-env NODE_ENV=production webpack --config ./webpack.config.prod.js --mode production",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,11 @@
     "copy-webpack-plugin": "^6.2.0",
     "cross-env": "^7.0.2",
     "css-loader": "^3.4.2",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-fsd": "^1.0.1",
     "file-loader": "^6.2.0",
+    "glob-import-loader": "^1.1.4",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^6.0.0",
     "imagemin-svgo": "^8.0.0",
@@ -40,6 +45,7 @@
     "latest": "^0.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
+    "node-sass-glob-importer-plus": "^5.3.2",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
@@ -51,9 +57,9 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "fsd-custom-slider": "^2.0.2",
     "jquery": "^3.5.1",
     "moment": "^2.27.0",
-    "paginationjs": "^2.1.5",
-    "fsd-custom-slider": "^2.0.2"
+    "paginationjs": "^2.1.5"
   }
 }

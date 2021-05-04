@@ -1,7 +1,4 @@
-@import "../checkbox-button/checkbox-button.scss";
-@import "./__item/_height/checkbox-list__item_height_custom.scss";
-@import "./__item/_height/checkbox-list__item_height_middle.scss";
-@import "./__item/_height/checkbox-list__item_height_default.scss";
+@import "../checkbox-button/**/*.scss";
 
 .checkbox-list {
   list-style: none;

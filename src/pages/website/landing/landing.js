@@ -1,28 +1,25 @@
-import '@assets/plugins/multiselect/multiselect-styles.css';
-import '@assets/plugins/datepicker/datepicker-styles.css';
-import '@assets/plugins/multiselect/bundle.js';
-import '@assets/plugins/datepicker/bundle.js';
+import $ from 'jquery';
 
 export function initLandJs() {
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        console.log(e.target);
-    };
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+  };
 
-    $('.find-room-form__datepicker .datepicker').datepicker({
-        mode: 'Range'
-    });
+  $('.js-find-room-form__datepicker .js-datepicker').datepicker({
+    mode: 'Range'
+  });
 
-    $('.find-room-form__multiselect .multiselect').multiselect({
-        state: 'Collapsed',
-        options: [
-            { text: 'взрослые', value: '0' },
-            { text: 'дети', value: '0' },
-            { text: 'младенцы', value: '0' }],
-        title: 'Сколько гостей',
-        totalTextTitle: 'гостя',
-        showAllValue: false
-    });
+  $('.js-find-room-form__multiselect .js-multiselect').multiselect({
+    state: 'Collapsed',
+    options: [
+      { text: 'взрослые', value: '0' },
+      { text: 'дети', value: '0' },
+      { text: 'младенцы', value: '0' }
+    ],
+    title: 'Сколько гостей',
+    totalTextTitle: 'гостя',
+    showAllValue: false
+  });
 
-    $('.find-room-form').on('submit', handleFormSubmit);
+  $('.js-find-room-form').on('submit', handleFormSubmit);
 }

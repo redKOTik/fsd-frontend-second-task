@@ -1,4 +1,4 @@
-form.find-room-form
+form.find-room-form.js-find-room-form
   include ../label/label
   include ../title/title
   div.find-room-form__title
@@ -6,12 +6,12 @@ form.find-room-form
   div.find-room-form__dates    
     +label('прибытие', 'label_weight_bold label_position_inline')        
     +label('выезд', 'label_weight_bold')
-    div.find-room-form__datepicker
-      div.datepicker
+    div.find-room-form__datepicker.js-find-room-form__datepicker
+      div.datepicker.js-datepicker
   div.find-room-form__guest    
     +label('гости', 'label_weight_bold')
-    div.find-room-form__multiselect
-      select.multiselect(value="Сколько гостей", name="counter")
+    div.find-room-form__multiselect.js-find-room-form__multiselect
+      select.multiselect.js-multiselect(value="Сколько гостей", name="counter")
         option(value="0") взрослые
         option(value="0") дети  
         option(value="0") младенцы

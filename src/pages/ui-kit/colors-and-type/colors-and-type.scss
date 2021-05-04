@@ -1,22 +1,4 @@
-@import 'src/blocks/logo/logo.scss';
-@import './__color/_bg/kit__color_bg_dark-shade-100.scss';
-@import './__color/_bg/kit__color_bg_dark-shade-75.scss';
-@import './__color/_bg/kit__color_bg_dark-shade-50.scss';
-@import './__color/_bg/kit__color_bg_dark-shade-25.scss';
-@import './__color/_bg/kit__color_bg_dark-shade-5.scss';
-@import './__color/_bg/kit__color_bg_green.scss';
-@import './__color/_bg/kit__color_bg_purple.scss';
-
-@import './__text/kit__text_weight_bold.scss';
-@import './__text/kit__text_weight_normal.scss';
-
-@import './__type/_size/kit__type_size_extra_large.scss';
-@import './__type/_size/kit__type_size_large.scss';
-@import './__type/_size/kit__type_size_middle.scss';
-@import './__type/_size/kit__type_size_small.scss';
-
-@import './__description/kit__description.scss';
-
+@import 'src/blocks/logo/**/*.scss';
 
 .wrapper {
   position: relative;
