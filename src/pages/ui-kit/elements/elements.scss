@@ -1,16 +1,16 @@
-@import "src/blocks/bullet-list/bullet-list.scss";
-@import "src/blocks/button/button.scss";
-@import "src/blocks/checkbox-list-expandable/checkbox-list-expandable.scss";
+@import "src/blocks/bullet-list/**/*.scss";
+@import "src/blocks/button/**/*.scss";
+@import "src/blocks/checkbox-list-expandable/**/*.scss";
 @import "src/blocks/like-button/like-button.scss";
-@import "src/blocks/radio-button/radio-button.scss";
+@import "src/blocks/radio-button/**/*.scss";
 @import "src/blocks/toggle-button/toggle-button.scss";
 @import "src/blocks/pagination/pagination.scss";
-@import "src/blocks/rate/rate.scss";
-@import "src/blocks/feature/feature.scss";
+@import "src/blocks/rate/**/*.scss";
+@import "src/blocks/feature/**/*.scss";
 @import "src/blocks/post/post.scss";
-@import "src/blocks/input/input.scss";
-@import "src/blocks/label/label.scss";
-@import "src/blocks/logo/logo.scss";
+@import "src/blocks/input/**/*.scss";
+@import "src/blocks/label/**/*.scss";
+@import "src/blocks/logo/**/*.scss";
 
 .wrapper {
   position: relative;

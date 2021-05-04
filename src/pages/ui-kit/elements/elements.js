@@ -4,9 +4,6 @@ import moment from 'moment';
 import '@assets/plugins/multiselect/multiselect-styles.css';
 import '@assets/plugins/datepicker/datepicker-styles.css';
 
-import '@assets/plugins/multiselect/bundle.js';
-import '@assets/plugins/datepicker/bundle.js';
-
 import 'fsd-custom-slider/dist/app.js';
 import 'fsd-custom-slider/dist/app.css';
 

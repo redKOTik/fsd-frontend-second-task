@@ -7,6 +7,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const imageminSvgo = require('imagemin-svgo');
+const globImporter = require('node-sass-glob-importer-plus');
 
 const cssLoaders = (extra) => {
   const loaders = [
@@ -21,7 +22,15 @@ const cssLoaders = (extra) => {
   ];
 
   if (extra) {
-    loaders.push(extra);
+    loaders.push({
+      loader: extra,
+      options: {
+        webpackImporter: false,
+        sassOptions: {
+          importer: globImporter()          
+        }
+      }
+    });    
   }
 
   return loaders;
@@ -75,10 +84,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        use: 'glob-import-loader'
+      },
+      {
         test: /\.s[ac]ss$/,
         exclude: /node_modules/,
-        use: cssLoaders("sass-loader"),
-      },
+        use: cssLoaders('sass-loader'),
+      },      
       {
         test: /\.css$/,
         use: cssLoaders(),

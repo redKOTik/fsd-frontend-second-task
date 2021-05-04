@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import '@assets/plugins/datepicker/datepicker-styles.css';
-import '@assets/plugins/datepicker/bundle.js';
 
 export function initRegJs(form) {
   const handleFormSubmit = (e) => {

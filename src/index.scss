@@ -1,12 +1,4 @@
-@import "src/pages/ui-kit/colors-and-type/colors-and-type.scss";
-@import "src/pages/ui-kit/elements/elements.scss";
-@import "src/pages/ui-kit/cards/cards.scss";
-@import "src/pages/ui-kit/headers-and-footers/headers-and-footers.scss";
-
-@import "src/pages/website/register/register.scss";
-@import "src/pages/website/landing/landing.scss";
-@import "src/pages/website/search-room/search-room.scss";
-@import "src/pages/website/details-room/details-room.scss";
+@import "src/pages/**/*.scss";
 
 $base-color: green;
 $base-color-text: black;

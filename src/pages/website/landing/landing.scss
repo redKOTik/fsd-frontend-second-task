@@ -1,11 +1,11 @@
-@import "src/blocks/header/header.scss";
+@import "src/blocks/header/**/*.scss";
 @import "src/blocks/footer/footer.scss";
-@import "src/blocks/label/label.scss";
+@import "src/blocks/label/**/*.scss";
 @import "src/blocks/find-room-form/find-room-form.scss";
 
 .container {
   max-width: 100%;
-  height: 702px;
+  min-height: 702px;
   display: flex;
   align-items: center;
 }

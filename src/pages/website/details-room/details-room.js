@@ -3,8 +3,6 @@ import moment from 'moment';
 
 import '@assets/plugins/multiselect/multiselect-styles.css';
 import '@assets/plugins/datepicker/datepicker-styles.css';
-import '@assets/plugins/multiselect/bundle.js';
-import '@assets/plugins/datepicker/bundle.js';
 
 const $modal = $('.js-details-room__reserve-form.js-modal');
 

@@ -1,6 +1,6 @@
-@import "../button/button.scss";
+@import "../button/**/*.scss";
 @import "../title/title.scss";
-@import "../label/label.scss";
+@import "../label/**/*.scss";
 
 .find-room-form {
   width: 380px;

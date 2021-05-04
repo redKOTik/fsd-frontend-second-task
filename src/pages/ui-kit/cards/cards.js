@@ -1,12 +1,9 @@
 import $ from 'jquery';
 import moment from 'moment';
-import '../../../assets/plugins/multiselect/multiselect-styles.css';
-import '../../../assets/plugins/datepicker/datepicker-styles.css';
+import '@assets/plugins/multiselect/multiselect-styles.css';
+import '@assets/plugins/datepicker/datepicker-styles.css';
 
-import '../../../assets/plugins/multiselect/bundle.js';
-import '../../../assets/plugins/datepicker/bundle.js';
-import Sim from '../../../blocks/image-slider/image-slider.js';
-
+import Sim from '@blocks/image-slider/image-slider.js';
 import initFindRoomPlugins from '@blocks/find-room-form/find-room-form';
 import initRegisterPlugins from '@blocks/register-form/register-form';
 import initReservePlugins from '@blocks/reserve-form/reserve-form';
