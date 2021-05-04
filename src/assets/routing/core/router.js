@@ -140,7 +140,10 @@ export class Router {
         Router.helperFunctions();
         break;
       default:
-        return;
+        title.textContent = 'Main';
+        body.html(content.querySelector('.base').innerHTML);
+        body[0].className = 'bg_gray';
+        Router.helperFunctions();
     }
     body.append(t);
   }
