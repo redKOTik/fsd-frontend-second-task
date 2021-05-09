@@ -819,7 +819,7 @@
           var someMoment = mode === 'Single' ? moments[0].format('M-YYYY') : moments[0].hasOwnProperty('start') ? moments[0].start.format('M-YYYY') : moments[0].end.format('M-YYYY');
           var isMonth = currMonth === someMoment;
           mask.querySelectorAll('.d').forEach(function (el) {
-            return el.classList.remove('select', 'range', 'select_start', 'select_end');
+            return el.classList.remove('select', 'd-range', 'select_start', 'select_end');
           });
 
           if (mode === 'Single' && isMonth) {
@@ -865,7 +865,7 @@
                 for (var i = startDay + 1; i < endDay; i++) {
                   var _mask$querySelector6;
 
-                  (_mask$querySelector6 = mask.querySelector('.d-'.concat(i))) === null || _mask$querySelector6 === void 0 ? void 0 : _mask$querySelector6.classList.add('range');
+                  (_mask$querySelector6 = mask.querySelector('.d-'.concat(i))) === null || _mask$querySelector6 === void 0 ? void 0 : _mask$querySelector6.classList.add('d-range');
                 }
               } else if (startMomentMonth === currMonth && endMomentMonth !== currMonth) {
                 var _mask$querySelector7;
@@ -875,7 +875,7 @@
                 for (var _i = startDay + 1; _i <= 42; _i++) {
                   var _mask$querySelector8;
 
-                  (_mask$querySelector8 = mask.querySelector('.d-'.concat(_i))) === null || _mask$querySelector8 === void 0 ? void 0 : _mask$querySelector8.classList.add('range');
+                  (_mask$querySelector8 = mask.querySelector('.d-'.concat(_i))) === null || _mask$querySelector8 === void 0 ? void 0 : _mask$querySelector8.classList.add('d-range');
                 }
               } else if (startMomentMonth !== currMonth && endMomentMonth === currMonth) {
                 var _mask$querySelector9;
@@ -885,13 +885,13 @@
                 for (var _i2 = 1; _i2 < endDay; _i2++) {
                   var _mask$querySelector10;
 
-                  (_mask$querySelector10 = mask.querySelector('.d-'.concat(_i2))) === null || _mask$querySelector10 === void 0 ? void 0 : _mask$querySelector10.classList.add('range');
+                  (_mask$querySelector10 = mask.querySelector('.d-'.concat(_i2))) === null || _mask$querySelector10 === void 0 ? void 0 : _mask$querySelector10.classList.add('d-range');
                 }
               } else if (startMomentMonth !== currMonth && endMomentMonth !== currMonth && moments[0].start.isBefore(monthMoment) && moments[0].end.isAfter(monthMoment)) {
                 for (var _i3 = 1; _i3 <= 42; _i3++) {
                   var _mask$querySelector11;
 
-                  (_mask$querySelector11 = mask.querySelector('.d-'.concat(_i3))) === null || _mask$querySelector11 === void 0 ? void 0 : _mask$querySelector11.classList.add('range');
+                  (_mask$querySelector11 = mask.querySelector('.d-'.concat(_i3))) === null || _mask$querySelector11 === void 0 ? void 0 : _mask$querySelector11.classList.add('d-range');
                 }
               }
             }
@@ -928,7 +928,7 @@
             }
 
             mask.querySelectorAll('.d').forEach(function (el) {
-              return el.classList.remove('range', 'select_start', 'select_end');
+              return el.classList.remove('d-range', 'select_start', 'select_end');
             });
             var span = count === 'Two' ? mask.querySelectorAll('.datepicker-range span.select__title') : mask.querySelectorAll('.datepicker span.header__text');
             setDeafaultTitle(defaultTitle, mode, span);
