@@ -27,7 +27,7 @@
 
 ## Демо
 См. Демонстрацию на страницах проекта.
-### Список страниц задания
+### [Список страниц задания](https://redkotik.gitlab.io/fsd-static-pages/)
 - [Страница регистрации](https://redkotik.gitlab.io/fsd-static-pages/#register)
 - [Детали номера](https://redkotik.gitlab.io/fsd-static-pages/#details)
 - [Поиск номера / фильтр](https://redkotik.gitlab.io/fsd-static-pages/#filter)
