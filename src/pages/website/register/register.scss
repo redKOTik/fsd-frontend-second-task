@@ -5,14 +5,25 @@
 @import "src/blocks/login-form/login-form.scss";
 
 .container {
-  max-width: 100%;
-  min-height: 702px;
+  max-width: 100%;  
   display: flex;
   align-items: center;
 }
 
 .container_bg_for-register {
+  min-height: 682px;
   background-image: url(/assets/img/website/register/bg-register-page.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;  
+  background-size: 100%;
+}
+
+.container_bg_for-login {
+  min-height: 702px;
+  background-image: url(/assets/img/website/register/bg-register-page.svg); 
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .register-form-wrapper,

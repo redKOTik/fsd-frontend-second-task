@@ -13,13 +13,13 @@ div.filter.js-filter
         option(value="1") взрослые
         option(value="2") дети  
         option(value="0") младенцы
-  div.filter__item
+  div.filter__item.filter__item_mb_23
     +label('default', 'label_weight_normal label_position_right filter__slider-value js-filter__slider-value')
     +label('диапазон цены', 'label_weight_bold')
     div.filter__slider-wrapper
       div.filter__slider.js-filter__slider
       p.filter__slider-description Стоимость за сутки пребывания в номере
-  div.filter__item
+  div.filter__item.filter__item_mb_25
     div.filter__label
       +label('правила дома', 'label_weight_bold')
     +checkboxList([
@@ -27,14 +27,14 @@ div.filter.js-filter
       {label: 'Можно с питомцами', classLabel: 'width_default', checked: 'checked'}, 
       {label: 'Можно пригласить гостей (до 10 человек)', checked: 'checked', classLabel: 'width_default', classItem: 'height_middle'}
       ])
-  div.filter__item
+  div.filter__item.filter__item_mb_27
     div.filter__label
       +label('доступность', 'label_weight_bold')
     +checkboxList([
       { label: 'Широкий коридор', classLabel: 'width_default', classItem: 'height_custom', richText: 'Ширина коридоров в номере не менее 91 см.', rich: true }, 
       { label: 'Помощник для инвалидов', classLabel: 'width_custom', classItem: 'height_custom', richText: 'На 1 этаже вас встретит специалист и проводит до номера.', rich: true }
       ])
-  div.filter__item
+  div.filter__item.filter__item_mb_16
     +label('удобства номера', 'label_weight_bold')
     div.filter__multiselect-wrapper
       select.filter__multiselect-for-bed.js-filter__multiselect-for-bed(value="Сколько всего")

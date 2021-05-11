@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   max-width: 100%;
-  padding: 70px 140px;
+  padding: 70px 140px 63px 140px;
 }
 
 .details-room__reserve-form {
@@ -27,14 +27,32 @@
   margin-right: 70px;  
 }
 
+.detail__item-wrapper {
+  min-width: 350px;
+}
+
 .detail__row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
+
+  &:last-child {
+    margin-bottom: 0;
+    justify-content: flex-start;
+    margin-left: 20px;
+  }
 }
 
 .detail__item {
   position: relative;
+}
+
+.detail_label_mb_20 {
+  margin-bottom: 20px;
+}
+  
+.detail_label_mb_17 {
+  margin-bottom: 17px;
 }
 
 .detail__quality {
@@ -47,12 +65,14 @@
 
 .detail__list {
   position: relative;
-  display: inline-block;
+  display: inline-block;  
+  top: -14px;
+  left: -10px;
 }
 
 .detail__post {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 23px;
 
   &:last-of-type {
     margin-bottom: 0px;

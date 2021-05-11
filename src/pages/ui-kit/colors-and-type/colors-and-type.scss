@@ -1,7 +1,7 @@
 @import 'src/blocks/logo/**/*.scss';
 
-.wrapper {
-  position: relative;
+.wrapper-logo {
+  position: fixed;
   top: 30px;
   left: 30px;
 }
@@ -11,7 +11,7 @@
   flex-wrap: nowrap;  
   justify-content: space-between;
 
-  margin: 10% 10%;
+  margin: 10.07% 10.417% 0 10.417%;
 }
 
 .kit__block {
@@ -23,18 +23,20 @@
 .kit__title-container {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around;
 }
 
 .kit__color {
   width: 70px;
   height: 70px;
-  margin: 10px 40px;
+  margin: 0px 40px 20px 0px;
   border-radius: 6px;
 }
 
 .kit__title {
-  line-height: 29px;
+  line-height: 28px;
+  height: 70px;
+  margin-bottom: 20px;
+  padding-top: 8px;
 }
 
 .kit__text {
@@ -51,12 +53,16 @@
 }
 
 .kit__type-wrapper {
+  margin-bottom: 51px;
+}
+
+.kit__type-wrapper-extra {
   margin-bottom: 50px;
 }
 
 .kit__type {
   display: flex;
-  width: 500px;  
+  min-width: 457px;  
 }
 
 .kit__tag {

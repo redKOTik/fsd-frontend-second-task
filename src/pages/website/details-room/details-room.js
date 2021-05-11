@@ -4,16 +4,14 @@ import moment from 'moment';
 import '@assets/plugins/multiselect/multiselect-styles.css';
 import '@assets/plugins/datepicker/datepicker-styles.css';
 
-const $modal = $('.js-details-room__reserve-form.js-modal');
-
 const handleDetailButtonClick = () => {
   $('.js-overlay').addClass('active');
-  $modal.addClass('active');
+  $('.js-details-room__reserve-form.js-modal').addClass('active');
 };
 
 function handleOverlayClick() {
-  $(this).removeClass('active');
-  $modal.removeClass('active');
+  $('.js-overlay').removeClass('active');
+  $('.js-details-room__reserve-form.js-modal').removeClass('active');
 }
 
 export function initDetailsJs() {

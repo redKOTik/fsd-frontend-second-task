@@ -73,7 +73,7 @@ export class Router {
         wrapper.classList.add('login-form-wrapper');
         $(wrapper).html(content.querySelector('.login').innerHTML);
         this.placeholder.append(wrapper);
-        this.toggleClass('container container_bg_for-register');
+        this.toggleClass('container container_bg_for-login');
         body.html(this.placeholder);
         body[0].insertAdjacentElement('afterbegin', this.header);
         body[0].insertAdjacentElement('beforeend', this.footer);

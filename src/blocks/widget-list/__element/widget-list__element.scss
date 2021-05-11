@@ -6,7 +6,24 @@
   font-family: Montserrat, Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.widget-list__element-special {
+  margin: 20px 0;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
   color: rgba(31, 32, 65, 0.5);
 
   &:first-child {

@@ -8,7 +8,7 @@
 
 .search-room {
   display: flex;
-  padding: 30px 140px 70px 140px;  
+  padding: 28px 140px 70px 140px;  
 }
 
 .search-room__filter {
@@ -20,14 +20,14 @@
 }
 
 .result {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
-  width: 840px;
+  width: 850px;
 
   & .room {
-    margin-right: 10px;
-    margin-bottom: 20px;
+    margin-right: 12px;
+    margin-bottom: 21px;
   }
 }
 
@@ -39,7 +39,7 @@
 
 @media (max-width: 1200px) {
   .result {
-    width: 560px;
+    width: 570px;
   }
 }
 

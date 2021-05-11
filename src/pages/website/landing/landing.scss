@@ -5,13 +5,16 @@
 
 .container {
   max-width: 100%;
-  min-height: 702px;
   display: flex;
   align-items: center;
 }
 
 .container_bg_for-landing {
+  min-height: 831px;
   background-image: url(/assets/img/website/landing/bg-landing-page.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;  
+  background-size: 100%;  
 }
 
 .find-room-form-wrapper {

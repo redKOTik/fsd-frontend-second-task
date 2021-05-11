@@ -26,8 +26,8 @@
   border-left: none;
   border-top: none;
 
-  right: 0;
-  bottom: 0;
+  right: 8px;
+  bottom: 8px;
 }
 
 .diagram__block_purple {
@@ -39,14 +39,14 @@
   border-left: none;
   border-bottom: none;
 
-  right: 0;
+  right: 8px;
 }
 
 .diagram__info {
   position: absolute;
   display: block;
-  top: 30%;
-  left: 25%;
+  top: 27%;
+  left: 23%;
   text-align: center;
 }
 

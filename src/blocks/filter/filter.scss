@@ -9,7 +9,24 @@
   margin-bottom: 30px;
 
   &:first-child {
-    margin-bottom: 20px;
+    margin-bottom: 17px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &_mb_16 {
+    margin-bottom: 16px;
+  }
+  &_mb_23 {
+    margin-bottom: 23px;
+  }
+  &_mb_25 {
+    margin-bottom: 25px;
+  }
+  &_mb_27 {
+    margin-bottom: 27px;
   }
 }
 
@@ -20,7 +37,7 @@
 .filter__datepicker-wrapper,
 .filter__multiselect-wrapper {
   position: relative;
-  margin-top: 5px;
+  margin-top: 3px;
 
   font-family: Montserrat, Arial, sans-serif;
   font-weight: 400;
@@ -34,12 +51,13 @@
   font-family: Montserrat, Arial, sans-serif;
   font-weight: 400;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 20px;
   color: rgba(31, 32, 65, 0.5);
 }
 
 @media (max-width: 992px) {
   .filter {
+    max-width: 320px;
     top: 175px;
     left: -285px;
     -webkit-transition-duration: 1s;

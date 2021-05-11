@@ -1,12 +1,13 @@
 .room-title__price {
   font-family: Montserrat, Arial, sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 18px;
   color: rgba(31, 32, 65, 0.5);
-  margin: 0;
+  margin-block-start: 1.5em;
 }
 
 .room-title__text {
   font-weight: 700;
+  font-size: 14px;
 }
