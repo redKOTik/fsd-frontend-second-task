@@ -1,202 +1,209 @@
 import $ from 'jquery';
 
-function setDefault() {
-  let arr = [];
-  arr.length = 180;
-  return arr;
-}
+class Pagination {
+  constructor(root, data = this.setDefault()) {
+    this.$root = $(root);
+    this.data = data;
+    this.state = {
+      currentPage: 1,
+      showPrev: false,
+      showNext: true,
+      visibleArray: [1, 2, 3],
+      size: this.computeSize(this.data)
+    };
 
-function size(data) {
-  let param = data.length % 12 === 0 ? 0 : 1;
-  return Math.floor(data.length / 12) + param;
-}
+    this.render();
+    this.initState();
+    this.setHandler();
+  }
 
-function render(selector, data) {
-  const rootDir = document.querySelector(selector);
-  if (rootDir) {
-    const container = document.createElement('div');
-    container.classList.add('pagination__container');
+  static init(root, data) {
+    return new this(root, data);
+  }
 
-    const pagefisrt = document.createElement('div');
-    pagefisrt.className = 'page page_select';
-    pagefisrt.textContent = '1';
-
-    const page2 = pagefisrt.cloneNode();
-    page2.className = 'page';
-    page2.textContent = '2';
-
-    const page3 = pagefisrt.cloneNode();
-    page3.className = 'page';
-    page3.textContent = '3';
-
-    const pagelast = pagefisrt.cloneNode();
-    pagelast.className = 'page';
-    pagelast.textContent = size(data);
-
-    const ellipsis = pagefisrt.cloneNode();
+  transformNav() {
+    const ellipsis = this.pagination.querySelector('.ellipsis').cloneNode();
     ellipsis.textContent = '...';
-    ellipsis.className = 'ellipsis';
 
-    const spanprev = document.createElement('span');
-    const spannext = document.createElement('span');
-    const prev = pagefisrt.cloneNode();
-    const next = pagefisrt.cloneNode();
+    const lastPageEl = this.pagination.querySelector('.page_last');
+    const firstPageEl = this.pagination.querySelector('.page_first');
 
-    prev.insertAdjacentElement('afterbegin', spanprev);
-    next.insertAdjacentElement('afterbegin', spannext);
+    if (this.state.size - this.state.currentPage < 2) {
+      if (lastPageEl) lastPageEl.classList.remove('page_last');
 
-    prev.className = 'page page_prev';
-    next.className = 'page page_next';
+      this.pagination.querySelector('.ellipsis').remove();
+      this.pagination
+        .querySelector('.page:not(.page_next):not(.page_prev)')
+        .insertAdjacentElement('afterend', ellipsis);
+      this.pagination
+        .querySelector('.page:not(.page_next):not(.page_prev)')
+        .classList.add('page_first');
 
-    const text = document.createElement('span');
-    text.className = 'pagination__info';
-    text.textContent = '1 – 12 из 100+ вариантов аренды';
+      if (firstPageEl) firstPageEl.textContent = '1';
+    } else if (this.state.currentPage < 3) {
+      if (firstPageEl) firstPageEl.classList.remove('page_first');
 
-    container.insertAdjacentElement('beforeend', prev);
-    container.insertAdjacentElement('beforeend', pagefisrt);
-    container.insertAdjacentElement('beforeend', page2);
-    container.insertAdjacentElement('beforeend', page3);
-    container.insertAdjacentElement('beforeend', ellipsis);
-    container.insertAdjacentElement('beforeend', pagelast);
-    container.insertAdjacentElement('beforeend', next);
-    container.insertAdjacentElement('beforeend', text);
-    rootDir.insertAdjacentElement('afterbegin', container);
-
-    return container;
-  }
-  throw new Error('невалидные данные для инициализации');
-}
-
-function transformNav(state, pagination) {
-  const ellipsis = pagination.querySelector('.ellipsis').cloneNode();
-  ellipsis.textContent = '...';
-
-  const lastPageEl = pagination.querySelector('.page_last');
-  const firstPageEl = pagination.querySelector('.page_first');
-
-  if (state.size - state.currentPage < 2) {
-    if (lastPageEl) lastPageEl.classList.remove('page_last');
-
-    pagination.querySelector('.ellipsis').remove();
-    pagination
-      .querySelector('.page:not(.page_next):not(.page_prev)')
-      .insertAdjacentElement('afterend', ellipsis);
-    pagination
-      .querySelector('.page:not(.page_next):not(.page_prev)')
-      .classList.add('page_first');
-
-    if (firstPageEl) firstPageEl.textContent = '1';
-  } else if (state.currentPage < 3) {
-    if (firstPageEl) firstPageEl.classList.remove('page_first');
-
-    pagination.querySelector('.ellipsis').remove();
-    pagination
-      .querySelectorAll('.page:not(.page_next):not(.page_prev)')[3]
-      .insertAdjacentElement('beforebegin', ellipsis);
-    pagination
-      .querySelectorAll('.page:not(.page_next):not(.page_prev)')[3]
-      .classList.add('page_last');
-    if (lastPageEl) lastPageEl.textContent = state.size;
-  }
-}
-
-function initState(state, pagination) {
-  const $prev = $(pagination.querySelector('.page_prev'));
-  const $next = $(pagination.querySelector('.page_next'));
-  const paginationElements = pagination.querySelectorAll('.page:not(.page_first):not(.page_last):not(.page_next):not(.page_prev)');
-  const isShowPrev = state.showPrev;
-  const isShowNext = state.showNext;
-
-  if (isShowPrev) {
-    $prev.show();
-  } else {
-    $prev.hide();
+      this.pagination.querySelector('.ellipsis').remove();
+      this.pagination
+        .querySelectorAll('.page:not(.page_next):not(.page_prev)')[3]
+        .insertAdjacentElement('beforebegin', ellipsis);
+      this.pagination
+        .querySelectorAll('.page:not(.page_next):not(.page_prev)')[3]
+        .classList.add('page_last');
+      if (lastPageEl) lastPageEl.textContent = this.state.size;
+    }
   }
 
-  if (isShowNext) {
-    $next.show();
-  } else {
-    $next.hide();
+  computeSize() {
+    let param = this.data.length % 12 === 0 ? 0 : 1;
+    return Math.floor(this.data.length / 12) + param;
   }
 
-  pagination.querySelector('.page_select').classList.remove('page_select');
+  setDefault() {
+    this.data = [];
+    this.data.length = 180;
+    return this.data;
+  }
 
-  state.visibleArray.forEach((element, i) => {
-    paginationElements[i].textContent = element;
-  });
+  initState() {
+    const $prev = $(this.pagination.querySelector('.page_prev'));
+    const $next = $(this.pagination.querySelector('.page_next'));
+    const paginationElements = this.pagination.querySelectorAll('.page:not(.page_first):not(.page_last):not(.page_next):not(.page_prev)');
+    const isShowPrev = this.state.showPrev;
+    const isShowNext = this.state.showNext;
 
-  pagination
-    .querySelectorAll('.page:not(.page_next):not(.page_prev)')
-    .forEach((element) => {
-      if (+element.textContent === state.currentPage) {
-        element.classList.add('page_select');
-      }
+    if (isShowPrev) {
+      $prev.show();
+    } else {
+      $prev.hide();
+    }
+
+    if (isShowNext) {
+      $next.show();
+    } else {
+      $next.hide();
+    }
+
+    this.pagination.querySelector('.page_select').classList.remove('page_select');
+
+    this.state.visibleArray.forEach((element, i) => {
+      paginationElements[i].textContent = element;
     });
 
-  transformNav(state, pagination);
+    this.pagination
+      .querySelectorAll('.page:not(.page_next):not(.page_prev)')
+      .forEach((element) => {
+        if (+element.textContent === this.state.currentPage) {
+          element.classList.add('page_select');
+        }
+      });
 
-  const text = pagination.querySelector('.pagination__info');
-  text.textContent = `${state.currentPage * 12 - 11} - ${
-    state.currentPage * 12
-  } из 100+ вариантов аренды`;
-}
+    this.transformNav();
 
-const handler = (state, pagination, e) => {
-  const target = e.target;
-  if (target.closest('.page_next')) {
-    const newState = state;
-    newState.currentPage += 1;
-
-    if (state.currentPage > 1) {
-      newState.showPrev = true;
-    }
-
-    if (state.currentPage === state.size) {
-      newState.showNext = false;
-    }
-
-    if (state.currentPage > state.visibleArray[state.visibleArray.length - 1]) {
-      newState.visibleArray = state.visibleArray.map((element) => element + 1);
-    }
-
-    initState(newState, pagination);
+    const text = this.pagination.querySelector('.pagination__info');
+    text.textContent = `${this.state.currentPage * 12 - 11} - ${
+      this.state.currentPage * 12
+    } из 100+ вариантов аренды`;
   }
 
-  if (target.closest('.page_prev')) {
-    const newState = state;
-    newState.currentPage -= 1;
+  render() {
+    if (this.$root.length > 0) {
+      this.pagination = document.createElement('div');
+      this.pagination.classList.add('pagination__container');
 
-    if (state.currentPage === 1) {
-      newState.showPrev = false;
+      const pagefisrt = document.createElement('div');
+      pagefisrt.className = 'page page_select';
+      pagefisrt.textContent = '1';
+
+      const page2 = pagefisrt.cloneNode();
+      page2.className = 'page';
+      page2.textContent = '2';
+
+      const page3 = pagefisrt.cloneNode();
+      page3.className = 'page';
+      page3.textContent = '3';
+
+      const pagelast = pagefisrt.cloneNode();
+      pagelast.className = 'page';
+      pagelast.textContent = this.state.size;
+
+      const ellipsis = pagefisrt.cloneNode();
+      ellipsis.textContent = '...';
+      ellipsis.className = 'ellipsis';
+
+      const spanprev = document.createElement('span');
+      const spannext = document.createElement('span');
+      const prev = pagefisrt.cloneNode();
+      const next = pagefisrt.cloneNode();
+
+      prev.insertAdjacentElement('afterbegin', spanprev);
+      next.insertAdjacentElement('afterbegin', spannext);
+
+      prev.className = 'page page_prev';
+      next.className = 'page page_next';
+
+      const text = document.createElement('span');
+      text.className = 'pagination__info';
+      text.textContent = '1 – 12 из 100+ вариантов аренды';
+
+      this.pagination.insertAdjacentElement('beforeend', prev);
+      this.pagination.insertAdjacentElement('beforeend', pagefisrt);
+      this.pagination.insertAdjacentElement('beforeend', page2);
+      this.pagination.insertAdjacentElement('beforeend', page3);
+      this.pagination.insertAdjacentElement('beforeend', ellipsis);
+      this.pagination.insertAdjacentElement('beforeend', pagelast);
+      this.pagination.insertAdjacentElement('beforeend', next);
+      this.pagination.insertAdjacentElement('beforeend', text);
+      this.$root.append($(this.pagination));
+      return this;
     }
-
-    if (state.currentPage < state.size) {
-      newState.showNext = true;
-    }
-
-    if (state.currentPage < state.visibleArray[0]) {
-      newState.visibleArray = state.visibleArray.map((element) => element - 1);
-    }
-
-    initState(newState, pagination);
+    throw new Error('невалидные данные для инициализации');
   }
-};
 
-function setHandler(pagination, state) {
-  pagination.addEventListener('click', handler.bind(null, state, pagination));
+  handlePaginationClick(e) {
+    const $target = $(e.target);
+    if ($target.closest('.page_next', this.$root).length > 0) {
+      this.state.currentPage += 1;
+
+      if (this.state.currentPage > 1) {
+        this.state.showPrev = true;
+      }
+
+      if (this.state.currentPage === this.state.size) {
+        this.state.showNext = false;
+      }
+
+      if (this.state.currentPage > this.state.visibleArray[this.state.visibleArray.length - 1]) {
+        this.state.visibleArray = this.state.visibleArray.map((element) => element + 1);
+      }
+    }
+    if ($target.closest('.page_prev', this.$root).length > 0) {
+      this.state.currentPage -= 1;
+
+      if (this.state.currentPage === 1) {
+        this.state.showPrev = false;
+      }
+
+      if (this.state.currentPage < this.state.size) {
+        this.state.showNext = true;
+      }
+
+      if (this.state.currentPage < this.state.visibleArray[0]) {
+        this.state.visibleArray = this.state.visibleArray.map((element) => element - 1);
+      }
+    }
+
+    this.initState();
+  }
+
+  setHandler() {
+    $(this.pagination).on('click.pagination', this.handlePaginationClick.bind(this));
+  }
+
+  destroy() {
+    $(this.pagination).off('click.pagination');
+    this.$root.empty();
+  }
 }
 
-export default function initPagination(selector, data = setDefault()) {
-  const state = {
-    currentPage: 1,
-    showPrev: false,
-    showNext: true,
-    visibleArray: [1, 2, 3],
-    size: size(data)
-  };
-
-  const pagination = render(selector, data);
-
-  initState(state, pagination);
-  setHandler(pagination, state);
-}
+export default Pagination;

@@ -7,8 +7,7 @@ import '@assets/plugins/datepicker/datepicker-styles.css';
 import initListExpandable from '@blocks/checkbox-list-expandable/index';
 import initSlider from '@blocks/slider/index';
 import initRate from '@blocks/rate/index';
-
-import initPagination from '@blocks/pagination/pagination.js';
+import initPagination from '@blocks/pagination/index';
 
 export function initElementsJs() {
   $('.js-multiselect-collapsed').multiselect({
@@ -99,7 +98,7 @@ export function initElementsJs() {
   initListExpandable();
 
   // pagination
-  initPagination('.result-pagination');
+  initPagination();
 
   // star rating
   initRate();
