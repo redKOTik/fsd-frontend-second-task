@@ -1,78 +1,100 @@
 import $ from 'jquery';
 
-function setAllActive(wrappers) {
-  wrappers.each((i, wrapper) => {
-    $(wrapper).find('.rate__label').addClass('rate__label_active');
-  });
-}
-function setAllInactive(wrappers) {
-  wrappers.each((i, wrapper) => {
-    $(wrapper).find('.rate__label').removeClass('rate__label_active');
-  });
-}
-
-function findChecked(siblings) {
-  let $checkedEl = false;
-  siblings.forEach(element => {
-    if (element.checked) {
-      $checkedEl = $(element);
-    }
-  });
-
-  return $checkedEl;
-}
-function setStarState($target) {
-  const nextAll = $target.parent().nextAll();
-  const prevAll = $target.parent().prevAll();
-
-  $target.siblings().addClass('rate__label_active');
-
-  setAllActive(nextAll);
-  setAllInactive(prevAll);
-}
-
-function handleRateClick(event) {
-  const target = event.target;
-  const parent = $(target).parent().parent()[0];
-  const $checkedEl = findChecked(parent.querySelectorAll('.rate__input'));
-  if ($checkedEl.length > 0) {
-    setStarState($checkedEl);
-  } else {
-    const nextAll = $(target).parent().nextAll('.rate__wrapper');
-    setAllActive(nextAll);
+class Rate {
+  constructor(element) {
+    this.$rate = $(element);
+    this.$inputs = this.$rate.find('.js-rate__input');
+    this.initRate();
   }
-}
-function handleRateMouseout(event) {
-  const target = event.target;
-  const parent = $(target).parent().parent()[0];
 
-  const $checkedEl = findChecked(parent.querySelectorAll('.rate__input'));
-
-  if ($checkedEl.length > 0) {
-    setStarState($checkedEl);
-  } else {
-    const nextAll = $(target).parent().nextAll('.rate__wrapper');
-    setAllInactive(nextAll);
+  static init(rootEl) {
+    return new this(rootEl);
   }
-}
-function handleRateMouseover(event) {
-  const target = event.target;
-  const nextAll = $(target).parent().nextAll('.rate__wrapper');
-  setAllActive(nextAll);
-}
 
-export function initRates(selector) {
-  const $rate = $(selector);
-  if ($rate.length > 0) {
-    $rate.on('mouseover', '.rate__label', handleRateMouseover);
-    $rate.on('mouseout', '.rate__label', handleRateMouseout);
-    $rate.on('click', handleRateClick);
-
-    $rate.each((i, item) => {
-      const $checkedEl = findChecked(item.querySelectorAll('.rate__input'));
-      setStarState($checkedEl);
+  setAllActive() {
+    this.$active.each((_, wrapper) => {
+      $(wrapper).find('.js-rate__label').addClass('rate__label_active');
     });
-  } else {
-    throw new Error(`cannot find elements by ${selector}`);
+  }
+
+  setAllInactive() {
+    this.$inactive.each((_, wrapper) => {
+      $(wrapper).find('.js-rate__label').removeClass('rate__label_active');
+    });
+  }
+
+  setStarState($el) {
+    this.$active = $el.parent().nextAll();
+    this.$inactive = $el.parent().prevAll();
+
+    $el.siblings().addClass('rate__label_active');
+
+    this.setAllActive();
+    this.setAllInactive();
+  }
+
+  findChecked() {
+    let $checkedEl = false;
+    this.$inputs.each((_, element) => {
+      if (element.checked) {
+        $checkedEl = $(element);
+      }
+    });
+
+    return $checkedEl;
+  }
+
+  handleRateClick(event) {
+    const $target = $(event.target);
+    const $checkedEl = this.findChecked();
+    if ($checkedEl.length > 0) {
+      this.setStarState($checkedEl);
+    } else {
+      this.$active = $target.parent().nextAll('.js-rate__wrapper');
+      this.setAllActive();
+    }
+  }
+
+  handleRateMouseout(event) {
+    const $target = $(event.target);
+    const $checkedEl = this.findChecked();
+
+    if ($checkedEl.length > 0) {
+      this.setStarState($checkedEl);
+    } else {
+      this.$inactive = $target.parent().nextAll('.js-rate__wrapper');
+      this.setAllInactive();
+    }
+  }
+
+  handleRateMouseover(event) {
+    const $target = $(event.target);
+    this.$active = $target.parent().nextAll('.js-rate__wrapper');
+    this.setAllActive();
+  }
+
+  addEvents() {
+    this.$rate.on('mouseover.star', '.js-rate__label', this.handleRateMouseover.bind(this));
+    this.$rate.on('mouseout.star', '.js-rate__label', this.handleRateMouseout.bind(this));
+    this.$rate.on('click.star', this.handleRateClick.bind(this));
+  }
+
+  initRate() {
+    if (this.$rate.length > 0) {
+      this.addEvents();
+      this.setStarState(this.findChecked());
+    } else {
+      throw new Error(`cannot find elements by .${this.$rate.prop('class')}`);
+    }
+  }
+
+  destroy() {
+    this.$rate.off('mouseover.star');
+    this.$rate.off('mouseout.star');
+    this.$rate.off('click.star');
+
+    this.$rate.empty();
   }
 }
+
+export default Rate;

@@ -7,7 +7,7 @@ import Sim from '@blocks/image-slider/image-slider.js';
 import initFindRoomPlugins from '@blocks/find-room-form/find-room-form';
 import initRegisterPlugins from '@blocks/register-form/register-form';
 import initReservePlugins from '@blocks/reserve-form/reserve-form';
-import { initRates } from '@blocks/rate/rate.js';
+import initRate from '@blocks/rate/index';
 
 export function initCardsJs() {
   const handleFormSubmit = (e) => {
@@ -35,7 +35,8 @@ export function initCardsJs() {
   $('.js-login-form').on('submit', handleFormSubmit);
   $('.js-reserve-form').on('submit', handleFormSubmit);
 
-  initRates('.rate');
+  // star rating
+  initRate();
 
   new Sim('js-slider-first');
   new Sim('js-slider-second');

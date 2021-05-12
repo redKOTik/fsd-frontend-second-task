@@ -7,10 +7,8 @@ import '../../assets/plugins/datepicker/datepicker-styles.css';
 import '../../assets/plugins/multiselect/bundle.js';
 import '../../assets/plugins/datepicker/bundle.js';
 
-import 'fsd-custom-slider/dist/app.js';
-import 'fsd-custom-slider/dist/app.css';
-
-import { handleListExpandableToggle } from '../checkbox-list-expandable/__header/checkbox-list-expandable__header';
+import initListExpandable from '@blocks/checkbox-list-expandable/index';
+import initSlider from '@blocks/slider/index';
 
 export function initFilterPlugins() {
   $('.js-filter__datepicker').datepicker({
@@ -45,23 +43,17 @@ export function initFilterPlugins() {
     showAllValue: true
   });
 
-  const $slider = $('.js-filter .js-filter__slider');
-  const $sliderLabel = $('.js-filter .js-filter__slider-value');
-
-  $slider.sliderPlugin({
+  // slider
+  initSlider({
     step: '500',
     mode: 'Multiple',
     orientation: 'Horizontal',
     defaultInterval: ['5000', '10000'],
     maximumValue: '15000',
     showSettings: false,
-    showValue: false,
-    onValueChanged: (_, change) => {
-      $sliderLabel.text(change);
-    }
-  });
+    showValue: false
+  }, '.js-filter__slider', '.js-filter__slider-value');
 
-  $sliderLabel.text($slider.sliderPlugin('value'));
-
-  $('.js-filter .js-checkbox-list-expandable__header').on('click', handleListExpandableToggle);
+  // list-expandable
+  initListExpandable();
 }

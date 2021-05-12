@@ -2,7 +2,8 @@ import $ from 'jquery';
 import Sim from '@blocks/image-slider/image-slider';
 import initPagination from '@blocks/pagination/pagination';
 import { initFilterPlugins } from '@blocks/filter/filter';
-import { initRates } from '@blocks/rate/rate.js';
+
+import initRate from '@blocks/rate/index';
 
 export function initFilterJs() {
   const handleFormSubmit = (e) => {
@@ -17,7 +18,9 @@ export function initFilterJs() {
     new Sim(slider.id);
   });
 
-  initRates('.js-rate');
+  // star rating
+  initRate();
 
+  // pagibation
   initPagination('.js-search-room__pagination');
 }

@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import handleWidgetElementClick from '@blocks/footer/footer';
-import handleBurgerClick from '@blocks/burger/burger';
+import initBurger from '@blocks/burger/index';
 
 const handleHeaderLoginClick = () => {
   window.location.href = '#login';
@@ -15,9 +15,7 @@ export function initHeaderJs() {
 
   $('.js-header__register').on('click', handleHeaderRegisterClick);
 
-  $('.js-burger').each((i, burger) => {
-    $(burger).on('click', handleBurgerClick);
-  });
+  initBurger();
 }
 
 export function initFooterJs() {

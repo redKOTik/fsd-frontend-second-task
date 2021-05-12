@@ -4,11 +4,10 @@ import moment from 'moment';
 import '@assets/plugins/multiselect/multiselect-styles.css';
 import '@assets/plugins/datepicker/datepicker-styles.css';
 
-import 'fsd-custom-slider/dist/app.js';
-import 'fsd-custom-slider/dist/app.css';
+import initListExpandable from '@blocks/checkbox-list-expandable/index';
+import initSlider from '@blocks/slider/index';
+import initRate from '@blocks/rate/index';
 
-import { handleListExpandableToggle } from '@blocks/checkbox-list-expandable/__header/checkbox-list-expandable__header';
-import { initRates } from '@blocks/rate/rate.js';
 import initPagination from '@blocks/pagination/pagination.js';
 
 export function initElementsJs() {
@@ -84,10 +83,8 @@ export function initElementsJs() {
     showAllValue: false
   });
 
-  const $slider = $('.js-custom-slider');
-  const $sliderLabel = $('.js-label_slider');
-
-  $slider.sliderPlugin({
+  // slider
+  initSlider({
     step: '500',
     mode: 'Multiple',
     orientation: 'Horizontal',
@@ -95,21 +92,15 @@ export function initElementsJs() {
     maximumValue: '15000',
     showSettings: false,
     showValue: false,
-    showScale: false,
-    onValueChanged: (_, change) => {
-      $sliderLabel.text(change);
-    }
-  });
+    showScale: false
+  }, '.js-custom-slider', '.js-label_slider');
 
   // list-expandable
-  $('.js-checkbox-list-expandable__header').on('click', handleListExpandableToggle);
+  initListExpandable();
 
   // pagination
   initPagination('.result-pagination');
 
-  // rating
-  initRates('.rate');
-
-  // slider
-  $sliderLabel.text($slider.sliderPlugin('value'));
+  // star rating
+  initRate();
 }

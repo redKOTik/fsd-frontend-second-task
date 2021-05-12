@@ -3,6 +3,6 @@ mixin rate(name, items)
     each item in items
       include ./__label/rate__label
       include ./__input/rate__input      
-      label.rate__wrapper
+      label.rate__wrapper.js-rate__wrapper
         +rateInput(item.value, name, item.checked)
         +rateLabel(item.value)
