@@ -1,8 +1,8 @@
-mixin cardroom(number, price, titleSize, isLux, count, sliderId, firstElId, ratename, ratedata)
+mixin cardroom(number, price, titleSize, isLux, count, firstElId, ratename, ratedata)
   div.room
     div.room__photos
       include ../image-slider/image-slider
-      +imgSlider(sliderId, firstElId)
+      +imgSlider(firstElId)
     include ../room-title/room-title
     div.room__title
       +roomTitle(number, price, titleSize, isLux)

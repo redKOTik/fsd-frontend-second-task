@@ -1,15 +1,15 @@
-mixin imgSlider(id, firstElId)  
-  ul.img-slider.js-img-slider(id=id)
-    li.img-slider__element
+mixin imgSlider(firstElId)  
+  ul.img-slider.js-img-slider
+    li.img-slider__element.js-img-slider__element
       span(class='element_'+firstElId)
-    li.img-slider__element
+    li.img-slider__element.js-img-slider__element
       span.element_1
-    li.img-slider__element
+    li.img-slider__element.js-img-slider__element
       span.element_2
-    li.img-slider__element
+    li.img-slider__element.js-img-slider__element
       span.element_3
-    div.img-slider__arrow_left
+    div.img-slider__arrow_left.js-img-slider__arrow_left
       span.arrow__left
-    div.img-slider__arrow_right
+    div.img-slider__arrow_right.js-img-slider__arrow_right
       span.arrow__right
-    div.img-slider__dots 
+    div.img-slider__dots.js-img-slider__dots 

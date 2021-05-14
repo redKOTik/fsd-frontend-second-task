@@ -1,16 +1,13 @@
-import $ from 'jquery';
-import moment from 'moment';
-
-import '@assets/plugins/multiselect/multiselect-styles.css';
-import '@assets/plugins/datepicker/datepicker-styles.css';
-
 import initListExpandable from '@blocks/checkbox-list-expandable/index';
 import initSlider from '@blocks/slider/index';
 import initRate from '@blocks/rate/index';
 import initPagination from '@blocks/pagination/index';
+import initDatepicker from '@blocks/datepicker/index';
+import initMultiselect from '@blocks/multiselect/index';
 
-export function initElementsJs() {
-  $('.js-multiselect-collapsed').multiselect({
+export function initElements() {
+  // multiselects
+  initMultiselect({
     state: 'Collapsed',
     options: [
       { text: 'взрослые', value: '0' },
@@ -19,28 +16,9 @@ export function initElementsJs() {
     title: 'Сколько гостей',
     totalTextTitle: 'гостя',
     showAllValue: false
-  });
+  }, '.js-multiselect-collapsed');
 
-  $('.js-datepicker-range').datepicker({
-    mode: 'Range'
-  }).datepicker('update', {
-    selected: [{
-      end: moment().locale('ru').set({ date: 19, month: 7, year: 2019 })
-    }]
-  });
-
-  $('.js-datepicker-range-filter').datepicker({
-    mode: 'Range',
-    select: 'One',
-    title: 'ДД.МММ'
-  }).datepicker('update', {
-    selected: [{
-      start: moment().locale('ru').set({ date: 19, month: 7, year: 2020 }),
-      end: moment().locale('ru').set({ date: 23, month: 7, year: 2020 })
-    }]
-  });
-
-  $('.js-multiselect-collapsed-with-value').multiselect({
+  initMultiselect({
     state: 'Collapsed',
     options: [
       { text: 'спальни', value: '2' },
@@ -48,9 +26,9 @@ export function initElementsJs() {
       { text: 'ванные комнаты', value: '0' }],
     title: 'Сколько всего',
     showAllValue: true
-  });
+  }, '.js-multiselect-collapsed-with-value');
 
-  $('.js-multiselect-expanded-with-value').multiselect({
+  initMultiselect({
     state: 'Expanded',
     options: [
       { text: 'спальни', value: '2' },
@@ -58,9 +36,9 @@ export function initElementsJs() {
       { text: 'ванные комнаты', value: '0' }],
     title: 'Сколько всего',
     showAllValue: true
-  });
+  }, '.js-multiselect-expanded-with-value');
 
-  $('.js-multiselect-expanded-default').multiselect({
+  initMultiselect({
     state: 'Collapsed',
     options: [
       { text: 'взрослые', value: '0' },
@@ -69,9 +47,9 @@ export function initElementsJs() {
     title: 'Сколько гостей',
     totalTextTitle: 'гостя',
     showAllValue: false
-  });
+  }, '.js-multiselect-expanded-default');
 
-  $('.js-multiselect-expanded-total-value').multiselect({
+  initMultiselect({
     state: 'Collapsed',
     options: [
       { text: 'взрослые', value: '2' },
@@ -80,7 +58,7 @@ export function initElementsJs() {
     title: 'Сколько гостей',
     totalTextTitle: 'гостя',
     showAllValue: false
-  });
+  }, '.js-multiselect-expanded-total-value');
 
   // slider
   initSlider({
@@ -102,4 +80,20 @@ export function initElementsJs() {
 
   // star rating
   initRate();
+
+  // datepickers
+  initDatepicker({
+    mode: 'Range'
+  }, '.js-datepicker-range', {
+    end: { date: 19, month: 7, year: 2019 }
+  });
+
+  initDatepicker({
+    mode: 'Range',
+    select: 'One',
+    title: 'ДД.МММ'
+  }, '.js-datepicker-range-filter', {
+    start: { date: 19, month: 7, year: 2020 },
+    end: { date: 23, month: 7, year: 2020 }
+  });
 }
