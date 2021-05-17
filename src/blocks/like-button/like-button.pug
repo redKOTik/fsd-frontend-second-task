@@ -1,4 +1,4 @@
 mixin like(count, checked)
-  label.like
-    input.like__button(type="checkbox", checked!=checked)
-    div.like__label= count
+  label.like.js-like
+    input.like__button.js-like__button(type="checkbox", checked!=checked)
+    div.like__label.js-like__label= count

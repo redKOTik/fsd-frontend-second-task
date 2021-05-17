@@ -1,5 +1,6 @@
 import initModal from '@blocks/modal/index';
 import initDiagram from '@blocks/diagram/index';
+import initLikeButtons from '@blocks/like-button/index';
 import initReserveFormPlugins from '@blocks/reserve-form/index';
 
 export function initDetails() {
@@ -14,6 +15,9 @@ export function initDetails() {
     grey: 0,
     summary: 1040
   });
+
+  // likes
+  initLikeButtons();
 
   // reserve form modal
   initModal('.js-modal', '.js-detail__button .js-button', '.js-overlay');
