@@ -2,4 +2,4 @@ mixin bulletColored(items)
   ul.bullet-list-colored
     each item in items
       include ./__item/bullet-list-colored__item
-      +bulletItemColored(item.text, item.color)
+      +bulletItemColored(item.text, item.color, item.data)

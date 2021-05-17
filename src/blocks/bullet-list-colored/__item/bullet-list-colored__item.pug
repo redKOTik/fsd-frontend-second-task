@@ -1,2 +1,2 @@
-mixin bulletItemColored(item, modificator)
-  li.bullet-list-colored__item(class="bullet-list-colored__item_marker_color_"+modificator)= item
+mixin bulletItemColored(item, modificator, data)
+  li.bullet-list-colored__item(class="bullet-list-colored__item_marker_color_"+modificator, data-block=data)= item

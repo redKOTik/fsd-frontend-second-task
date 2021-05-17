@@ -6,40 +6,124 @@
 
 .diagram__block {
   position: absolute;
+
+  &.diagram__block_active {
+    border-width: 6px;
+  } 
 }
 
 .diagram__block_yellow {
-  position: absolute;
   width: 60px;
   height: 122px;
   border-radius: 120px 0 0 120px;
   border: 4px solid #ffe39c;
   border-right: none;
+
+  .diagram__pseudo-block_yellow {
+    width: 56px;
+    height: 114px;
+    border-radius: 120px 0 0 120px;
+    border: 0px solid #ffe39c;
+    border-right: none;
+  }
+  
+}
+
+.diagram__block_yellow.diagram__block_active {
+  left: -1px;
+  top: -1px;
+  width: 61px;
+  height: 124px;
+  cursor: pointer;
+
+  & ~ .diagram__info {
+    color: #ffe39c;
+  }
 }
 
 .diagram__block_green {
-  position: absolute;
   width: 60px;
   height: 60px;
   border-radius: 0 0 120px 0;
   border: 4px solid #6fcf97;
   border-left: none;
   border-top: none;
-
   right: 8px;
-  bottom: 8px;
+  bottom: 8px;  
+
+  .diagram__pseudo-block_green {
+    width: 56px;
+    height: 56px;
+    border-radius: 0 0 120px 0;
+    border: 0px solid #6fcf97;
+    border-left: none;
+    border-top: none;
+    bottom: 8px;
+    right: 0px;
+  }
+}
+
+.diagram__block_green.diagram__block_active {
+  right: 7px;
+  bottom: 7px;
+  width: 61px;
+  height: 61px;
+  cursor: pointer;
+
+  & ~ .diagram__info {
+    color: #6fcf97;
+  }
 }
 
 .diagram__block_purple {
-  position: absolute;
   width: 60px;
   height: 60px;
   border-radius: 0 120px 0 0;
   border: 4px solid #bc9cff;
   border-left: none;
   border-bottom: none;
-
   right: 8px;
+
+  .diagram__pseudo-block_purple {
+    width: 56px;
+    height: 56px;
+    border-radius: 0 120px 0 0;
+    border: 0px solid #bc9cff;
+    border-left: none;
+    border-bottom: none;
+    right: 0px;
+  }
+}
+
+.diagram__block_purple.diagram__block_active {
+  top: -1px;
+  right: 7px;
+  width: 61px;
+  height: 61px;
+  cursor: pointer;
+
+  & ~ .diagram__info {
+    color: #bc9cff;
+  }
+}
+
+.diagram__block_grey {
+  width: 0px;
+  height: 0px;
+  border: 0px solid #919191;
+
+  .diagram__pseudo-block_grey {
+    width: 0px;
+    height: 0px;
+    border: 0px solid #919191;
+  }  
+}
+
+.diagram__block_grey.diagram__block_active {
+  border-width: 0px;
+  & ~ .diagram__info {
+    color: #919191;
+  }
 }
 
 .diagram__info {
@@ -48,12 +132,12 @@
   top: 27%;
   left: 23%;
   text-align: center;
+  color: #000;
 }
 
 .diagram__name,
 .diagram__count {
-  margin: 0;
-  color: #bc9cff;
+  margin: 0;  
   font-style: normal;
   font-weight: bold;
   font-family: Montserrat, Arial, sans-serif;

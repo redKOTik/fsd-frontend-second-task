@@ -24,10 +24,10 @@ div.details-room
               include ../../../blocks/diagram/diagram
             div.detail__list
               include ../../../blocks/bullet-list-colored/bullet-list-colored
-              +bulletColored([{ text: 'Великолепно', color: 'yellow' },
-                { text: 'Хорошо', color: 'green' },
-                { text: 'Удовлетворительно', color: 'purple' },
-                { text: 'Разочарован', color: 'black' }])
+              +bulletColored([{ text: 'Великолепно', color: 'yellow', data: 'yellow' },
+                { text: 'Хорошо', color: 'green', data: 'green' },
+                { text: 'Удовлетворительно', color: 'purple', data: 'purple' },
+                { text: 'Разочарован', color: 'grey', data: 'grey' }])
             div.detail__button.js-detail__button.hide
               include ../../../blocks/button/button
               +button('форма бронирования', 'button_size_wide button_height_large button_bg_purple button_color_white button_without-border button_focused')
