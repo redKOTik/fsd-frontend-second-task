@@ -1,43 +1,654 @@
-!(function (t, e) { if (typeof exports === 'object' && typeof module === 'object')module.exports = e(require('jquery')); else if (typeof define === 'function' && define.amd)define(['jquery'], e); else { var n = typeof exports === 'object' ? e(require('jquery')) : e(t.jquery); for (var s in n)(typeof exports === 'object' ? exports : t)[s] = n[s]; } }(window, (function (t) {
-  return (function (t) { var e = {}; function n(s) { if (e[s]) return e[s].exports; var i = e[s] = { i: s, l: !1, exports: {} }; return t[s].call(i.exports, i, i.exports, n), i.l = !0, i.exports; } return n.m = t, n.c = e, n.d = function (t, e, s) { n.o(t, e) || Object.defineProperty(t, e, { enumerable: !0, get: s }); }, n.r = function (t) { typeof Symbol !== 'undefined' && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, { value: 'Module' }), Object.defineProperty(t, '__esModule', { value: !0 }); }, n.t = function (t, e) { if (1 & e && (t = n(t)), 8 & e) return t; if (4 & e && typeof t === 'object' && t && t.__esModule) return t; var s = Object.create(null); if (n.r(s), Object.defineProperty(s, 'default', { enumerable: !0, value: t }), 2 & e && typeof t !== 'string') for (var i in t)n.d(s, i, function (e) { return t[e]; }.bind(null, i)); return s; }, n.n = function (t) { var e = t && t.__esModule ? function () { return t.default; } : function () { return t; }; return n.d(e, 'a', e), e; }, n.o = function (t, e) { return Object.prototype.hasOwnProperty.call(t, e); }, n.p = '', n(n.s = 5); }([function (t, e, n) {
-    function s(t, e) { t.addClass('hidden'); const n = e.defaultOptions.state === 'Expanded' ? 'active' : null; const s = u('span', 'multiselect__title'); const i = u('div', n === null ? 'multiselect' : ['multiselect', n]); i.tabIndex = -1; const o = u('div', 'multiselect__content'); const a = u('div', 'multiselect__arrow'); return a.classList.add('icon'), s.textContent = e.defaultOptions.title, i.insertAdjacentElement('beforeend', s), i.insertAdjacentElement('beforeend', a), i.insertAdjacentElement('beforeend', o), t[0].insertAdjacentElement('afterend', i), e.defaultOptions.options.forEach((t, e)=>{ o.insertAdjacentElement('beforeend', (function (t, e) { const n = u('div', 'option'); n.dataset.id = e.toString(); const s = u('div', 'option__text'); const i = u('div', 'option__counter'); return s.textContent = t.text, i.innerHTML = `\n        <button class="${+t.value == 0 ? 'disabled' : ''}">-</button><span>${t.value}</span><button>+</button>\n    `, n.insertAdjacentElement('beforeend', s), n.insertAdjacentElement('beforeend', i), n; }(t, e))); }), o.insertAdjacentElement('beforeend', (function () { const t = u('div', ['multiselect__buttons', 'off']); return t.innerHTML = '\n        <button class="clear__button">очистить</button><button class="apply__button">применить</button>\n    ', t; }())), l(i, e.options), i; } function i(t, e, n) { const s = t.querySelector(`.option[data-id="${n}"]`); const i = s == null ? void 0 : s.querySelector('.option__counter span'); const o = s == null ? void 0 : s.querySelector('.option__text'); const a = s == null ? void 0 : s.querySelector('.option__counter button:first-of-type'); i.textContent = e.value, o.textContent = e.text, a.classList.toggle('disabled', +e.value == 0); } function o(t, e, n) { const s = t[0].querySelectorAll('option')[n]; s.value = e.value, s.textContent = e.text; } function a(t, e) { t.querySelector('span.multiselect__title').textContent = e; } function l(t, e) { e.showAllValue ? (function (t, e, n) { let s = ''; e.forEach(t=>s += +t.value > 0 ? `${t.value} ${t.text}, ` : ''), a(t, s.length > 20 ? s.substring(0, 20) + '...' : s.length === 0 ? n : s.substring(0, s.length - 2)); }(t, e.options, e.title)) : (function (t, e, n, s) { let i = 0; e.forEach(t=>i += +t.value), a(t, i > 0 ? `${i} ${n}` : s); }(t, e.options, e.totalTextTitle, e.title)); } function r(t, e, n) { if (t === 'state' || t === 'title') return e[t] !== n[t]; if (t === 'options') { if (e.options.length !== n.options.length) return !0; return void 0 !== e.options.find((t, e)=>n.options[e].value !== t.value || n.options[e].text !== t.text); } return !1; } function c(t, e) { const n = t.querySelector('.multiselect__buttons'); const s = t.querySelector('.clear__button'); const i = t.querySelector('.apply__button'); s.classList.toggle('active', e.clear), i.classList.toggle('active', e.apply), n.classList.toggle('off', !e.clear && !e.apply); } function u(t, e) { const n = document.createElement(t); return e && typeof e === 'string' ? n.classList.add(e) : e && n.classList.add(...e), n; }n.d(e, 'c', (function () { return s; })), n.d(e, 'e', (function () { return i; })), n.d(e, 'g', (function () { return o; })), n.d(e, 'f', (function () { return a; })), n.d(e, 'a', (function () { return l; })), n.d(e, 'b', (function () { return r; })), n.d(e, 'd', (function () { return c; }));
-  }, function (e, n) { e.exports = t; }, function (t, e, n) {
-    (function (t) {
-      n.d(e, 'a', (function () { return o; })); var s = n(3); var i = n(4); class o {
-        constructor(e, n) { this.updateModelHandler = e=>{ var n; const s = e.target; const i = t(this.view.mask).has(s).length !== 0 || t(this.view.mask).is(s); if (e.type !== 'blur') if (s && i && s instanceof HTMLButtonElement && s.classList.contains('apply__button')) this.model.updateData('save'); else if (s && i && s instanceof HTMLButtonElement && s.classList.contains('clear__button')) this.model.updateData('clear'); else if (s && i && s instanceof HTMLButtonElement && s.classList.length === 0) { const t = ((n = s.parentNode) === null || void 0 === n ? void 0 : n.parentNode).dataset.id; const e = s.innerHTML; this.model.updateData(t, e); } else if (s && i && s instanceof HTMLDivElement && s.classList.contains('multiselect') && s.classList.contains('active')) this.model.updateData('state', 'Collapsed'); else if (s && i && s instanceof HTMLDivElement && s.classList.contains('multiselect') && !s.classList.contains('active')) this.model.updateData('state', 'Expanded'); else { if (s && i && (s.classList.contains('multiselect__title') || s.classList.contains('multiselect__arrow'))) { const t = s.parentNode; if (t && t.classList.contains('multiselect') && t.classList.contains('active')) return void this.model.updateData('state', 'Collapsed'); if (s && t.classList.contains('multiselect') && !t.classList.contains('active')) return void this.model.updateData('state', 'Expanded'); }s && this.view.mask.classList.contains('active') && !i && this.model.updateData('state', 'Collapsed'); } else this.model.updateData('state', 'Collapsed'); }, this.model = new i.a(n), this.view = new s.a(e, this.model), this.view.bindChangeModelHandler(this.updateModelHandler); }
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("jquery"));
+	else if(typeof define === 'function' && define.amd)
+		define(["jquery"], factory);
+	else {
+		var a = typeof exports === 'object' ? factory(require("jquery")) : factory(root["jquery"]);
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(window, function(__WEBPACK_EXTERNAL_MODULE_jquery__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./plugin/multiselect.ts");
+/******/ })
+/************************************************************************/
+/******/ ({
 
-        getModel() { return this.model; }
-      }
-    }).call(this, n(1));
-  }, function (t, e, n) {
-    (function (t) {
-      n.d(e, 'a', (function () { return i; })); var s = n(0); class i {
-        constructor(t, e) { this.updateView = (t, e, n)=>{ Object(s.d)(this.mask, n), Object.keys(t).forEach(n=>{ if (Object(s.b)(n, t, e)) switch (n) { case 'state': return void this.mask.classList.toggle('active', t.state === 'Expanded'); case 'options': return t.options.forEach((t, e)=>{ Object(s.e)(this.mask, t, e), Object(s.g)(this.view, t, e); }), void Object(s.a)(this.mask, t); case 'title': return void Object(s.f)(this.mask, t.title); } }); }, this.model = e, this.view = t, this.unsub = this.model.subscribe(this.updateView), this.mask = Object(s.c)(t, e), this.model.defaultOptions.state === 'Expanded' && this.mask.focus(); }
+/***/ "./plugin/multiselect.ts":
+/*!*******************************!*\
+  !*** ./plugin/multiselect.ts ***!
+  \*******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-        bindChangeModelHandler(e) { this.mask.addEventListener('click', e), this.mask.addEventListener('blur', e), this.mask.querySelectorAll('button').forEach(e=>{ t(e).on('mousedown', (function () { return !1; })); }); }
-      }
-    }).call(this, n(1));
-  }, function (t, e, n) {
-    n.d(e, 'a', (function () { return s; })); class s {
-      constructor(t) { this.defaultOptions = t, this.options = JSON.parse(JSON.stringify(this.defaultOptions)), this.clearIsActive = this.isActiveClear(this.options.options), this.applyIsActive = !1, this.tempCondition = JSON.parse(JSON.stringify(this.defaultOptions.options)); }
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(jQuery) {/* harmony import */ var _plugin_mvc_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../plugin/mvc/controller */ "./plugin/mvc/controller.ts");
 
-      subscribe(t) { return this.observer = t, { unsubscribe: ()=>{ this.observer = void 0; } }; }
+;
 
-      setData(t, e) { e && (this.tempCondition = t.options), this.clearIsActive = this.isActiveClear(t.options); const n = JSON.parse(JSON.stringify(this.options)); this.options = Object.assign({}, this.options, t), typeof this.observer === 'function' && this.observer(this.options, n, { clear: this.clearIsActive, apply: this.applyIsActive }); }
-
-      getDefaultOptions() { return Object.assign({}, this.defaultOptions); }
-
-      isActiveClear(t) { return void 0 !== t.find(t=>+t.value > 0); }
-
-      updateData(t, e) { if (t !== 'state' || e !== 'Expanded' && e !== 'Collapsed') if (t === 'save') this.applyIsActive = !1, this.tempCondition = JSON.parse(JSON.stringify(this.options.options)), this.setData(this.options); else if (t === 'clear') { this.applyIsActive = !0; const t = JSON.parse(JSON.stringify(this.options)); t.options.forEach(t=>t.value = '0'), this.setData(t); } else { this.applyIsActive = !0; const n = JSON.parse(JSON.stringify(this.options)); let s = +n.options[+t].value; e === '+' ? s++ : s--, s < 0 && (s = 0), n.options[+t].value = s.toString(), this.setData(n); } else { this.applyIsActive = !1; const t = JSON.parse(JSON.stringify(this.options)); t.state = e, t.options = JSON.parse(JSON.stringify(this.tempCondition)), this.setData(t); } }
+(function ($) {
+  var pluginName = 'multiselect';
+  var defaultOptions = {
+    state: 'Collapsed',
+    options: [{
+      text: 'спальни',
+      value: '0',
+      unique: false
+    }, {
+      text: 'кровати',
+      value: '0',
+      unique: false
+    }, {
+      text: 'ванные комнаты',
+      value: '0',
+      unique: false
+    }],
+    title: 'Сколько комнат',
+    totalTextTitle: 'комнаты'
+  };
+  var methods = {
+    init: function init(object, options) {
+      object.data(pluginName, new _plugin_mvc_controller__WEBPACK_IMPORTED_MODULE_0__["Controller"](object, options));
+    },
+    update: function update(object, content) {
+      object.data(pluginName).getModel().setData(content, true);
+    },
+    destroy: function destroy(object) {
+      object.data(pluginName).destroy();
+      object.removeData(pluginName);
     }
-  }, function (t, e, n) {
-    n.r(e), function (t) {
-      var e = n(2); !(function (t) {
-        const n = {
-          state: 'Collapsed', options: [{ text: 'спальни', value: '0' }, { text: 'кровати', value: '0' }, { text: 'ванные комнаты', value: '0' }], title: 'Сколько комнат', showAllValue: !1, totalTextTitle: 'комнаты'
-        }; const s = { init: (t, n)=>{ t.data('multiselect', new e.a(t, n)); }, update: (t, e)=>{ t.data('multiselect').getModel().setData(e, !0); }, destroy: t=>{ t.data('multiselect').destroy(), t.removeData('multiselect'); } }; t.fn.multiselect = function (e) { let i; const o = this.data('multiselect'); if (typeof e === 'string' && e === 'update')s[e].apply(this, [this, arguments[1]]); else if (typeof e === 'string' && e === 'destroy')s[e](this); else if (typeof e === 'boolean')i = o; else { const i = t.extend({}, n, e); s.init.apply(this, [this, i]); } return i || this; };
-      }(t));
-    }.call(this, n(1));
-  }]));
-})));
+  };
+
+  $.fn.multiselect = function (options) {
+    var result;
+
+    var _this = this.data(pluginName);
+
+    if (typeof options === 'string' && options === 'update') {
+      methods[options].apply(this, [this, arguments[1]]);
+    } else if (typeof options === 'string' && options === 'destroy') {
+      methods[options](this);
+    } else if (typeof options === 'boolean') {
+      result = _this;
+    } else {
+      var opts = $.extend({}, defaultOptions, options);
+      methods['init'].apply(this, [this, opts]);
+    }
+
+    return result || this;
+  };
+})(jQuery);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
+/***/ "./plugin/mvc/controller.ts":
+/*!**********************************!*\
+  !*** ./plugin/mvc/controller.ts ***!
+  \**********************************/
+/*! exports provided: Controller */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Controller", function() { return Controller; });
+/* harmony import */ var _view__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view */ "./plugin/mvc/view.ts");
+/* harmony import */ var _model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./model */ "./plugin/mvc/model.ts");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var Controller = /*#__PURE__*/function () {
+  function Controller(object, options) {
+    var _this = this;
+
+    _classCallCheck(this, Controller);
+
+    _defineProperty(this, "updateModelHandler", function (event) {
+      var target = event.target;
+      var itIsThat = $(_this.view.mask).has(target).length !== 0 || $(_this.view.mask).is(target);
+
+      if (event.type === 'blur') {
+        _this.model.updateData('save');
+
+        _this.model.updateData('state', 'Collapsed');
+
+        return;
+      }
+
+      if (target && itIsThat && target instanceof HTMLButtonElement && target.classList.contains('apply__button')) {
+        _this.model.updateData('save');
+
+        return;
+      }
+
+      if (target && itIsThat && target instanceof HTMLButtonElement && target.classList.contains('clear__button')) {
+        _this.model.updateData('clear');
+
+        return;
+      }
+
+      if (target && itIsThat && target instanceof HTMLButtonElement && target.classList.length === 0) {
+        var _target$parentNode;
+
+        var option = (_target$parentNode = target.parentNode) === null || _target$parentNode === void 0 ? void 0 : _target$parentNode.parentNode;
+        var optionId = option.dataset.id;
+        var operation = target.innerHTML;
+
+        _this.model.updateData(optionId, operation);
+
+        return;
+      }
+
+      if (target && itIsThat && target instanceof HTMLDivElement && target.classList.contains('multiselect') && target.classList.contains('active')) {
+        _this.model.updateData('save');
+
+        _this.model.updateData('state', 'Collapsed');
+
+        return;
+      }
+
+      if (target && itIsThat && target instanceof HTMLDivElement && target.classList.contains('multiselect') && !target.classList.contains('active')) {
+        _this.model.updateData('state', 'Expanded');
+
+        return;
+      }
+
+      if (target && itIsThat && (target.classList.contains('multiselect__title') || target.classList.contains('multiselect__arrow'))) {
+        var div = target.parentNode;
+
+        if (div && div.classList.contains('multiselect') && div.classList.contains('active')) {
+          _this.model.updateData('save');
+
+          _this.model.updateData('state', 'Collapsed');
+
+          return;
+        }
+
+        if (target && div.classList.contains('multiselect') && !div.classList.contains('active')) {
+          _this.model.updateData('state', 'Expanded');
+
+          return;
+        }
+      }
+
+      if (target && _this.view.mask.classList.contains('active') && !itIsThat) {
+        _this.model.updateData('save');
+
+        _this.model.updateData('state', 'Collapsed');
+
+        return;
+      }
+    });
+
+    this.model = new _model__WEBPACK_IMPORTED_MODULE_1__["Model"](options);
+    this.view = new _view__WEBPACK_IMPORTED_MODULE_0__["View"](object, this.model);
+    this.view.bindChangeModelHandler(this.updateModelHandler);
+  }
+
+  _createClass(Controller, [{
+    key: "getModel",
+    value: function getModel() {
+      return this.model;
+    }
+  }]);
+
+  return Controller;
+}();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
+/***/ "./plugin/mvc/model.ts":
+/*!*****************************!*\
+  !*** ./plugin/mvc/model.ts ***!
+  \*****************************/
+/*! exports provided: Model */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Model", function() { return Model; });
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Model = /*#__PURE__*/function () {
+  function Model(options) {
+    _classCallCheck(this, Model);
+
+    this.defaultOptions = options;
+    this.options = JSON.parse(JSON.stringify(this.defaultOptions));
+    this.clearIsActive = this.isActiveClear(this.options.options);
+    this.applyIsActive = false;
+    this.tempCondition = JSON.parse(JSON.stringify(this.defaultOptions.options));
+  }
+
+  _createClass(Model, [{
+    key: "subscribe",
+    value: function subscribe(observer) {
+      var _this = this;
+
+      this.observer = observer;
+      return {
+        unsubscribe: function unsubscribe() {
+          _this.observer = undefined;
+        }
+      };
+    }
+  }, {
+    key: "setData",
+    value: function setData(content, save) {
+      //console.log('update model', content);
+      save ? this.tempCondition = content.options : false;
+      this.clearIsActive = this.isActiveClear(content.options);
+      var prevOptions = JSON.parse(JSON.stringify(this.options));
+      this.options = Object.assign({}, this.options, content);
+
+      if (typeof this.observer === 'function') {
+        this.observer(this.options, prevOptions, {
+          clear: this.clearIsActive,
+          apply: this.applyIsActive
+        });
+      }
+    }
+  }, {
+    key: "getDefaultOptions",
+    value: function getDefaultOptions() {
+      return _objectSpread({}, this.defaultOptions);
+    }
+  }, {
+    key: "isActiveClear",
+    value: function isActiveClear(options) {
+      var el = options.find(function (el) {
+        return +el.value > 0;
+      });
+      return el !== undefined;
+    }
+  }, {
+    key: "updateData",
+    value: function updateData(option, value) {
+      if (option === 'state' && (value === 'Expanded' || value === 'Collapsed')) {
+        this.applyIsActive = false;
+        var content = JSON.parse(JSON.stringify(this.options));
+        content.state = value;
+        content.options = JSON.parse(JSON.stringify(this.tempCondition));
+        this.setData(content);
+      } else if (option === 'save') {
+        this.applyIsActive = false;
+        this.tempCondition = JSON.parse(JSON.stringify(this.options.options));
+        this.setData(this.options);
+      } else if (option === 'clear') {
+        this.applyIsActive = true;
+
+        var _content = JSON.parse(JSON.stringify(this.options));
+
+        _content.options.forEach(function (el) {
+          return el.value = '0';
+        });
+
+        this.setData(_content);
+      } else {
+        this.applyIsActive = true;
+
+        var _content2 = JSON.parse(JSON.stringify(this.options));
+
+        var newValue = +_content2.options[+option].value;
+        value === '+' ? newValue++ : newValue--;
+        newValue < 0 ? newValue = 0 : newValue;
+        _content2.options[+option].value = newValue.toString();
+        this.setData(_content2);
+      } //console.log(`update model through view`, this.options);
+
+    }
+  }]);
+
+  return Model;
+}();
+
+/***/ }),
+
+/***/ "./plugin/mvc/view.ts":
+/*!****************************!*\
+  !*** ./plugin/mvc/view.ts ***!
+  \****************************/
+/*! exports provided: View */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View", function() { return View; });
+/* harmony import */ var _utils_view_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/view.functions */ "./plugin/utils/view.functions.ts");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var View = /*#__PURE__*/function () {
+  function View(view, model) {
+    var _this = this;
+
+    _classCallCheck(this, View);
+
+    _defineProperty(this, "updateView", function (data, prevData, state) {
+      Object(_utils_view_functions__WEBPACK_IMPORTED_MODULE_0__["setBtnState"])(_this.mask, state);
+      Object.keys(data).forEach(function (key) {
+        if (Object(_utils_view_functions__WEBPACK_IMPORTED_MODULE_0__["checkKey"])(key, data, prevData)) {
+          switch (key) {
+            case 'state':
+              _this.mask.classList.toggle('active', data.state === 'Expanded');
+
+              return;
+
+            case 'options':
+              data.options.forEach(function (item, index) {
+                Object(_utils_view_functions__WEBPACK_IMPORTED_MODULE_0__["setMaskValue"])(_this.mask, item, index);
+                Object(_utils_view_functions__WEBPACK_IMPORTED_MODULE_0__["setViewValue"])(_this.view, item, index);
+              });
+              Object(_utils_view_functions__WEBPACK_IMPORTED_MODULE_0__["changeTitle"])(_this.mask, data);
+              return;
+
+            case 'title':
+              Object(_utils_view_functions__WEBPACK_IMPORTED_MODULE_0__["setTitle"])(_this.mask, data.title);
+              return;
+          }
+        }
+      });
+    });
+
+    this.model = model;
+    this.view = view;
+    this.unsub = this.model.subscribe(this.updateView);
+    this.mask = Object(_utils_view_functions__WEBPACK_IMPORTED_MODULE_0__["createMultiselect"])(view, model);
+
+    if (this.model.defaultOptions.state === 'Expanded') {
+      this.mask.focus();
+    }
+  }
+
+  _createClass(View, [{
+    key: "bindChangeModelHandler",
+    value: function bindChangeModelHandler(handler) {
+      this.mask.addEventListener('click', handler);
+      this.mask.addEventListener('blur', handler);
+      this.mask.querySelectorAll('button').forEach(function (button) {
+        $(button).on('mousedown', function () {
+          return false;
+        });
+      });
+    }
+  }]);
+
+  return View;
+}();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
+/***/ "./plugin/utils/view.functions.ts":
+/*!****************************************!*\
+  !*** ./plugin/utils/view.functions.ts ***!
+  \****************************************/
+/*! exports provided: createMultiselect, setMaskValue, setViewValue, setTitle, changeTitle, checkKey, setBtnState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createMultiselect", function() { return createMultiselect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setMaskValue", function() { return setMaskValue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setViewValue", function() { return setViewValue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTitle", function() { return setTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeTitle", function() { return changeTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkKey", function() { return checkKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setBtnState", function() { return setBtnState; });
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function createMultiselect(view, model) {
+  view.addClass('hidden');
+  var active = model.defaultOptions.state === 'Expanded' ? 'active' : null;
+  var spanTitle = createElement('span', 'multiselect__title');
+  var divHead = createElement('div', active === null ? 'multiselect' : ['multiselect', active]);
+  divHead.tabIndex = -1;
+  var divContent = createElement('div', 'multiselect__content');
+  var icon = createElement('div', 'multiselect__arrow');
+  icon.classList.add('icon');
+  spanTitle.textContent = model.defaultOptions.title;
+  divHead.insertAdjacentElement('beforeend', spanTitle);
+  divHead.insertAdjacentElement('beforeend', icon);
+  divHead.insertAdjacentElement('beforeend', divContent);
+  view[0].insertAdjacentElement('afterend', divHead);
+  model.defaultOptions.options.forEach(function (option, index) {
+    divContent.insertAdjacentElement('beforeend', createOption(option, index));
+  });
+  divContent.insertAdjacentElement('beforeend', createBtns());
+  changeTitle(divHead, model.options);
+  return divHead;
+}
+function setMaskValue(mask, item, index) {
+  var option = mask.querySelector(".option[data-id=\"".concat(index, "\"]"));
+  var counter = option === null || option === void 0 ? void 0 : option.querySelector('.option__counter span');
+  var optionName = option === null || option === void 0 ? void 0 : option.querySelector('.option__text');
+  var decrementBtn = option === null || option === void 0 ? void 0 : option.querySelector('.option__counter button:first-of-type');
+  counter.textContent = item.value;
+  optionName.textContent = item.text;
+  decrementBtn.classList.toggle('disabled', +item.value === 0);
+}
+function setViewValue(view, item, index) {
+  var option = view[0].querySelectorAll('option')[index];
+  option.value = item.value;
+  option.textContent = item.text;
+}
+function setTitle(mask, title) {
+  var titleEl = mask.querySelector('span.multiselect__title');
+  titleEl.textContent = title;
+}
+function changeTitle(mask, data) {
+  makeTitle(mask, data.options, data.totalTextTitle, data.title);
+}
+
+function makeTitle(mask, options, totalTitle, defaultTitle) {
+  var title = '';
+  var compositeTitle = '';
+  var amount = 0;
+  var otherAmount = 0;
+  options.forEach(function (item) {
+    if (item.unique) {
+      compositeTitle += +item.value > 0 ? "".concat(item.value, " ").concat(item.text, ", ") : '';
+      otherAmount += +item.value;
+    } else {
+      amount += +item.value;
+    }
+  });
+  var totalAmount = amount + otherAmount;
+
+  if (totalAmount > 0) {
+    title = (amount > 0 ? "".concat(amount, " ").concat(totalTitle, ", ") : '') + compositeTitle;
+  } else {
+    title = defaultTitle;
+  }
+
+  if (totalAmount > 0) {
+    title = title.substring(0, title.length - 2);
+  }
+
+  setTitle(mask, title.length > 19 ? title.substring(0, 20) + '...' : title.length === 0 ? defaultTitle : title);
+}
+
+function checkKey(key, data, oldData) {
+  if (key === 'state' || key === 'title') {
+    return data[key] !== oldData[key];
+  } else if (key === 'options') {
+    if (data.options.length !== oldData.options.length) {
+      return true;
+    } else {
+      var option = data.options.find(function (option, index) {
+        return oldData.options[index].value !== option.value || oldData.options[index].text !== option.text;
+      });
+      return option !== undefined;
+    }
+  } else {
+    return false;
+  }
+}
+function setBtnState(mask, state) {
+  var btnDiv = mask.querySelector('.multiselect__buttons');
+  var btnClear = mask.querySelector('.clear__button');
+  var btnApply = mask.querySelector('.apply__button');
+  btnClear.classList.toggle('active', state.clear);
+  btnApply.classList.toggle('active', state.apply);
+  btnDiv.classList.toggle('off', !state.clear && !state.apply);
+}
+
+function createOption(option, id) {
+  var divOption = createElement('div', 'option');
+  divOption.dataset.id = id.toString();
+  var divTextOption = createElement('div', 'option__text');
+  var divCounter = createElement('div', 'option__counter');
+  divTextOption.textContent = option.text;
+  divCounter.innerHTML = "\n        <button class=\"".concat(+option.value === 0 ? 'disabled' : '', "\">-</button><span>").concat(option.value, "</span><button>+</button>\n    ");
+  divOption.insertAdjacentElement('beforeend', divTextOption);
+  divOption.insertAdjacentElement('beforeend', divCounter);
+  return divOption;
+}
+
+function createBtns() {
+  var divBtns = createElement('div', ['multiselect__buttons', 'off']);
+  divBtns.innerHTML = "\n        <button class=\"clear__button\">\u043E\u0447\u0438\u0441\u0442\u0438\u0442\u044C</button><button class=\"apply__button\">\u043F\u0440\u0438\u043C\u0435\u043D\u0438\u0442\u044C</button>\n    ";
+  return divBtns;
+}
+
+function createElement(tag, className) {
+  var _element$classList;
+
+  var element = document.createElement(tag);
+  if (className && typeof className === 'string') element.classList.add(className);else if (className) (_element$classList = element.classList).add.apply(_element$classList, _toConsumableArray(className));
+  return element;
+}
+
+/***/ }),
+
+/***/ "jquery":
+/*!*************************!*\
+  !*** external "jquery" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_jquery__;
+
+/***/ })
+
+/******/ });
+});
+//# sourceMappingURL=bundle.js.map

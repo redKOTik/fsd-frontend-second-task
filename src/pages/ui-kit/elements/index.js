@@ -11,54 +11,49 @@ export function initElements() {
   initMultiselect({
     state: 'Collapsed',
     options: [
-      { text: 'взрослые', value: '0' },
-      { text: 'дети', value: '0' },
-      { text: 'младенцы', value: '0' }],
+      { text: 'взрослые', value: '0', unique: false },
+      { text: 'дети', value: '0', unique: false },
+      { text: 'младенцы', value: '0', unique: true }],
     title: 'Сколько гостей',
-    totalTextTitle: 'гостя',
-    showAllValue: false
+    totalTextTitle: 'гостя'
   }, '.js-multiselect-collapsed');
 
   initMultiselect({
     state: 'Collapsed',
     options: [
-      { text: 'спальни', value: '2' },
-      { text: 'кровати', value: '2' },
-      { text: 'ванные комнаты', value: '0' }],
-    title: 'Сколько всего',
-    showAllValue: true
+      { text: 'спальни', value: '2', unique: true },
+      { text: 'кровати', value: '2', unique: true },
+      { text: 'ванные комнаты', value: '0', unique: true }],
+    title: 'Сколько всего'
   }, '.js-multiselect-collapsed-with-value');
 
   initMultiselect({
     state: 'Expanded',
     options: [
-      { text: 'спальни', value: '2' },
-      { text: 'кровати', value: '2' },
-      { text: 'ванные комнаты', value: '0' }],
-    title: 'Сколько всего',
-    showAllValue: true
+      { text: 'спальни', value: '2', unique: true },
+      { text: 'кровати', value: '2', unique: true },
+      { text: 'ванные комнаты', value: '0', unique: true }],
+    title: 'Сколько всего'
   }, '.js-multiselect-expanded-with-value');
 
   initMultiselect({
     state: 'Collapsed',
     options: [
-      { text: 'взрослые', value: '0' },
-      { text: 'дети', value: '0' },
-      { text: 'младенцы', value: '0' }],
+      { text: 'взрослые', value: '0', unique: false },
+      { text: 'дети', value: '0', unique: false },
+      { text: 'младенцы', value: '0', unique: true }],
     title: 'Сколько гостей',
-    totalTextTitle: 'гостя',
-    showAllValue: false
+    totalTextTitle: 'гостя'
   }, '.js-multiselect-expanded-default');
 
   initMultiselect({
     state: 'Collapsed',
     options: [
-      { text: 'взрослые', value: '2' },
-      { text: 'дети', value: '1' },
-      { text: 'младенцы', value: '0' }],
+      { text: 'взрослые', value: '2', unique: false },
+      { text: 'дети', value: '1', unique: false },
+      { text: 'младенцы', value: '0', unique: true }],
     title: 'Сколько гостей',
-    totalTextTitle: 'гостя',
-    showAllValue: false
+    totalTextTitle: 'гостя'
   }, '.js-multiselect-expanded-total-value');
 
   // slider
