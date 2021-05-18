@@ -2,7 +2,8 @@ mixin header(isAuthorized)
   nav.header.js-header
     include ../burger/burger
     div.header__logo
-      img(src="assets/img/logo/_bg/logo-color.svg", alt="logo")   
+      a(href="http://localhost:8082") 
+        img(src="assets/img/logo/_bg/logo-color.svg", alt="logo")   
     ul.header__menu
       li.header__link.header__link_selected О нас
       li.header__link Услуги

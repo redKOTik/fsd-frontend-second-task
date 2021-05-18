@@ -3,6 +3,6 @@ mixin widgetList(items, isSpecial)
     each item in items
       li(class= item.isSpecial ? 'widget-list__element-special' : 'widget-list__element')(class=item.highlighted ? 'widget-list__element_highlighted js-widget-list__element_highlighted' : '')= item.text
         if item.block
-          div.widget-list__input
+          form.widget-list__input
             input.widget-list__email(placeholder="Email")
-            span.widget-list__arrow
+            button.widget-list__arrow(type="submit")
