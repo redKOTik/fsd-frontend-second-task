@@ -11,11 +11,27 @@
 
   &:first-child {
     margin-top: 0;
+
+    .widget-list__link {
+      color: #1f2041;
+    }
   }
 
   &:last-child {
     margin-bottom: 0;
   }
+
+  &_selected {
+    color: rgba(31, 32, 65, 0.75);
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 700;
+  }
+}
+
+.widget-list__link {
+  text-decoration: none;
+  color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
 }
 
 .widget-list__element-special {

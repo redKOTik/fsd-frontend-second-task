@@ -8,10 +8,7 @@ import { initFilter } from '@pages/website/search-room/index';
 
 import { initCards } from '@pages/ui-kit/cards/index';
 import { initElements } from '@pages/ui-kit/elements/index';
-import {
-  initHeaderJs,
-  initFooterJs
-} from '@pages/ui-kit/headers-and-footers/headers-and-footers';
+import { initHeadersAndFooters } from '@pages/ui-kit/headers-and-footers/index';
 
 export class Router {
   constructor(selector, routes) {
@@ -82,26 +79,26 @@ export class Router {
       case 'register':
         this.initPage(false, content, $body[0], formWrapper, title, 'Registration', 'bg_white', 'register-form-wrapper', 'container container_bg_for-register', ActiveRoute.path);            
         initRegister();        
-        Router.helperFunctions();
+        initHeadersAndFooters();
         break;
       case 'login':
         this.initPage(false, content, $body[0], formWrapper, title, 'Login', 'bg_white', 'login-form-wrapper', 'container container_bg_for-login', ActiveRoute.path);  
-        Router.helperFunctions();
+        initHeadersAndFooters();
         break;
       case 'findroom':
         this.initPage(false, content, $body[0], formWrapper, title, 'Landing', 'bg_white', 'find-room-form-wrapper', 'container container_bg_for-landing', ActiveRoute.path);
         initLanding();
-        Router.helperFunctions();
+        initHeadersAndFooters();
         break;
       case 'details':
         this.initPage(false, content, $body[0], formWrapper, title, 'Details', 'bg_white', null, 'container container__details-room', ActiveRoute.path);
         initDetails();
-        Router.helperFunctions();
+        initHeadersAndFooters();
         break;
       case 'filter':
         this.initPage(false, content, $body[0], formWrapper, title, 'Search room', 'bg_white', null, 'container container__search-room', ActiveRoute.path);
         initFilter();
-        Router.helperFunctions();
+        initHeadersAndFooters();
         break;
       case 'cards':
         this.initPage(true, content, $body[0], null, title, 'Cards', 'bg_gray', null, null, ActiveRoute.path);
@@ -116,7 +113,7 @@ export class Router {
         break;
       case 'haf':
         this.initPage(true, content, $body[0], null, title, 'Headers and Footers', 'bg_gray', null, null, ActiveRoute.path);
-        Router.helperFunctions();
+        initHeadersAndFooters();
         break;
       default:
         this.initPage(true, content, $body[0], null, title, 'Main', 'bg_gray', null, null, 'base');
@@ -128,11 +125,6 @@ export class Router {
 
   toggleClassPlaceholder(className) {
     this.placeholder[0].className = className;
-  }
-
-  static helperFunctions() {
-    initHeaderJs();
-    initFooterJs();
   }
 
   handleFormSubmit(e) {

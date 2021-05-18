@@ -1,7 +1,11 @@
 mixin widgetList(items, isSpecial)
   ul.widget-list
     each item in items
-      li(class= item.isSpecial ? 'widget-list__element-special' : 'widget-list__element')(class=item.highlighted ? 'widget-list__element_highlighted js-widget-list__element_highlighted' : '')= item.text
+      li(class= item.isSpecial ? 'widget-list__element-special js-widget-list__element-special' : 'widget-list__element js-widget-list__element')(class=item.highlighted ? 'widget-list__element_highlighted js-widget-list__element_highlighted' : '')
+        if !item.highlighted
+          a.widget-list__link(href="/mock-address/change-me")= item.text
+        else
+          =item.text           
         if item.block
           form.widget-list__input
             input.widget-list__email(placeholder="Email")

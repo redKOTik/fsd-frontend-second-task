@@ -5,12 +5,17 @@ mixin header(isAuthorized)
       a(href="http://localhost:8082") 
         img(src="assets/img/logo/_bg/logo-color.svg", alt="logo")   
     ul.header__menu
-      li.header__link.header__link_selected О нас
-      li.header__link Услуги
+      li.header__element
+        a.header__link(href="/mock-address/change-me") О нас
+      li.header__element
+        a.header__link(href="/mock-address/change-me") Услуги
         span.header__arrow
-      li.header__link Вакансии
-      li.header__link Новости
-      li.header__link Соглашения
+      li.header__element
+        a.header__link(href="/mock-address/change-me") Вакансии
+      li.header__element
+        a.header__link(href="/mock-address/change-me") Новости
+      li.header__element 
+        a.header__link(href="/mock-address/change-me") Соглашения
         span.header__arrow
     include ./__control/header__control
     +control(isAuthorized)
