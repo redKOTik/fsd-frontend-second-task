@@ -1,5 +1,9 @@
+import $ from 'jquery';
 import Slider from './Slider';
 
-export default function init(options, rootContainer, valueContainer) {
-  return Slider.init(options, rootContainer, valueContainer);
+export default function init() {
+  $('.js-slider-plugin').each((_, domElement) => {
+    const slider = new Slider(domElement);
+    slider.init();
+  });
 }

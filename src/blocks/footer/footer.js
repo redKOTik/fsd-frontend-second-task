@@ -4,12 +4,10 @@ class Footer {
   constructor(root) {
     this.$footer = $(root);
     this.$widget = this.$footer.find('.js-widget');
-
-    this.addEvents();
   }
 
-  static init(root) {
-    return new this(root);
+  init() {
+    this.addEvents();
   }
 
   handleLinkMouseover(e) {

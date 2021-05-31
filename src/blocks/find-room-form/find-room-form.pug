@@ -6,12 +6,14 @@ form.find-room-form.js-find-room-form
   div.find-room-form__dates    
     +label('прибытие', 'label_weight_bold label_position_inline')        
     +label('выезд', 'label_weight_bold')
-    div.find-room-form__datepicker.js-find-room-form__datepicker
-      div.datepicker.js-datepicker
-  div.find-room-form__guest    
+    div.find-room-form__datepicker-plugin
+      - var options = '{"mode":"Range"}';
+      div.datepicker-plugin.js-datepicker-plugin(data-options=options)
+  div.find-room-form__guest        
     +label('гости', 'label_weight_bold')
-    div.find-room-form__multiselect.js-find-room-form__multiselect
-      select.multiselect.js-multiselect(value="Сколько гостей", name="counter")
+    div.find-room-form__multiselect-plugin
+      - options = '{"state":"Collapsed","options":[{"text":"взрослые","value":"0","unique":false},{"text":"дети","value":"0","unique":false},{"text":"младенцы","value":"0","unique":true}],"title":"Сколько гостей","totalTextTitle":"гостя"}';
+      select.multiselect-plugin.js-multiselect-plugin(value="Сколько гостей", name="counter", data-options=options)
         option(value="0") взрослые
         option(value="0") дети  
         option(value="0") младенцы

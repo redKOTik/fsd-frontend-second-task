@@ -5,14 +5,12 @@ class LikeButton {
     this.$likeContainer = $(root);
     this.$input = this.$likeContainer.find('.js-like__button');
     this.$count = this.$likeContainer.find('.js-like__label');
+  }
 
+  init() {
     this.initState();
     this.render();
     this.addEvents();
-  }
-
-  static init(root, state) {
-    return new this(root, state);
   }
 
   initState() {

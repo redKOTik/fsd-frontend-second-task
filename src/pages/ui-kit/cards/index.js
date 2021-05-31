@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 import initFindRoomFormPlugins from '@blocks/find-room-form/index';
 import initRegisterFormPlugins from '@blocks/register-form/index';
 import initReserveFormPlugins from '@blocks/reserve-form/index';
@@ -14,15 +12,7 @@ export function initCards() {
   initReserveFormPlugins();
 
   // calendar
-  initDatepicker({
-    mode: 'Range',
-    state: 'Expanded'
-  }, '.js-calendar', {
-    start: { date: 25, month: 7, year: 2020 },
-    end: { date: 28, month: 7, year: 2020 }
-  });
-
-  $('.js-calendar').next().focus();
+  initDatepicker();
 
   // star rating
   initRate();

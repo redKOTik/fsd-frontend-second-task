@@ -4,11 +4,10 @@ class Burger {
   constructor(element) {
     this.$header = $(element);
     this.$burger = this.$header.find('.js-burger');
-    this.addEvents();
   }
 
-  static init(element) {
-    return new this(element);
+  init() {
+    this.addEvents();
   }
 
   addEvents() {

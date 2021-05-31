@@ -5,16 +5,20 @@ import '@assets/plugins/datepicker/datepicker-styles.css';
 import '@assets/plugins/datepicker/bundle.js';
 
 class Datepicker {
-  constructor(options = {}, rootContainer, defaultValues) {
-    this.options = options;
-    this.defaultValues = defaultValues;
+  constructor(rootContainer) {
     this.$rootContainer = $(rootContainer);
-    this.initPlugin();
-    this.initDefaultValue();
+    this.options = this.$rootContainer.data('options');
+    this.defaultValues = this.$rootContainer.data('values');
+    this.$rootContainer.removeAttr('data-options').removeAttr('data-values');
   }
 
-  static init(options, rootContainer, defaultValues) {
-    return new this(options, rootContainer, defaultValues);
+  init() {
+    this.initPlugin();
+    this.initDefaultValue();
+
+    if (this.options && this.options.focus) {
+      this.$rootContainer.next().focus();
+    }
   }
 
   initPlugin() {

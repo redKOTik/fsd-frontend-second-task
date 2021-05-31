@@ -54,11 +54,11 @@
   }
 }  
 
-.detail__list {
+.detail__list {  
+  align-self: flex-end;
   position: relative;
-  display: inline-block;  
-  top: -14px;
-  left: -10px;
+  top: -7px;
+  left: -9px;
 }
 
 .detail__post {
@@ -89,7 +89,8 @@
 
 .detail__diagram {  
   margin-right: 30px;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 }
 
 .detail__description {

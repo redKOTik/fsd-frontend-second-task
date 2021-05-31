@@ -15,5 +15,5 @@ export function initFilter() {
   initRate();
 
   // pagibation
-  initPagination('.js-search-room__pagination');
+  initPagination();
 }

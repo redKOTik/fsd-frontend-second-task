@@ -4,11 +4,10 @@ class Rate {
   constructor(element) {
     this.$rate = $(element);
     this.$inputs = this.$rate.find('.js-rate__input');
-    this.initRate();
   }
 
-  static init(rootEl) {
-    return new this(rootEl);
+  init() {
+    this.initRate();
   }
 
   setAllActive() {

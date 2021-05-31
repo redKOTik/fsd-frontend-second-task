@@ -1,5 +1,9 @@
+import $ from 'jquery';
 import Modal from './Modal';
 
-export default function init(root, button, overlay) {
-  return Modal.init(root, button, overlay);
+export default function init() {
+  $('.js-modal').each((_, domElement) => {
+    const modal = new Modal(domElement);
+    modal.init();
+  });
 }

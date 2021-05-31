@@ -4,14 +4,14 @@ import '@assets/plugins/multiselect/multiselect-styles.css';
 import '@assets/plugins/multiselect/bundle.js';
 
 class Multiselect {
-  constructor(options = {}, rootContainer) {
-    this.options = options;
+  constructor(rootContainer) {
     this.$rootContainer = $(rootContainer);
-    this.initPlugin();
+    this.options = this.$rootContainer.data('options');
+    this.$rootContainer.removeAttr('data-options');
   }
 
-  static init(options, rootContainer) {
-    return new this(options, rootContainer);
+  init() {
+    this.initPlugin();
   }
 
   initPlugin() {

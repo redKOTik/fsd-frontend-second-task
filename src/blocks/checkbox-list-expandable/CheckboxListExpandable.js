@@ -5,11 +5,10 @@ class CheckboxListExpandable {
     this.$root = $(element);
     this.$header = this.$root.find('.js-checkbox-list-expandable__header');
     this.$arrow = this.$root.find('.js-checkbox-list-expandable__arrow');
-    this.addEvents();
   }
 
-  static init(element) {
-    return new this(element);
+  init() {
+    this.addEvents();
   }
 
   addEvents() {

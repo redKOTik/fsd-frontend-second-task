@@ -8,17 +8,11 @@ export function initDetails() {
   initReserveFormPlugins();
 
   // diagram
-  initDiagram('.diagram', '.bullet-list-colored', {
-    yellow: 520,
-    purple: 260,
-    green: 260,
-    grey: 0,
-    summary: 1040
-  });
+  initDiagram();
 
   // likes
   initLikeButtons();
 
   // reserve form modal
-  initModal('.js-modal', '.js-detail__button .js-button', '.js-overlay');
+  initModal();
 }

@@ -1,16 +1,29 @@
 import $ from 'jquery';
 
 class Modal {
-  constructor(root, button, overlay) {
+  constructor(root) {
     this.$modal = $(root);
-    this.$btn = $(button);
-    this.$overlay = $(overlay);
+    this.$btn = $(this.$modal.data('btn')).find('.js-button');
+    this.$overlay = $(document.createElement('div'));
+    this.$overlay.addClass('overlay js-overlay');
+    this.$modal.removeAttr('data-btn');
+  }
 
+  init() {
+    this.hideBtn();
+    this.addOverlay();
     this.addEvents();
   }
 
-  static init(root, button, overlay) {
-    return new this(root, button, overlay);
+  hideBtn() {
+    this.$btn.parent().addClass('hide');
+  }
+
+  addOverlay() {
+    const $body = $(document.body);
+    if ($body.find('.js-overlay').length === 0) {
+      this.$overlay.appendTo($body);
+    }
   }
 
   addEvents() {

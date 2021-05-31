@@ -4,18 +4,17 @@ import 'fsd-custom-slider/dist/app.js';
 import 'fsd-custom-slider/dist/app.css';
 
 class Slider {
-  constructor(options, rootContainer, valueContainer) {
-    this.options = options;
+  constructor(rootContainer) {
     this.$rootContainer = $(rootContainer);
-    this.$valueContainer = $(valueContainer);
+    this.$valueContainer = $(this.$rootContainer.data('value'));
+    this.options = this.$rootContainer.data('options');
+    this.$rootContainer.removeAttr('data-options').removeAttr('data-value');
+  }
 
+  init() {
     this.initHandleValueChange();
     this.initPlugin();
     this.initDefaultValue();
-  }
-
-  static init(options, rootContainer, valueContainer) {
-    return new this(options, rootContainer, valueContainer);
   }
 
   initPlugin() {

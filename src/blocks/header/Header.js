@@ -4,12 +4,10 @@ class Header {
   constructor(root) {
     this.$header = $(root);
     this.$controls = this.$header.find('.header__control');
-
-    this.addEvents();
   }
 
-  static init(root) {
-    return new this(root);
+  init() {
+    this.addEvents();
   }
 
   handleLinkMouseover(e) {

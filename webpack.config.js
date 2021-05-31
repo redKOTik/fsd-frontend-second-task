@@ -158,7 +158,8 @@ module.exports = {
           plugins: [
             {removeViewBox: false}
           ]
-        })
+        }),
+        ['pngquant', { quality: [0.9, 0.95]}]
       ]
     }),
     new MiniCssExtractPlugin({

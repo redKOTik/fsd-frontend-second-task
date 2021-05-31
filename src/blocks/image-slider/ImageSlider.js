@@ -18,13 +18,11 @@ class ImageSlider {
     this.$sldrElemFirst = this.$slider.first('.js-img-slider__element');
     this.$leftArrow = this.$slider.find('.js-img-slider__arrow_left');
     this.$rightArrow = this.$slider.find('.js-img-slider__arrow_right');
-    this.$indicatorDots = this.$slider.find('.js-img-slider__dots');
-
-    this.initImageSlider();
+    this.$indicatorDots = this.$slider.find('.js-img-slider__dots');    
   }
 
-  static init(root) {
-    return new this(root);
+  init() {
+    this.initImageSlider();
   }
 
   // eslint-disable-next-line class-methods-use-this

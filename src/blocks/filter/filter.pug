@@ -4,20 +4,24 @@ include ../checkbox-list-expandable/checkbox-list-expandable
 div.filter.js-filter
   div.filter__item
     +label('даты пребывания в отеле', 'label_weight_bold')
-    div.filter__datepicker-wrapper
-      div.filter__datepicker.js-filter__datepicker
-  div.filter__item
+    div.filter__datepicker-plugin
+      - var options = '{"mode":"Range","select":"One","title":"ДД.МММ"}';
+      - var values = '{"start":{"date":19,"month":7,"year":2019},"end":{"date":23,"month":7,"year":2019}}';
+      div.datepicker-plugin.js-datepicker-plugin(data-options=options, data-values=values)
+  div.filter__item    
     +label('гости', 'label_weight_bold')
-    div.filter__multiselect-wrapper
-      select.filter__multiselect-for-human.js-filter__multiselect-for-human(value="Сколько гостей")
+    div.filter__multiselect-plugin
+      - options = '{"state":"Collapsed","options":[{"text":"взрослые","value":"1","unique":false},{"text":"дети","value":"2","unique":false},{"text":"младенцы","value":"1","unique":true}],"title":"Сколько гостей","totalTextTitle":"гостя"}';   
+      select.multiselect-plugin.js-multiselect-plugin(value="Сколько гостей", data-options=options)
         option(value="1") взрослые
         option(value="2") дети  
         option(value="0") младенцы
   div.filter__item.filter__item_mb_23
     +label('default', 'label_weight_normal label_position_right filter__slider-value js-filter__slider-value')
     +label('диапазон цены', 'label_weight_bold')
-    div.filter__slider-wrapper
-      div.filter__slider.js-filter__slider
+    div.filter__slider-plugin
+      - options = '{"step":"500","mode":"Multiple","orientation":"Horizontal","defaultInterval":["5000","10000"],"maximumValue":"15000","showSettings":false,"showValue":false}';              
+      div.slider-plugin.js-slider-plugin(data-options=options, data-value=".js-filter__slider-value")
       p.filter__slider-description Стоимость за сутки пребывания в номере
   div.filter__item.filter__item_mb_25
     div.filter__label
@@ -34,10 +38,11 @@ div.filter.js-filter
       { label: 'Широкий коридор', classLabel: 'width_default', classItem: 'height_custom', richText: 'Ширина коридоров в номере не менее 91 см.', rich: true }, 
       { label: 'Помощник для инвалидов', classLabel: 'width_custom', classItem: 'height_custom', richText: 'На 1 этаже вас встретит специалист и проводит до номера.', rich: true }
       ])
-  div.filter__item.filter__item_mb_16
+  div.filter__item.filter__item_mb_16    
     +label('удобства номера', 'label_weight_bold')
-    div.filter__multiselect-wrapper
-      select.filter__multiselect-for-bed.js-filter__multiselect-for-bed(value="Сколько всего")
+    div.filter__multiselect-plugin
+      - options = '{"state":"Collapsed","options":[{"text":"спальни","value":"2","unique":true},{"text":"кровати","value":"2","unique":true},{"text":"ванные комнаты","value":"0","unique":true}],"title":"Сколько всего"}';
+      select.multiselect-plugin.js-multiselect-plugin(value="Сколько всего", data-options=options)
         option(value="2") спальни
         option(value="2") кровати
         option(value="0") ванные комнаты

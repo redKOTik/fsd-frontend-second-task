@@ -20,11 +20,12 @@ div.element
               div.label__input
                 +input('other', 'text', null, 'input_focused input_hovered', 'This is pretty awesome')   
         div.column__field_mb_18
-          div.field
+          div.field            
             +label('default', 'label_weight_normal label_position_right')
             +label('dropdown', 'label_weight_bold') 
-            div.field__multiselect-wrapper.field_font_montserrat
-              select.multiselect-collapsed.js-multiselect-collapsed(value="Сколько гостей", name="counter")
+            div.field__multiselect-plugin.field_font_montserrat
+              - var options = '{"state":"Collapsed","options":[{"text":"взрослые","value":"0","unique":false},{"text":"дети","value":"0","unique":false},{"text":"младенцы","value":"0","unique":true}],"title":"Сколько гостей","totalTextTitle":"гостя"}';
+              select.multiselect-plugin.js-multiselect-plugin(value="Сколько гостей", name="counter", data-options=options)
                 option(value="0") взрослые
                 option(value="0") дети  
                 option(value="0") младенцы
@@ -38,13 +39,17 @@ div.element
           div.field
             +label('date dropdown', 'label_weight_bold label_position_inline')        
             +label('date dropdown', 'label_weight_bold')
-            div.field__datepicker-wrapper.field_font_montserrat
-              div.datepicker-range.js-datepicker-range
+            div.field__datepicker-plugin.field_font_montserrat
+              - options = '{"mode":"Range"}';
+              - var values = '{"end":{"date":19,"month":7,"year":2019}}';
+              div.datepicker-plugin.js-datepicker-plugin(data-options=options, data-values=values)
         div.column__field_mb_37.column__field_width_custom     
           div.field
             +label('filter date dropdown', 'label_weight_bold')
-            div.field__datepicker-wrapper.field_font_montserrat
-              div.datepicker-range-filter.js-datepicker-range-filter
+            div.field__datepicker-plugin.field_font_montserrat
+              - options = '{"mode":"Range","select":"One","title":"ДД.МММ"}';
+              - values = '{"start":{"date":19,"month":7,"year":2019},"end":{"date":23,"month":7,"year":2019}}';
+              div.datepicker-plugin.js-datepicker-plugin(data-options=options, data-values=values)
         div.column__field_width_custom      
           div.field
             +label('subscription text field', 'label_weight_bold')
@@ -96,8 +101,9 @@ div.element
           div.field
             +label('default', 'label_weight_normal label_position_right label_slider js-label_slider')
             +label('Range Slider', 'label_weight_bold') 
-            div.field__custom-slider      
-              div.custom-slider.js-custom-slider
+            div.field__slider-plugin
+              - options = '{"step":"500","mode":"Multiple","orientation":"Horizontal","defaultInterval":["5000","10000"],"maximumValue":"15000","showSettings":false,"showValue":false,"showScale":false}';              
+              div.slider-plugin.js-slider-plugin(data-options=options, data-value=".js-label_slider")
         div.column__field_mb_36    
           div.field
             div.field__label_mb_16
@@ -122,37 +128,41 @@ div.element
     div.element__line
       div.column
         div.column__field_mb_16.column__field_width_custom
-          div.field
+          div.field            
             +label('default', 'label_weight_normal label_position_right')
             +label('dropdown', 'label_weight_bold') 
-            div.field__multiselect-wrapper.field_font_montserrat
-              select.multiselect-collapsed-with-value.js-multiselect-collapsed-with-value(value="Сколько всего")
+            div.field__multiselect-plugin.field_font_montserrat
+              - options = '{"state":"Collapsed","options":[{"text":"спальни","value":"2","unique":true},{"text":"кровати","value":"2","unique":true},{"text":"ванные комнаты","value":"0","unique":true}],"title":"Сколько всего"}';
+              select.multiselect-plugin.js-multiselect-plugin(value="Сколько всего", data-options=options)
                 option(value="0") спальни
                 option(value="0") кровати
                 option(value="0") ванные комнаты
         div.column__field_width_custom        
-          div.field
+          div.field            
             +label('expanded', 'label_weight_normal label_position_right')
             +label('dropdown', 'label_weight_bold')
-            div.field__multiselect-wrapper.field_font_montserrat
-              select.multiselect-expanded-with-value.js-multiselect-expanded-with-value(value="Сколько всего")
+            div.field__multiselect-plugin.field_font_montserrat
+              - options = '{"state":"Expanded","options":[{"text":"спальни","value":"2","unique":true},{"text":"кровати","value":"2","unique":true},{"text":"ванные комнаты","value":"0","unique":true}],"title":"Сколько всего"}';
+              select.multiselect-plugin.js-multiselect-plugin(value="Сколько всего", data-options=options)
                 option(value="0") спальни
                 option(value="0") кровати  
                 option(value="0") ванные комнаты
       .column-wrapper
         div.column
-          div.field
+          div.field            
             +label('dropdown', 'label_weight_bold')
-            div.field__multiselect-wrapper.field_font_montserrat
-              select.multiselect-expanded-default.js-multiselect-expanded-default(value="Сколько гостей")
+            div.field__multiselect-plugin.field_font_montserrat
+              - options = '{"state":"Collapsed","options":[{"text":"взрослые","value":"0","unique":false},{"text":"дети","value":"0","unique":false},{"text":"младенцы","value":"0","unique":true}],"title":"Сколько гостей","totalTextTitle":"гостя"}';
+              select.multiselect-plugin.js-multiselect-plugin(value="Сколько гостей", data-options=options)
                 option(value="0") взрослые
                 option(value="0") дети  
                 option(value="0") младенцы   
       div.column
         div.field
           +label('dropdown', 'label_weight_bold')
-          div.field__multiselect-wrapper.field_font_montserrat 
-            select.multiselect-expanded-total-value.js-multiselect-expanded-total-value(value="Сколько гостей")
+          div.field__multiselect-plugin.field_font_montserrat            
+            - options = '{"state":"Collapsed","options":[{"text":"взрослые","value":"2","unique":false},{"text":"дети","value":"1","unique":false},{"text":"младенцы","value":"0","unique":true}],"title":"Сколько гостей","totalTextTitle":"гостя"}'; 
+            select.multiselect-plugin.js-multiselect-plugin(value="Сколько гостей", data-options=options)
               option(value="2") взрослые
               option(value="1") дети  
               option(value="0") младенцы

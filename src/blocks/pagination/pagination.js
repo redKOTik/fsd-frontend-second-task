@@ -1,9 +1,11 @@
 import $ from 'jquery';
 
 class Pagination {
-  constructor(root, data = this.setDefault()) {
+  constructor(root) {
     this.$root = $(root);
-    this.data = data;
+    this.data = this.$root.data('options') || this.setDefault();
+    this.$root.removeAttr('data-options');
+
     this.state = {
       currentPage: 1,
       showPrev: false,
@@ -11,14 +13,12 @@ class Pagination {
       visibleArray: [1, 2, 3],
       size: this.computeSize(this.data)
     };
+  }
 
+  init() {
     this.render();
     this.initState();
     this.setHandler();
-  }
-
-  static init(root, data) {
-    return new this(root, data);
   }
 
   transformNav() {

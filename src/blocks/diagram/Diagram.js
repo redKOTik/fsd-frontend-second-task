@@ -1,17 +1,16 @@
 import $ from 'jquery';
 
 class Diagram {
-  constructor(rootContainer, list, state) {
+  constructor(rootContainer) {
     this.$diagram = $(rootContainer);
-    this.$list = $(list);
-    this.state = state;
-
-    this.render();
-    this.addEvents();
+    this.state = this.$diagram.data('list');
+    this.$list = this.$diagram.next().find(this.state.list);
+    this.$diagram.removeAttr('data-list');
   }
 
-  static init(rootContainer, list, state) {
-    return new this(rootContainer, list, state);
+  init() {
+    this.render();
+    this.addEvents();
   }
 
   createInfoBlock() {

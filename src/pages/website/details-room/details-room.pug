@@ -22,13 +22,13 @@ div.details-room
               +label('Впечатления от номера', 'label_for-details')
             div.detail__diagram
               include ../../../blocks/diagram/diagram
-            div.detail__list
-              include ../../../blocks/bullet-list-colored/bullet-list-colored
-              +bulletColored([{ text: 'Великолепно', color: 'yellow', data: 'yellow' },
-                { text: 'Хорошо', color: 'green', data: 'green' },
-                { text: 'Удовлетворительно', color: 'purple', data: 'purple' },
-                { text: 'Разочарован', color: 'grey', data: 'grey' }])
-            div.detail__button.js-detail__button.hide
+              div.detail__list
+                include ../../../blocks/bullet-list-colored/bullet-list-colored
+                +bulletColored([{ text: 'Великолепно', color: 'yellow', data: 'yellow' },
+                  { text: 'Хорошо', color: 'green', data: 'green' },
+                  { text: 'Удовлетворительно', color: 'purple', data: 'purple' },
+                  { text: 'Разочарован', color: 'grey', data: 'grey' }])
+            div.detail__button.js-detail__button
               include ../../../blocks/button/button
               +button('форма бронирования', 'button_size_wide button_height_large button_bg_purple button_color_white button_without-border button_focused')
       div.detail__row
@@ -53,6 +53,5 @@ div.details-room
             +label('Отмена', 'label_for-details')
           div.detail__info
             p.detail__description Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-    div.details-room__reserve-form.modal.js-details-room__reserve-form.js-modal
+    div.details-room__reserve-form.modal.js-details-room__reserve-form.js-modal(data-btn=".js-detail__button")
       include ../../../blocks/reserve-form/reserve-form
-div.overlay.js-overlay
