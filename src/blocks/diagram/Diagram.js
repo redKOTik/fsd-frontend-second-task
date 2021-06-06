@@ -26,7 +26,7 @@ class Diagram {
 
   render() {
     this.createInfoBlock();
-    const $block = $(document.createElement('div')).addClass('diagram__block');
+    const $block = $(document.createElement('div')).addClass('diagram__block js-diagram__block');
     this.$diagram
       .append($block.clone().addClass('diagram__block_yellow').attr('data-block', 'yellow')
         .append($block.clone().addClass('diagram__pseudo-block_yellow')))
@@ -66,7 +66,7 @@ class Diagram {
     if (isList) {
       const dataAttr = $target.data('block');
       this.$pCount.text(this.state[dataAttr]);
-      this.$diagram.find('.diagram__block[data-block="' + dataAttr + '"]').addClass('diagram__block_active');
+      this.$diagram.find('.js-diagram__block[data-block="' + dataAttr + '"]').addClass('diagram__block_active');
     }
   }
 
@@ -77,7 +77,7 @@ class Diagram {
     if (isList) {
       const dataAttr = $target.data('block');
       this.$pCount.text(this.state.summary);
-      this.$diagram.find('.diagram__block[data-block="' + dataAttr + '"]').removeClass('diagram__block_active');
+      this.$diagram.find('.js-diagram__block[data-block="' + dataAttr + '"]').removeClass('diagram__block_active');
     }
   }
 
