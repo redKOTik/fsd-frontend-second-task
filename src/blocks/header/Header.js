@@ -32,11 +32,11 @@ class Header {
     const $target = $(e.target);
 
     if ($target.closest('.js-header__login', this.$controls).length > 0) {
-      window.location.href = '#login';
+      window.location.href = './login.html';
     }
 
     if ($target.closest('.js-header__register', this.$controls).length > 0) {
-      window.location.href = '#register';
+      window.location.href = './register.html';
     }
   }
 

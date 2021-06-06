@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name="keywords" content="html, css, javascript, page, fsd, work")
+    meta(name="description" content="Training project with hotel room search pages")
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel="icon", href="assets/favicon.ico", type="image/ico")
+    title Landing  
+  body
+    include ../../blocks/header/header
+    +header()      
+    section.container.container_bg_for-landing
+      div.find-room-form-wrapper
+        include ../../blocks/find-room-form/find-room-form
+    include ../../blocks/footer/footer

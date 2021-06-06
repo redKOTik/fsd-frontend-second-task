@@ -1,4 +1,9 @@
-require.context('./', true, /\.scss$/);
-import { Router } from './assets/routing/core/router';
+require.context("./", true, /\.scss$/);
 
-new Router('.container');
+function importAll(r) {
+  r.keys().forEach(r);
+}
+
+importAll(require.context("./blocks", true, /index\.js$/));
+
+$('form').on('submit', e => e.preventDefault());

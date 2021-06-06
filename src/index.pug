@@ -7,31 +7,25 @@ html(lang='en')
     meta(name="description" content="Training project with hotel room search pages")
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     link(rel="icon", href="assets/favicon.ico", type="image/ico")
-    title Registration  
+    title Menu  
   body
-    template
-      div.register
-        include blocks/register-form/register-form
-      div.login
-        include blocks/login-form/login-form
-      div.findroom
-        include blocks/find-room-form/find-room-form
-      div.details
-        include pages/website/details-room/details-room
-      div.filter
-        include pages/website/search-room/search-room
-      div.cat
-        include pages/ui-kit/colors-and-type/colors-and-type
-      div.elements
-        include pages/ui-kit/elements/elements
-      div.cards
-        include pages/ui-kit/cards/cards
-      div.haf
-        include pages/ui-kit/headers-and-footers/headers-and-footers
-      div.base        
-        include pages/base/base
-    include blocks/header/header
-    +header()      
-    section.container
-      div.register-form-wrapper
-    include blocks/footer/footer
+    .base
+      ul
+        li
+          a(href="./register.html") Страница регистрации
+        li
+          a(href="./login.html") Страница входа  
+        li
+          a(href="./details-room.html") Детали номера
+        li
+          a(href="./search-room.html") Поиск номера / фильтр 
+        li
+          a(href="./landing.html") Целевая страница
+        li
+          a(href="./cards.html") Формы
+        li
+          a(href="./elements.html") Элементы
+        li
+          a(href="./headers-and-footers.html") Headers and footers
+        li
+          a(href="./colors-and-type.html") Шрифты 
